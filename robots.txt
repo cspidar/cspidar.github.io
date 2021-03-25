@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://cspidar.github.io/sitemap.xml
