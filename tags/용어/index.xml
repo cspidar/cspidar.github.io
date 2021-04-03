@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>용어 on quick start by EEAS</title>
+    <link>https://cspidar.github.io/tags/%EC%9A%A9%EC%96%B4/</link>
+    <description>Recent content in 용어 on quick start by EEAS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Sat, 03 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cspidar.github.io/tags/%EC%9A%A9%EC%96%B4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>자바스크립트 문법 - A - 작성 규칙, 용어와 개념</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/a-%EC%9E%91%EC%84%B1-%EA%B7%9C%EC%B9%99_%EC%9A%A9%EC%96%B4%EC%99%80-%EA%B0%9C%EB%85%90/</link>
+      <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/a-%EC%9E%91%EC%84%B1-%EA%B7%9C%EC%B9%99_%EC%9A%A9%EC%96%B4%EC%99%80-%EA%B0%9C%EB%85%90/</guid>
+      <description>정식 표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다. 반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부와 생략했을때 기본값을 명확히 하는데 중점을 뒀습니다. 학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.
+   1. 작성 규칙 1.1. 기존 대상  1.2. 항목  1.3. 항목별 설명 순서 기능 설명 → (원본 변경/유지 여부) → 반환값</description>
+    </item>
+    
+  </channel>
+</rss>
