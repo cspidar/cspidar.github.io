@@ -69,8 +69,8 @@
   "keywords": [
     "자바스크립트", "문법", "작성 규칙", "용어", "개념"
   ],
-  "articleBody": " 정식 표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다. 반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부와 생략했을때 기본값을 명확히 하는데 중점을 뒀습니다. 학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.\n   1. 작성 규칙 1.1. 기존 대상  1.2. 항목  1.3. 항목별 설명 순서 기능 설명 → (원본 변경/유지 여부) → 반환값\n  1.4. 기존 대상의 변경 여부 표시   기존 대상 변경: 변경된 대상 반환 (원본 변경)\n  기존 대상 유지: 새로운 대상 반환 (원본 유지)\n    1.5. 생략 가능한 항목의 생략 시 기본값 (옵션: 기본 0)    1.6. 대상 표기 1.6.1. 숫자와 불리언 n // 숫자 (0 포함 자연수) 1/0 // 무한대 (Infinity) true/false // 불리언    1.6.2. 문자열 str, 'a'    1.6.3. 배열 arr, [item1, item2, ...item]: arr[index], arr[start]: item1, arr[end]: ...item, start - end, // 차례로 end - start, // 역순으로 target // 지정 인덱스    1.6.4. 객체 obj, {key1: value1, key2: value2, ...key: ...value}: obj.key    1.6.5. 함수 func, p = p, p = p + 1, // 연산 함수 적용 p = p return    1.6.6. 맵 map    1.6.7. 셋 set    1.6.8. 여러 형태가 가능한 대상 H, (arr, obj, set, map ...)       2. 용어와 개념 2.1. 얕게 복사  2.2. 반환 (return)  2.3. 확장  2.4. 동결 (freeze)  2.5. 밀봉 (sealed)  2.6. thisArg: 호출하는데 제공될 this 의 값  2.7. 열거 가능 (enumerable)  2.8. 유사 배열 (array-like)  2.9. 이터러블 (iterable)  2.10. 이터레이터 (iterator)  2.11. 원시값 (string, number, bigint (큰 정수), boolean, undefined, symbol) 객체가 아니면서 메소드도 가지지 않는 데이터\n  2.12. 메소드: 대상에 할당된 함수 const user = {} // [], p = p ... user.sayHi = () = console.log('Hi'); // user 객체에 sayHi() 함수 할당 user.sayHi(); // Hi    2.13. 메소드 체인 user.sayHi().sayBye().goToBed();   undefined 를 반환하는 메소드는 체인 중간에 올수 없음\n    ",
-  "wordCount" : "304",
+  "articleBody": " 정식 표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다. 반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부와 생략했을때 기본값을 명확히 하는데 중점을 뒀습니다. 학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.\n   1. 작성 규칙 1.1. 기존 대상  1.2. 항목  1.3. 항목별 설명 순서 기능 설명 → (원본 변경/유지 여부) → 반환값\n  1.4. 기존 대상의 변경 여부 표시   기존 대상 변경: 변경된 대상 반환 (원본 변경) - 기능 설명에 표시\n  기존 대상 유지: 새로운 대상 반환 (원본 유지) - 기능 설명에 미표시\n    1.5. 생략 가능한 항목의 생략 시 기본값 (옵션: 기본 0)    1.6. 대상 표기 1.6.1. 숫자와 불리언 n // 숫자 (0 포함 자연수) 1/0 // 무한대 (Infinity) true/false // 불리언    1.6.2. 문자열 str, 'a'    1.6.3. 배열 arr, [item1, item2, ...item]: arr[index], arr[start]: item1, arr[end]: ...item, start - end, // 차례로 end - start, // 역순으로 target // 지정 인덱스    1.6.4. 객체 obj, {key1: value1, key2: value2, ...key: ...value}: obj.key    1.6.5. 함수 func, p = p, p = p + 1, // 연산 함수 적용 p = p return    1.6.6. 맵 map    1.6.7. 셋 set    1.6.8. 여러 형태가 가능한 대상 H, (arr, obj, set, map ...)       2. 용어와 개념 2.1. 얕게 복사  2.2. 반환 (return)  2.3. 확장  2.4. 동결 (freeze)  2.5. 밀봉 (sealed)  2.6. thisArg: 호출하는데 제공될 this 의 값  2.7. 열거 가능 (enumerable)  2.8. 유사 배열 (array-like)  2.9. 이터러블 (iterable)  2.10. 이터레이터 (iterator)  2.11. 원시값 (string, number, bigint (큰 정수), boolean, undefined, symbol) 객체가 아니면서 메소드도 가지지 않는 데이터\n  2.12. 메소드: 대상에 할당된 함수 const user = {} // [], p = p ... user.sayHi = () = console.log('Hi'); // user 객체에 sayHi() 함수 할당 user.sayHi(); // Hi    2.13. 메소드 체인 user.sayHi().sayBye().goToBed();   undefined 를 반환하는 메소드는 체인 중간에 올수 없음\n    ",
+  "wordCount" : "312",
   "inLanguage": "en",
   "datePublished": "2021-04-03T00:00:00Z",
   "dateModified": "2021-04-03T00:00:00Z",
@@ -284,10 +284,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>기존 대상 변경: 변경된 대상 반환 (원본 변경)</p>
+<p>기존 대상 변경: 변경된 대상 반환 (원본 변경) - 기능 설명에 표시</p>
 </li>
 <li>
-<p>기존 대상 유지: 새로운 대상 반환 (원본 유지)</p>
+<p>기존 대상 유지: 새로운 대상 반환 (원본 유지) - 기능 설명에 미표시</p>
 </li>
 </ul>
 </div>
