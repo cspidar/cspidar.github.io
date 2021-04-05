@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>코드 저장 on quick start by EEAS</title>
+    <link>https://cspidar.github.io/tags/%EC%BD%94%EB%93%9C-%EC%A0%80%EC%9E%A5/</link>
+    <description>Recent content in 코드 저장 on quick start by EEAS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Mon, 29 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cspidar.github.io/tags/%EC%BD%94%EB%93%9C-%EC%A0%80%EC%9E%A5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>코드 저장소 github - 기본 사용법 (Windows10)</title>
+      <link>https://cspidar.github.io/posts/%EC%BD%94%EB%93%9C-%EC%A0%80%EC%9E%A5%EC%86%8C-github-%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95/</link>
+      <pubDate>Mon, 29 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%BD%94%EB%93%9C-%EC%A0%80%EC%9E%A5%EC%86%8C-github-%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95/</guid>
+      <description>1. 왜 github?   git: 소스코드를 관리하기 위한 버전 관리 시스템, 이력 관리와 협업과 관련된 다양한 기능을 제공
+  github: git 을 인터넷에 업로드하는 서비스, 이외에도 유사 서비스 (gitlab 등) 이 있음
+   git은 브랜치, 모듈, 로그 등 다양한 기능을 제공하여 개발환경에 훌륭하고 다양한 편의 기능을 제공 하지만, 복잡해보이는 수많은 개념 + 낯선 터미널 명령어때문에 진입 장벽이 다소 높다고 생각합니다. 따라서 Google Drive 나 Naver Cloud 와 같이, github를 코드 + 파일을 저장하는 클라우드 서비스처럼 활용하는 방법만 소개하면 도움이 될 것이라고 생각해 이번 포스트를 작성합니다.</description>
+    </item>
+    
+  </channel>
+</rss>

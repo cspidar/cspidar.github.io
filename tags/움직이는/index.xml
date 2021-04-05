@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>움직이는 on quick start by EEAS</title>
+    <link>https://cspidar.github.io/tags/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94/</link>
+    <description>Recent content in 움직이는 on quick start by EEAS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Tue, 23 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cspidar.github.io/tags/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>움직이는 이미지 만들기 - 화면 녹화: ScreenToGif</title>
+      <link>https://cspidar.github.io/posts/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/</link>
+      <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/</guid>
+      <description>화면을 녹화하여 만든 움직이는 이미지로 문서의 가독성을 개선
+ 1. 왜 ScreenToGif? https://www.screentogif.com/
+ 오픈소스: 광고, 워터마크, 분량제한 없이 사용 가능 다양한 기능 및 설정: 녹화 범위 지정, 마우스 위치 강조, 클릭 효과, 고정창 마우스 따라다니기 기능, gif, avi 등 다양한 출력 방식 제공 등
+ 비교 대상 확인   CamStudio 오픈소스. 마우스 위치 강조나 클릭 효과 있음. 출력 양식 부족, 부가 기능 부족 소개 사이트에서의 인터페이스는 처참하지만.. 실제 윈도우10 환경에서 사용해보면 봐줄만 하다.</description>
+    </item>
+    
+  </channel>
+</rss>
