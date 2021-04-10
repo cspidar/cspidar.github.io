@@ -21,6 +21,20 @@
     </item>
     
     <item>
+      <title>자바스크립트 문법 - F - 셋 주요 메소드 (Set methods essentials)</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/f-%EC%85%8B-%EB%A9%94%EC%86%8C%EB%93%9C-set-methods/</link>
+      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/f-%EC%85%8B-%EB%A9%94%EC%86%8C%EB%93%9C-set-methods/</guid>
+      <description>본 문서의 작성 규칙은 자바스크립트 문법 작성 규칙 을 참고하세요. 활용 빈도와 중요도가 높다고 생각되는 항목으로 본문을 구성하였습니다. 나머지 항목은 기타 챕터에서 확인 가능합니다.
+   1. Set 1.1. 특징   유일한 값을 저장, 객체와 원시 값 모두 저장 가능
+  index 없음
+  item 순서에 의미 없음
+  개별 item에 접근 불가
+    1.2. 기본 문법 1.2.1. 선언 const set = new Set()       2.</description>
+    </item>
+    
+    <item>
       <title>자바스크립트 문법 - D - 문자열 주요 메소드 (String methods essentials)</title>
       <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/d-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%A9%94%EC%86%8C%EB%93%9C-object-methods/</link>
       <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
