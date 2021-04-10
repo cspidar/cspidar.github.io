@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 06 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cspidar.github.io/tags/%EB%AC%B8%EC%9E%90%EC%97%B4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>자바스크립트 문법 - D - 문자열 주요 메소드 (String methods essentials)</title>
-      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/d-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%A9%94%EC%86%8C%EB%93%9C-object-methods-copy/</link>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/d-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%A9%94%EC%86%8C%EB%93%9C-object-methods/</link>
       <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/d-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%A9%94%EC%86%8C%EB%93%9C-object-methods-copy/</guid>
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/d-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%A9%94%EC%86%8C%EB%93%9C-object-methods/</guid>
       <description>본 문서의 작성 규칙은 자바스크립트 문법 작성 규칙 을 참고하세요. 활용 빈도와 중요도가 높다고 생각되는 항목으로 본문을 구성하였습니다. 나머지 항목은 기타 챕터에서 확인 가능합니다.
    1. 문자열 프로퍼티 1.1. String.length str.length //&amp;gt; str의 문자 개수 반환      2. 문자열 메소드 2.1. 변환 2.1.1. String.prototype.concat() str.concat(&amp;#39;s1&amp;#39;, &amp;#39;s2&amp;#39;, ...&amp;#39;s&amp;#39;) //&amp;gt; str에 하나 이상의 &amp;#39;s&amp;#39;를 합쳐 새로운 str로 반환    2.1.2. String.prototype.slice() str.slice(start, end) //&amp;gt; start부터 end (옵션: 기본 str.</description>
     </item>
