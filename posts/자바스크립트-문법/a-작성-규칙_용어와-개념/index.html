@@ -7,14 +7,14 @@
 <meta name="robots" content="index, follow">
 <title>자바스크립트 문법 - A - 작성 규칙, 용어와 개념 (Style, Terms and Concepts) | quick start by EEAS</title>
 
-<meta name="keywords" content="자바스크립트, 문법, 작성 규칙, 용어, 개념, Style guide, Term, Concept" />
-<meta name="description" content="정식 표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다. 반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부와 생략했을때 기본값을 명확히 하는데 중점을 뒀습니다. 학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.
-   1. 작성 규칙   배열 예시
-  정식 표기법
-  본문 표기법">
+<meta name="keywords" content="자바스크립트, 문법, 작성 규칙, 용어, 개념, Style, Term, Concept" />
+<meta name="description" content="표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다.
+  반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부 (&#43;생략했을때 기본값) 을 명확히 하는데 중점을 뒀습니다.
+  학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.
+  오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다.">
 <meta name="author" content="">
 <link rel="canonical" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/a-%EC%9E%91%EC%84%B1-%EA%B7%9C%EC%B9%99_%EC%9A%A9%EC%96%B4%EC%99%80-%EA%B0%9C%EB%85%90/" />
-<link href="/assets/css/stylesheet.min.460f7000b0a6b201a2d3e7ee394f03cb56cd776b705fbff1ba576481ca46d277.css" integrity="sha256-Rg9wALCmsgGi0&#43;fuOU8Dy1bNd2twX7/xuldkgcpG0nc=" rel="preload stylesheet"
+<link href="/assets/css/stylesheet.min.6f175a1f66e6446913caca4334cbb986e9c2c12c1b6a50e0edc8bf1d8fd29ded.css" integrity="sha256-bxdaH2bmRGkTyspDNMu5hunCwSwbalDg7ci/HY/Sne0=" rel="preload stylesheet"
     as="style">
 
 <link rel="icon" href="https://cspidar.github.io/favicon.ico">
@@ -28,10 +28,10 @@
 
 
 <meta property="og:title" content="자바스크립트 문법 - A - 작성 규칙, 용어와 개념 (Style, Terms and Concepts)" />
-<meta property="og:description" content="정식 표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다. 반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부와 생략했을때 기본값을 명확히 하는데 중점을 뒀습니다. 학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.
-   1. 작성 규칙   배열 예시
-  정식 표기법
-  본문 표기법" />
+<meta property="og:description" content="표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다.
+  반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부 (&#43;생략했을때 기본값) 을 명확히 하는데 중점을 뒀습니다.
+  학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.
+  오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/a-%EC%9E%91%EC%84%B1-%EA%B7%9C%EC%B9%99_%EC%9A%A9%EC%96%B4%EC%99%80-%EA%B0%9C%EB%85%90/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-04-03T00:00:00&#43;00:00" />
@@ -39,10 +39,10 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="자바스크립트 문법 - A - 작성 규칙, 용어와 개념 (Style, Terms and Concepts)"/>
-<meta name="twitter:description" content="정식 표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다. 반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부와 생략했을때 기본값을 명확히 하는데 중점을 뒀습니다. 학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.
-   1. 작성 규칙   배열 예시
-  정식 표기법
-  본문 표기법"/>
+<meta name="twitter:description" content="표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다.
+  반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부 (&#43;생략했을때 기본값) 을 명확히 하는데 중점을 뒀습니다.
+  학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.
+  오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다."/>
 
 
 <script type="application/ld+json">
@@ -71,12 +71,12 @@
   "@type": "BlogPosting",
   "headline": "자바스크립트 문법 - A - 작성 규칙, 용어와 개념 (Style, Terms and Concepts)",
   "name": "자바스크립트 문법 - A - 작성 규칙, 용어와 개념 (Style, Terms and Concepts)",
-  "description": "정식 표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다. 반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부와 생략했을때 기본값을 명확히 하는데 중점을 뒀습니다. 학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.\n   1. 작성 규칙   배열 예시\n  정식 표기법\n  본문 표기법",
+  "description": "표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다.\n  반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부 (+생략했을때 기본값) 을 명확히 하는데 중점을 뒀습니다.\n  학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.\n  오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다.",
   "keywords": [
-    "자바스크립트", "문법", "작성 규칙", "용어", "개념", "Style guide", "Term", "Concept"
+    "자바스크립트", "문법", "작성 규칙", "용어", "개념", "Style", "Term", "Concept"
   ],
-  "articleBody": " 정식 표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다. 반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부와 생략했을때 기본값을 명확히 하는데 중점을 뒀습니다. 학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.\n   1. 작성 규칙   배열 예시\n  정식 표기법\n  본문 표기법\n     문자열 예시\n  객체 예시\n  Map 예시\n  Set 예시\n   1.1. 기존 대상  1.2. 항목  1.3. 항목별 설명 순서 기능 설명 → (원본 변경/유지 여부) → 반환값\n  1.4. 기존 대상의 변경 여부 표시   기존 대상 변경: 변경된 대상 반환 (원본 변경) - 기능 설명에 표시\n  기존 대상 유지: 새로운 대상 반환 (원본 유지) - 기능 설명에 미표시\n    1.5. 생략 가능한 항목의 생략 시 기본값 (옵션: 기본 0)    1.6. 대상 표기 1.6.1. 공통 n // 0 포함 자연수 -n // 음의 정수 1/0 // 무한대 (Infinity) true/false // 불리언 a1, a2, a3 ...a // 지정 값 index // 인덱스 target // 지정 인덱스 start // 시작 인덱스 end // 끝 인덱스 start - end // 차례로 end - start // 역순으로 r/ // 정규표현식 r1/, r2/, ...r/ // 특정 정규 표현식    1.6.2. 문자열 str, 'str'[start]: 's' 'str'[end]: 'r' 'a' // 지정 문자열 `{t}` // 템플릿 리터럴    1.6.3. 배열 arr, // [] [item1, item2, ...item]: arr[index], arr[start]: item1, arr[end]: ...item,    1.6.4. 객체 obj, // {} {key1: value1, key2: value2, ...key: ...value}: obj.key, src // key: value    1.6.5. 함수 func, p = p, p, // 파라미터 p = p + 1, // 연산 함수 적용 p = p p    1.6.6. 맵 map    1.6.7. 셋 set    1.6.8. 여러 형태가 가능한 대상 H, (arr, obj, set, map ...)       2. 용어와 개념 2.1. 얕게 복사  2.2. 반환 (return)  2.3. 확장  2.4. 동결 (freeze)  2.5. 밀봉 (sealed)  2.6. thisArg: 호출하는데 제공될 this 의 값  2.7. 열거 가능 (enumerable)  2.8. 유사 배열 (array-like)  2.9. 이터러블 (iterable)  2.10. 이터레이터 (iterator)  2.11. 원시값 (string, number, bigint (큰 정수), boolean, undefined, symbol) 객체가 아니면서 메소드도 가지지 않는 데이터\n  2.12. 메소드: 대상에 할당된 함수 const user = {} // [], p = p ... user.sayHi = () = console.log('Hi'); // user 객체에 sayHi() 함수 할당 user.sayHi(); // Hi    2.13. 메소드 체인 user.sayHi().sayBye().goToBed();   undefined 를 반환하는 메소드는 체인 중간에 올수 없음\n    ",
-  "wordCount" : "378",
+  "articleBody": "   표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다.\n  반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부 (+생략했을때 기본값) 을 명확히 하는데 중점을 뒀습니다.\n  학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.\n  오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다.\n  본 문서의 첫번째 작성 목적은 제 학습에 대한 정리와 리마인드를 용이하게 하려는 것이나, 자바스크립트 학습을 시작하시는 분들에게는 파악이 필요한 대상의 요약본이, 숙련자분들에게는 리마인드에 도움이 되는 도구가 되었으면 하는 바램입니다.\n     1. 작성 규칙 1.1. 개요   일반 지칭: 대상을 일반화 하여 언급\n  특정 값: 표현 식내에 활용되는 대상 언급\n  예\narr.unshift(i) // i를 arr의 첫 item으로 추가 (원본 arr 변경), 새로운 길이를 반환     i: 표현 식에 사용된 arr 배열의 구성 요소\n  item: 배열 요소의 일반적 표현\n        애매한 상황에선 글자 수가 적은 '특정 값' 형태를 우선하여 작성\n  마지막 (n번째) 대상은 …​ 형태 (스프레드 연산자) 로 표현\n  예\n[item1, item2, ...item]     item1: 배열의 첫 요소\n  …​item: 배열의 마지막 요소\n          1.2. 일반 지칭과 특정 값 표현       일반 지칭 특정 값     배열 (Array)\n arr\n   [item, ...item]   [i1, i2, ...i]     arr[index] // item   arr[start] // i1 arr[end] // ...i arr[target] // i     item: 요소\n i1: 첫 요소 …​i: 마지막 요소 i: 특정 요소\n   index: 인덱스\n start: 첫 인덱스 end: 마지막 인덱스 target: 특정 인덱스\n   인덱스 (Index), 요소 (Item) 쌍\n src\n   객체 (Object)\n obj\n   {key: value, ...key: ...value}   {k1: v1, k2: v2, ...k: ...v}     obj.key // value   obj.k1 // v1     Key: 키\n k: 키\n   Value: 값\n v: 값\n   키 (Key), 값 (Value) 쌍\n src\n   문자열 (String)\n str\n   \"string\"   \"s1s2...s\"     str[index] // \"string\"   str[start] // \"s1\" str[end] // \"...s\" str[target] // \"s\"     \"string\": 문자열\n \"s1\": 첫 글자 \"…​s\": 마지막 글자 \"s\": 특정 글자\n   `{template literal}`: 템플릿 리터럴\n `{t}`\n   Regular Expression: 정규 표현식\n r/\n   r1/r2/…​r/\n r1/: 첫 표현식 …​r/: 마지막 표현식 r/: 특정 표현식\n   index: 인덱스\n start: 첫 인덱스 end: 마지막 인덱스 target: 특정 인덱스\n   인덱스 (Index), 문자 (String) 쌍\n src\n   맵 (Map)\n map\n   {key1 = value1, key2 = value2, ...key = ...value}   {k1 = v1, k2 = v2, ...k = ...v}     map.get(key) // value   map.get(k) // v     Key: 키\n k: 키\n   Value: 값\n v: 값\n   키 (Key), 값 (Value) 쌍\n src\n   셋 (Set)\n set\n   {item1, item2, ...item}   {i1, i2, ...i}     item: 요소\n i1: 첫 요소 …​i: 마지막 요소 i: 특정 요소\n   함수 (Function)\n func\n   (parameter1, parameter2 ...parameter) = parameter   (p1, p2, ...p) = p     parameter: 인자\n p1: 첫 인자 …​p: 마지막 인자 p: 특정 인자\n   복합 요소 (Hybrid)\n H\n   hybrid.method()   H.method() H[arr, obj, str, map, set, func]     hybrid: 여러 형태가 가능한 대상\n H[가능 대상 목록]\n   일반 요소\n    0 포함 자연수\n n\n   음의 정수\n -n\n   무한대\n 1/0\n   불리언\n true/false\n   차례로\n start → end\n   역순으로\n end → start\n   생략 가능한 항목의 기본값 0\n 옵션 - 기본: 0\n     1.3. 항목별 설명 순서 기능 설명 → (원본 변경/유지 여부) → 반환값\n  1.4. 기존 대상의 변경 여부 표시   기존 대상 변경: 변경된 대상 반환 (원본 변경) - 기능 설명에 표시\n  기존 대상 유지: 새로운 대상 반환 (원본 유지) - 기능 설명에 미표시\n      2. 용어와 개념 2.1. 얕게 복사  2.2. 반환 (return)  2.3. 확장  2.4. 동결 (freeze)  2.5. 밀봉 (sealed)  2.6. thisArg: 호출하는데 제공될 this 의 값  2.7. 열거 가능 (enumerable)  2.8. 유사 배열 (array-like)  2.9. 이터러블 (iterable)  2.10. 이터레이터 (iterator)  2.11. 원시값 string, number, bigint (큰 정수), boolean, undefined, symbol 객체가 아니면서 메소드도 가지지 않는 데이터\n  2.12. 메소드: 대상에 할당된 함수 const user = {} // [], p = p ... user.sayHi = () = console.log('Hi'); // user 객체에 sayHi() 함수 할당 user.sayHi(); // Hi    2.13. 메소드 체인 user.sayHi().sayBye().goToBed();   undefined 를 반환하는 메소드는 체인 중간에 올수 없음\n    ",
+  "wordCount" : "596",
   "inLanguage": "en",
   "datePublished": "2021-04-03T00:00:00Z",
   "dateModified": "2021-04-03T00:00:00Z",
@@ -221,22 +221,10 @@
       <div class="inner"><ul><li>
         <a href="#_%ec%9e%91%ec%84%b1_%ea%b7%9c%ec%b9%99" aria-label="1. 작성 규칙">1. 작성 규칙</a><ul>
             <li>
-        <a href="#_%ea%b8%b0%ec%a1%b4_%eb%8c%80%ec%83%81" aria-label="1.1. 기존 대상">1.1. 기존 대상</a></li><li>
-        <a href="#_%ed%95%ad%eb%aa%a9" aria-label="1.2. 항목">1.2. 항목</a></li><li>
+        <a href="#_%ea%b0%9c%ec%9a%94" aria-label="1.1. 개요">1.1. 개요</a></li><li>
+        <a href="#_%ec%9d%bc%eb%b0%98_%ec%a7%80%ec%b9%ad%ea%b3%bc_%ed%8a%b9%ec%a0%95_%ea%b0%92_%ed%91%9c%ed%98%84" aria-label="1.2. 일반 지칭과 특정 값 표현">1.2. 일반 지칭과 특정 값 표현</a></li><li>
         <a href="#_%ed%95%ad%eb%aa%a9%eb%b3%84_%ec%84%a4%eb%aa%85_%ec%88%9c%ec%84%9c" aria-label="1.3. 항목별 설명 순서">1.3. 항목별 설명 순서</a></li><li>
-        <a href="#_%ea%b8%b0%ec%a1%b4_%eb%8c%80%ec%83%81%ec%9d%98_%eb%b3%80%ea%b2%bd_%ec%97%ac%eb%b6%80_%ed%91%9c%ec%8b%9c" aria-label="1.4. 기존 대상의 변경 여부 표시">1.4. 기존 대상의 변경 여부 표시</a></li><li>
-        <a href="#_%ec%83%9d%eb%9e%b5_%ea%b0%80%eb%8a%a5%ed%95%9c_%ed%95%ad%eb%aa%a9%ec%9d%98_%ec%83%9d%eb%9e%b5_%ec%8b%9c_%ea%b8%b0%eb%b3%b8%ea%b0%92" aria-label="1.5. 생략 가능한 항목의 생략 시 기본값">1.5. 생략 가능한 항목의 생략 시 기본값</a></li><li>
-        <a href="#_%eb%8c%80%ec%83%81_%ed%91%9c%ea%b8%b0" aria-label="1.6. 대상 표기">1.6. 대상 표기</a><ul>
-            <li>
-        <a href="#_%ea%b3%b5%ed%86%b5" aria-label="1.6.1. 공통">1.6.1. 공통</a></li><li>
-        <a href="#_%eb%ac%b8%ec%9e%90%ec%97%b4" aria-label="1.6.2. 문자열">1.6.2. 문자열</a></li><li>
-        <a href="#_%eb%b0%b0%ec%97%b4" aria-label="1.6.3. 배열">1.6.3. 배열</a></li><li>
-        <a href="#_%ea%b0%9d%ec%b2%b4" aria-label="1.6.4. 객체">1.6.4. 객체</a></li><li>
-        <a href="#_%ed%95%a8%ec%88%98" aria-label="1.6.5. 함수">1.6.5. 함수</a></li><li>
-        <a href="#_%eb%a7%b5" aria-label="1.6.6. 맵">1.6.6. 맵</a></li><li>
-        <a href="#_%ec%85%8b" aria-label="1.6.7. 셋">1.6.7. 셋</a></li><li>
-        <a href="#_%ec%97%ac%eb%9f%ac_%ed%98%95%ed%83%9c%ea%b0%80_%ea%b0%80%eb%8a%a5%ed%95%9c_%eb%8c%80%ec%83%81" aria-label="1.6.8. 여러 형태가 가능한 대상">1.6.8. 여러 형태가 가능한 대상</a></li></ul>
-    </li></ul>
+        <a href="#_%ea%b8%b0%ec%a1%b4_%eb%8c%80%ec%83%81%ec%9d%98_%eb%b3%80%ea%b2%bd_%ec%97%ac%eb%b6%80_%ed%91%9c%ec%8b%9c" aria-label="1.4. 기존 대상의 변경 여부 표시">1.4. 기존 대상의 변경 여부 표시</a></li></ul>
     </li><li>
         <a href="#_%ec%9a%a9%ec%96%b4%ec%99%80_%ea%b0%9c%eb%85%90" aria-label="2. 용어와 개념">2. 용어와 개념</a><ul>
             <li>
@@ -250,7 +238,7 @@
         <a href="#_%ec%9c%a0%ec%82%ac_%eb%b0%b0%ec%97%b4_array_like" aria-label="2.8. 유사 배열 (array-like)">2.8. 유사 배열 (array-like)</a></li><li>
         <a href="#_%ec%9d%b4%ed%84%b0%eb%9f%ac%eb%b8%94_iterable" aria-label="2.9. 이터러블 (iterable)">2.9. 이터러블 (iterable)</a></li><li>
         <a href="#_%ec%9d%b4%ed%84%b0%eb%a0%88%ec%9d%b4%ed%84%b0_iterator" aria-label="2.10. 이터레이터 (iterator)">2.10. 이터레이터 (iterator)</a></li><li>
-        <a href="#_%ec%9b%90%ec%8b%9c%ea%b0%92_string_number_bigint_%ed%81%b0_%ec%a0%95%ec%88%98_boolean_undefined_symbol" aria-label="2.11. 원시값 (string, number, bigint (큰 정수), boolean, undefined, symbol)">2.11. 원시값 (string, number, bigint (큰 정수), boolean, undefined, symbol)</a></li><li>
+        <a href="#_%ec%9b%90%ec%8b%9c%ea%b0%92" aria-label="2.11. 원시값">2.11. 원시값</a></li><li>
         <a href="#_%eb%a9%94%ec%86%8c%eb%93%9c_%eb%8c%80%ec%83%81%ec%97%90_%ed%95%a0%eb%8b%b9%eb%90%9c_%ed%95%a8%ec%88%98" aria-label="2.12. 메소드: 대상에 할당된 함수">2.12. 메소드: 대상에 할당된 함수</a></li><li>
         <a href="#_%eb%a9%94%ec%86%8c%eb%93%9c_%ec%b2%b4%ec%9d%b8" aria-label="2.13. 메소드 체인">2.13. 메소드 체인</a></li></ul>
 </li></ul>
@@ -261,52 +249,526 @@
 
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>정식 표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다.<br/>
-반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부와 생략했을때 기본값을 명확히 하는데 중점을 뒀습니다.<br/>
-학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다.</p>
+</li>
+<li>
+<p>반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부 (+생략했을때 기본값) 을 명확히 하는데 중점을 뒀습니다.</p>
+</li>
+<li>
+<p>학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.</p>
+</li>
+<li>
+<p>오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다.</p>
+</li>
+<li>
+<p>본 문서의 첫번째 작성 목적은 제 학습에 대한 정리와 리마인드를 용이하게 하려는 것이나,<br/>
+자바스크립트 학습을 시작하시는 분들에게는 파악이 필요한 대상의 요약본이, 숙련자분들에게는 리마인드에 도움이 되는 도구가 되었으면 하는 바램입니다.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_작성_규칙">1. 작성 규칙<a hidden class="anchor" aria-hidden="true" href="#_작성_규칙">#</a></h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_개요">1.1. 개요<a hidden class="anchor" aria-hidden="true" href="#_개요">#</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>배열 예시</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>정식 표기법</p>
+<p><strong>일반 지칭:</strong> 대상을 일반화 하여 언급</p>
 </li>
 <li>
-<p>본문 표기법</p>
+<p><strong>특정 값:</strong> 표현 식내에 활용되는 대상 언급</p>
+<div class="ulist">
+<ul>
+<li>
+<p>예</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.unshift(i)
+// i를 arr의 첫 item으로 추가 (원본 arr 변경), 새로운 길이를 반환</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>i: 표현 식에 사용된 arr 배열의 구성 요소</p>
+</li>
+<li>
+<p>item: 배열 요소의 일반적 표현</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>문자열 예시</strong></p>
+<p>애매한 상황에선 글자 수가 적은 &#39;특정 값&#39; 형태를 우선하여 작성</p>
 </li>
 <li>
-<p><strong>객체 예시</strong></p>
+<p>마지막 (n번째) 대상은 …​ 형태 (스프레드 연산자) 로 표현</p>
+<div class="ulist">
+<ul>
+<li>
+<p>예</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">[item1, item2, ...item]</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>item1: 배열의 첫 요소</p>
 </li>
 <li>
-<p><strong>Map 예시</strong></p>
-</li>
-<li>
-<p><strong>Set 예시</strong></p>
+<p>…​item: 배열의 마지막 요소</p>
 </li>
 </ul>
 </div>
-<div class="sect2">
-<h3 id="_기존_대상">1.1. 기존 대상<a hidden class="anchor" aria-hidden="true" href="#_기존_대상">#</a></h3>
-
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_항목">1.2. 항목<a hidden class="anchor" aria-hidden="true" href="#_항목">#</a></h3>
-
+<h3 id="_일반_지칭과_특정_값_표현">1.2. 일반 지칭과 특정 값 표현<a hidden class="anchor" aria-hidden="true" href="#_일반_지칭과_특정_값_표현">#</a></h3>
+<table class="tableblock frame-ends grid-all fit-content">
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">일반 지칭</th>
+<th class="tableblock halign-left valign-top">특정 값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>배열 (Array)</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>arr</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">[item, ...item]</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">[i1, i2, ...i]</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr[index] // item</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr[start] // i1
+arr[end] // ...i
+arr[target] // i</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>item: 요소</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>i1: 첫 요소<br/>
+…​i: 마지막 요소<br/>
+i: 특정 요소</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>index: 인덱스</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>start: 첫 인덱스<br/>
+end: 마지막 인덱스<br/>
+target: 특정 인덱스</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>인덱스 (Index), 요소 (Item) 쌍</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>src</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>객체 (Object)</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>obj</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">{key: value, ...key: ...value}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">{k1: v1, k2: v2, ...k: ...v}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">obj.key // value</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">obj.k1 // v1</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Key: 키</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>k: 키</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Value: 값</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>v: 값</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>키 (Key), 값 (Value) 쌍</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>src</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>문자열 (String)</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>str</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">&#34;string&#34;</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">&#34;s1s2...s&#34;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">str[index] // &#34;string&#34;</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">str[start] // &#34;s1&#34;
+str[end] // &#34;...s&#34;
+str[target] // &#34;s&#34;</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>&#34;string&#34;: 문자열</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>&#34;s1&#34;: 첫 글자<br/>
+&#34;…​s&#34;: 마지막 글자<br/>
+&#34;s&#34;: 특정 글자</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>`{template literal}`: 템플릿 리터럴</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>`{t}`</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Regular Expression: 정규 표현식</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>r/</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>r1/r2/…​r/</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>r1/: 첫 표현식<br/>
+…​r/: 마지막 표현식<br/>
+r/: 특정 표현식</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>index: 인덱스</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>start: 첫 인덱스<br/>
+end: 마지막 인덱스<br/>
+target: 특정 인덱스</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>인덱스 (Index), 문자 (String) 쌍</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>src</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>맵 (Map)</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>map</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">{key1 =&gt; value1, key2 =&gt; value2,
+...key =&gt; ...value}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">{k1 =&gt; v1, k2 =&gt; v2, ...k =&gt; ...v}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">map.get(key) // value</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">map.get(k) // v</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Key: 키</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>k: 키</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Value: 값</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>v: 값</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>키 (Key), 값 (Value) 쌍</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>src</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>셋 (Set)</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>set</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">{item1, item2, ...item}</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">{i1, i2, ...i}</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>item: 요소</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>i1: 첫 요소<br/>
+…​i: 마지막 요소<br/>
+i: 특정 요소</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>함수 (Function)</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>func</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">(parameter1, parameter2 ...parameter)
+=&gt; parameter</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">(p1, p2, ...p) =&gt; p</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>parameter: 인자</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>p1: 첫 인자<br/>
+…​p: 마지막 인자<br/>
+p: 특정 인자</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>복합 요소 (Hybrid)</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>H</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">hybrid.method()</code></pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">H.method()
+H[arr, obj, str, map, set, func]</code></pre>
+</div>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>hybrid: 여러 형태가 가능한 대상</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>H[가능 대상 목록]</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><strong>일반 요소</strong></p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>0 포함 자연수</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>n</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>음의 정수</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>-n</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>무한대</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>1/0</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>불리언</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>true/false</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>차례로</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>start → end</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>역순으로</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>end → start</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>생략 가능한 항목의 기본값 0</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>옵션 - 기본: 0</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_항목별_설명_순서">1.3. 항목별 설명 순서<a hidden class="anchor" aria-hidden="true" href="#_항목별_설명_순서">#</a></h3>
@@ -325,108 +787,6 @@
 <p>기존 대상 유지: 새로운 대상 반환 (원본 유지) - 기능 설명에 미표시</p>
 </li>
 </ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_생략_가능한_항목의_생략_시_기본값">1.5. 생략 가능한 항목의 생략 시 기본값<a hidden class="anchor" aria-hidden="true" href="#_생략_가능한_항목의_생략_시_기본값">#</a></h3>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>(옵션: 기본 0)</code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_대상_표기">1.6. 대상 표기<a hidden class="anchor" aria-hidden="true" href="#_대상_표기">#</a></h3>
-<div class="sect3">
-<h4 id="_공통">1.6.1. 공통<a hidden class="anchor" aria-hidden="true" href="#_공통">#</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-js" data-lang="js">n // 0 포함 자연수
--n // 음의 정수
-1/0 // 무한대 (Infinity)
-true/false // 불리언
-a1, a2, a3 ...a // 지정 값
-index // 인덱스
-target // 지정 인덱스
-start // 시작 인덱스
-end // 끝 인덱스
-start -&gt; end // 차례로
-end -&gt; start // 역순으로
-r/ // 정규표현식
-r1/, r2/, ...r/ // 특정 정규 표현식</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_문자열">1.6.2. 문자열<a hidden class="anchor" aria-hidden="true" href="#_문자열">#</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-js" data-lang="js">str,
-&#39;str&#39;[start]: &#39;s&#39;
-&#39;str&#39;[end]: &#39;r&#39;
-&#39;a&#39; // 지정 문자열
-`{t}` // 템플릿 리터럴</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_배열">1.6.3. 배열<a hidden class="anchor" aria-hidden="true" href="#_배열">#</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-js" data-lang="js">arr, // []
-[item1, item2, ...item]: arr[index],
-arr[start]: item1,
-arr[end]: ...item,</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_객체">1.6.4. 객체<a hidden class="anchor" aria-hidden="true" href="#_객체">#</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-js" data-lang="js">obj, // {}
-{key1: value1, key2: value2, ...key: ...value}: obj.key,
-src // key: value</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_함수">1.6.5. 함수<a hidden class="anchor" aria-hidden="true" href="#_함수">#</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-js" data-lang="js">func,
-p =&gt; p,
-p, // 파라미터
-p =&gt; p + 1, // 연산 함수 적용
-p =&gt; p &lt; 10, // 판별 함수 만족
-(p1, p2, ...p) =&gt; p</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_맵">1.6.6. 맵<a hidden class="anchor" aria-hidden="true" href="#_맵">#</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-js" data-lang="js">map</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_셋">1.6.7. 셋<a hidden class="anchor" aria-hidden="true" href="#_셋">#</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-js" data-lang="js">set</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_여러_형태가_가능한_대상">1.6.8. 여러 형태가 가능한 대상<a hidden class="anchor" aria-hidden="true" href="#_여러_형태가_가능한_대상">#</a></h4>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-js" data-lang="js">H,
-(arr, obj, set, map ...)</code></pre>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -475,9 +835,10 @@ p =&gt; p &lt; 10, // 판별 함수 만족
 
 </div>
 <div class="sect2">
-<h3 id="_원시값_string_number_bigint_큰_정수_boolean_undefined_symbol">2.11. 원시값 (string, number, bigint (큰 정수), boolean, undefined, symbol)<a hidden class="anchor" aria-hidden="true" href="#_원시값_string_number_bigint_큰_정수_boolean_undefined_symbol">#</a></h3>
+<h3 id="_원시값">2.11. 원시값<a hidden class="anchor" aria-hidden="true" href="#_원시값">#</a></h3>
 <div class="paragraph">
-<p>객체가 아니면서 메소드도 가지지 않는 데이터</p>
+<p>string, number, bigint (큰 정수), boolean, undefined, symbol<br/>
+객체가 아니면서 메소드도 가지지 않는 데이터</p>
 </div>
 </div>
 <div class="sect2">
@@ -512,7 +873,7 @@ user.sayHi(); // Hi</code></pre>
       <li><a href="https://cspidar.github.io/tags/%EC%9E%91%EC%84%B1-%EA%B7%9C%EC%B9%99/">작성 규칙</a></li>
       <li><a href="https://cspidar.github.io/tags/%EC%9A%A9%EC%96%B4/">용어</a></li>
       <li><a href="https://cspidar.github.io/tags/%EA%B0%9C%EB%85%90/">개념</a></li>
-      <li><a href="https://cspidar.github.io/tags/style-guide/">Style guide</a></li>
+      <li><a href="https://cspidar.github.io/tags/style/">Style</a></li>
       <li><a href="https://cspidar.github.io/tags/term/">Term</a></li>
       <li><a href="https://cspidar.github.io/tags/concept/">Concept</a></li>
     </ul>
@@ -520,7 +881,7 @@ user.sayHi(); // Hi</code></pre>
       <a class="prev" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/b-%EB%B0%B0%EC%97%B4-%EB%A9%94%EC%86%8C%EB%93%9C-array-methods/">
         <span class="title">« Prev Page</span>
         <br>
-        <span>자바스크립트 문법 - B - 배열 주요 메소드 (Array method essentials)</span>
+        <span>자바스크립트 문법 - B - 배열 주요 메소드 (Array methods essential)</span>
       </a>
       <a class="next" href="https://cspidar.github.io/posts/%EC%BD%94%EB%93%9C-%EC%A0%80%EC%9E%A5%EC%86%8C-github-%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95/">
         <span class="title">Next Page »</span>
@@ -547,7 +908,7 @@ user.sayHi(); // Hi</code></pre>
 
 
 
-<script defer src="/assets/js/highlight.min.6440bfc0b65c724436623cb5a8f98b99db573eccd0a1515682df5bcba179addd.js" integrity="sha256-ZEC/wLZcckQ2Yjy1qPmLmdtXPszQoVFWgt9by6F5rd0="
+<script defer src="/assets/js/highlight.min.f68659e96a77a08aca0c8649e80ca3be972098f9999f5019f7832693b68d2132.js" integrity="sha256-9oZZ6Wp3oIrKDIZJ6AyjvpcgmPmZn1AZ94Mmk7aNITI="
     onload="hljs.initHighlightingOnLoad();"></script>
 <script>
     window.onload = function () {

@@ -8,22 +8,20 @@
     <language>ko</language>
     <lastBuildDate>Sat, 10 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cspidar.github.io/tags/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>자바스크립트 문법 - E - 맵 주요 메소드 (Map methods essentials)</title>
-      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/e-%EB%A7%B5-%EB%A9%94%EC%86%8C%EB%93%9C-map-methods/</link>
+      <title>자바스크립트 문법 - G - 함수 주요 메소드 (Function methods essentials)</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/f-%ED%95%A8%EC%88%98-%EB%A9%94%EC%86%8C%EB%93%9C-function-methods/</link>
       <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/e-%EB%A7%B5-%EB%A9%94%EC%86%8C%EB%93%9C-map-methods/</guid>
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/f-%ED%95%A8%EC%88%98-%EB%A9%94%EC%86%8C%EB%93%9C-function-methods/</guid>
       <description>본 문서의 작성 규칙은 자바스크립트 문법 작성 규칙 을 참고하세요. 활용 빈도와 중요도가 높다고 생각되는 항목으로 본문을 구성하였습니다. 나머지 항목은 기타 챕터에서 확인 가능합니다.
-   1. Map 1.1. 특징   key, value 쌍을 저장하며 삽입 순서도 기억하는 컬렉션
-     객체 (Object) 대신 맵 (Map) 을 사용해야 하는 경우
- 동적인 대상을 컬렉션화 할 경우
-  Object는 경로를 알고 있는 정적인 정보에 적합.</description>
+   1. Function 1.1. 특징 this 키워드는 함수 내에서 현재 실행 중인 함수를 참조하지 않으므로 이름으로 Function 객체를 직접 참조해야 함 (bind() 메서드 활용 이유)
+    2. Function 프로퍼티 2.1. Function.length func.length // func의 p 갯수 반환   /// 예시 function func(a, b) =&amp;gt; a + b; func.</description>
     </item>
     
     <item>
-      <title>자바스크립트 문법 - F - 셋 주요 메소드 (Set methods essentials)</title>
+      <title>자바스크립트 문법 - F - 셋 주요 메소드 (Set methods essential)</title>
       <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/f-%EC%85%8B-%EB%A9%94%EC%86%8C%EB%93%9C-set-methods/</link>
-      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 09 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/f-%EC%85%8B-%EB%A9%94%EC%86%8C%EB%93%9C-set-methods/</guid>
       <description>본 문서의 작성 규칙은 자바스크립트 문법 작성 규칙 을 참고하세요. 활용 빈도와 중요도가 높다고 생각되는 항목으로 본문을 구성하였습니다. 나머지 항목은 기타 챕터에서 확인 가능합니다.
@@ -35,7 +33,20 @@
     </item>
     
     <item>
-      <title>자바스크립트 문법 - D - 문자열 주요 메소드 (String methods essentials)</title>
+      <title>자바스크립트 문법 - E - 맵 주요 메소드 (Map methods essential)</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/e-%EB%A7%B5-%EB%A9%94%EC%86%8C%EB%93%9C-map-methods/</link>
+      <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/e-%EB%A7%B5-%EB%A9%94%EC%86%8C%EB%93%9C-map-methods/</guid>
+      <description>본 문서의 작성 규칙은 자바스크립트 문법 작성 규칙 을 참고하세요. 활용 빈도와 중요도가 높다고 생각되는 항목으로 본문을 구성하였습니다. 나머지 항목은 기타 챕터에서 확인 가능합니다.
+   1. Map 1.1. 특징   key, value 쌍을 저장하며 삽입 순서도 기억하는 컬렉션
+     객체 (Object) 대신 맵 (Map) 을 사용해야 하는 경우
+ 동적인 대상을 컬렉션화 할 경우
+  Object는 경로를 알고 있는 정적인 정보에 적합.</description>
+    </item>
+    
+    <item>
+      <title>자바스크립트 문법 - D - 문자열 주요 메소드 (String methods essential)</title>
       <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/d-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%A9%94%EC%86%8C%EB%93%9C-object-methods/</link>
       <pubDate>Tue, 06 Apr 2021 00:00:00 +0000</pubDate>
       
@@ -45,7 +56,7 @@
     </item>
     
     <item>
-      <title>자바스크립트 문법 - C - 객체 주요 메소드 (Object methods essentials)</title>
+      <title>자바스크립트 문법 - C - 객체 주요 메소드 (Object methods essential)</title>
       <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/c-%EA%B0%9D%EC%B2%B4-%EB%A9%94%EC%86%8C%EB%93%9C-object-methods/</link>
       <pubDate>Mon, 05 Apr 2021 00:00:00 +0000</pubDate>
       
@@ -56,7 +67,7 @@
     </item>
     
     <item>
-      <title>자바스크립트 문법 - B - 배열 주요 메소드 (Array method essentials)</title>
+      <title>자바스크립트 문법 - B - 배열 주요 메소드 (Array methods essential)</title>
       <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/b-%EB%B0%B0%EC%97%B4-%EB%A9%94%EC%86%8C%EB%93%9C-array-methods/</link>
       <pubDate>Sun, 04 Apr 2021 00:00:00 +0000</pubDate>
       
@@ -72,10 +83,10 @@
       <pubDate>Sat, 03 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/a-%EC%9E%91%EC%84%B1-%EA%B7%9C%EC%B9%99_%EC%9A%A9%EC%96%B4%EC%99%80-%EA%B0%9C%EB%85%90/</guid>
-      <description>정식 표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다. 반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부와 생략했을때 기본값을 명확히 하는데 중점을 뒀습니다. 학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.
-   1. 작성 규칙   배열 예시
-  정식 표기법
-  본문 표기법</description>
+      <description>표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다.
+  반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부 (+생략했을때 기본값) 을 명확히 하는데 중점을 뒀습니다.
+  학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.
+  오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다.</description>
     </item>
     
   </channel>

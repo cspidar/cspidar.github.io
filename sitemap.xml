@@ -5,7 +5,7 @@
     <loc>https://cspidar.github.io/categories/</loc>
     <lastmod>2021-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cspidar.github.io/tags/map/</loc>
+    <loc>https://cspidar.github.io/tags/function/</loc>
     <lastmod>2021-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cspidar.github.io/posts/</loc>
@@ -14,25 +14,16 @@
     <loc>https://cspidar.github.io/</loc>
     <lastmod>2021-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cspidar.github.io/tags/set/</loc>
-    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://cspidar.github.io/tags/</loc>
     <lastmod>2021-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cspidar.github.io/tags/%EA%B0%9C%EB%85%90/</loc>
     <lastmod>2021-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cspidar.github.io/tags/%EB%A7%B5/</loc>
-    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://cspidar.github.io/tags/%EB%A9%94%EC%86%8C%EB%93%9C/</loc>
     <lastmod>2021-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cspidar.github.io/tags/%EB%AC%B8%EB%B2%95/</loc>
-    <lastmod>2021-04-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://cspidar.github.io/tags/%EC%85%8B/</loc>
     <lastmod>2021-04-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cspidar.github.io/tags/%EC%9A%A9%EC%96%B4/</loc>
@@ -44,11 +35,29 @@
     <loc>https://cspidar.github.io/categories/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/</loc>
     <lastmod>2021-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/e-%EB%A7%B5-%EB%A9%94%EC%86%8C%EB%93%9C-map-methods/</loc>
+    <loc>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/f-%ED%95%A8%EC%88%98-%EB%A9%94%EC%86%8C%EB%93%9C-function-methods/</loc>
     <lastmod>2021-04-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/f-%EC%85%8B-%EB%A9%94%EC%86%8C%EB%93%9C-set-methods/</loc>
+    <loc>https://cspidar.github.io/tags/%ED%95%A8%EC%88%98/</loc>
     <lastmod>2021-04-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cspidar.github.io/tags/set/</loc>
+    <lastmod>2021-04-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cspidar.github.io/tags/%EC%85%8B/</loc>
+    <lastmod>2021-04-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/f-%EC%85%8B-%EB%A9%94%EC%86%8C%EB%93%9C-set-methods/</loc>
+    <lastmod>2021-04-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cspidar.github.io/tags/map/</loc>
+    <lastmod>2021-04-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cspidar.github.io/tags/%EB%A7%B5/</loc>
+    <lastmod>2021-04-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/e-%EB%A7%B5-%EB%A9%94%EC%86%8C%EB%93%9C-map-methods/</loc>
+    <lastmod>2021-04-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cspidar.github.io/tags/string/</loc>
     <lastmod>2021-04-06T00:00:00+00:00</lastmod>
@@ -80,7 +89,7 @@
     <loc>https://cspidar.github.io/tags/concept/</loc>
     <lastmod>2021-04-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://cspidar.github.io/tags/style-guide/</loc>
+    <loc>https://cspidar.github.io/tags/style/</loc>
     <lastmod>2021-04-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://cspidar.github.io/tags/term/</loc>
