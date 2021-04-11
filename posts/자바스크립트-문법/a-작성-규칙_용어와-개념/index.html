@@ -14,7 +14,7 @@
   오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다.">
 <meta name="author" content="">
 <link rel="canonical" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/a-%EC%9E%91%EC%84%B1-%EA%B7%9C%EC%B9%99_%EC%9A%A9%EC%96%B4%EC%99%80-%EA%B0%9C%EB%85%90/" />
-<link href="/assets/css/stylesheet.min.6f175a1f66e6446913caca4334cbb986e9c2c12c1b6a50e0edc8bf1d8fd29ded.css" integrity="sha256-bxdaH2bmRGkTyspDNMu5hunCwSwbalDg7ci/HY/Sne0=" rel="preload stylesheet"
+<link href="/assets/css/stylesheet.min.2f0dae3edc603b1e878e021127b9aeb039d9cb0cf2b462bd557751c190b24b8f.css" integrity="sha256-Lw2uPtxgOx6HjgIRJ7musDnZywzytGK9VXdRwZCyS48=" rel="preload stylesheet"
     as="style">
 
 <link rel="icon" href="https://cspidar.github.io/favicon.ico">
@@ -75,7 +75,7 @@
   "keywords": [
     "자바스크립트", "문법", "작성 규칙", "용어", "개념", "Style", "Term", "Concept"
   ],
-  "articleBody": "   표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다.\n  반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부 (+생략했을때 기본값) 을 명확히 하는데 중점을 뒀습니다.\n  학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.\n  오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다.\n  본 문서의 첫번째 작성 목적은 제 학습에 대한 정리와 리마인드를 용이하게 하려는 것이나, 자바스크립트 학습을 시작하시는 분들에게는 파악이 필요한 대상의 요약본이, 숙련자분들에게는 리마인드에 도움이 되는 도구가 되었으면 하는 바램입니다.\n     1. 작성 규칙 1.1. 개요   일반 지칭: 대상을 일반화 하여 언급\n  특정 값: 표현 식내에 활용되는 대상 언급\n  예\narr.unshift(i) // i를 arr의 첫 item으로 추가 (원본 arr 변경), 새로운 길이를 반환     i: 표현 식에 사용된 arr 배열의 구성 요소\n  item: 배열 요소의 일반적 표현\n        애매한 상황에선 글자 수가 적은 '특정 값' 형태를 우선하여 작성\n  마지막 (n번째) 대상은 …​ 형태 (스프레드 연산자) 로 표현\n  예\n[item1, item2, ...item]     item1: 배열의 첫 요소\n  …​item: 배열의 마지막 요소\n          1.2. 일반 지칭과 특정 값 표현       일반 지칭 특정 값     배열 (Array)\n arr\n   [item, ...item]   [i1, i2, ...i]     arr[index] // item   arr[start] // i1 arr[end] // ...i arr[target] // i     item: 요소\n i1: 첫 요소 …​i: 마지막 요소 i: 특정 요소\n   index: 인덱스\n start: 첫 인덱스 end: 마지막 인덱스 target: 특정 인덱스\n   인덱스 (Index), 요소 (Item) 쌍\n src\n   객체 (Object)\n obj\n   {key: value, ...key: ...value}   {k1: v1, k2: v2, ...k: ...v}     obj.key // value   obj.k1 // v1     Key: 키\n k: 키\n   Value: 값\n v: 값\n   키 (Key), 값 (Value) 쌍\n src\n   문자열 (String)\n str\n   \"string\"   \"s1s2...s\"     str[index] // \"string\"   str[start] // \"s1\" str[end] // \"...s\" str[target] // \"s\"     \"string\": 문자열\n \"s1\": 첫 글자 \"…​s\": 마지막 글자 \"s\": 특정 글자\n   `{template literal}`: 템플릿 리터럴\n `{t}`\n   Regular Expression: 정규 표현식\n r/\n   r1/r2/…​r/\n r1/: 첫 표현식 …​r/: 마지막 표현식 r/: 특정 표현식\n   index: 인덱스\n start: 첫 인덱스 end: 마지막 인덱스 target: 특정 인덱스\n   인덱스 (Index), 문자 (String) 쌍\n src\n   맵 (Map)\n map\n   {key1 = value1, key2 = value2, ...key = ...value}   {k1 = v1, k2 = v2, ...k = ...v}     map.get(key) // value   map.get(k) // v     Key: 키\n k: 키\n   Value: 값\n v: 값\n   키 (Key), 값 (Value) 쌍\n src\n   셋 (Set)\n set\n   {item1, item2, ...item}   {i1, i2, ...i}     item: 요소\n i1: 첫 요소 …​i: 마지막 요소 i: 특정 요소\n   함수 (Function)\n func\n   (parameter1, parameter2 ...parameter) = parameter   (p1, p2, ...p) = p     parameter: 인자\n p1: 첫 인자 …​p: 마지막 인자 p: 특정 인자\n   복합 요소 (Hybrid)\n H\n   hybrid.method()   H.method() H[arr, obj, str, map, set, func]     hybrid: 여러 형태가 가능한 대상\n H[가능 대상 목록]\n   일반 요소\n    0 포함 자연수\n n\n   음의 정수\n -n\n   무한대\n 1/0\n   불리언\n true/false\n   차례로\n start → end\n   역순으로\n end → start\n   생략 가능한 항목의 기본값 0\n 옵션 - 기본: 0\n     1.3. 항목별 설명 순서 기능 설명 → (원본 변경/유지 여부) → 반환값\n  1.4. 기존 대상의 변경 여부 표시   기존 대상 변경: 변경된 대상 반환 (원본 변경) - 기능 설명에 표시\n  기존 대상 유지: 새로운 대상 반환 (원본 유지) - 기능 설명에 미표시\n      2. 용어와 개념 2.1. 얕게 복사  2.2. 반환 (return)  2.3. 확장  2.4. 동결 (freeze)  2.5. 밀봉 (sealed)  2.6. thisArg: 호출하는데 제공될 this 의 값  2.7. 열거 가능 (enumerable)  2.8. 유사 배열 (array-like)  2.9. 이터러블 (iterable)  2.10. 이터레이터 (iterator)  2.11. 원시값 string, number, bigint (큰 정수), boolean, undefined, symbol 객체가 아니면서 메소드도 가지지 않는 데이터\n  2.12. 메소드: 대상에 할당된 함수 const user = {} // [], p = p ... user.sayHi = () = console.log('Hi'); // user 객체에 sayHi() 함수 할당 user.sayHi(); // Hi    2.13. 메소드 체인 user.sayHi().sayBye().goToBed();   undefined 를 반환하는 메소드는 체인 중간에 올수 없음\n    ",
+  "articleBody": "   표기법을 문자화, 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략, 또는 비약이 있을 수 있습니다.\n  반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부 (+생략했을때 기본값) 을 명확히 하는데 중점을 뒀습니다.\n  학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주신다면 업데이트 하도록 하겠습니다.\n  오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다.\n  본 문서의 첫번째 작성 목적은 제 학습에 대한 정리와 리마인드를 용이하게 하려는 것이나, 자바스크립트 학습을 시작하시는 분들에게는 파악이 필요한 대상의 요약본이, 숙련자분들에게는 리마인드에 도움이 되는 도구가 되었으면 하는 바램입니다.\n     1. 작성 규칙 1.1. 개요   일반 지칭: 대상을 일반화 하여 언급\n  특정 값: 표현 식내에 활용되는 대상 언급\n  예\narr.unshift(i) // i를 arr의 첫 item으로 추가 (원본 arr 변경), 새로운 길이를 반환     i: 표현 식에 사용된 arr 배열의 구성 요소\n  item: 배열 요소의 일반적 표현\n        애매한 상황에선 글자 수가 적은 '특정 값' 형태를 우선하여 작성\n  마지막 (n번째) 대상은 …​ 형태 (스프레드 연산자) 로 표현\n  예\n[item1, item2, ...item]     item1: 배열의 첫 요소\n  …​item: 배열의 마지막 요소\n          1.2. 일반 지칭과 특정 값 표현       일반 지칭 특정 값       배열 (Array)\n     arr\n     [item, ...item]   [i1, i2, ...i]     arr[index] // item   arr[start] // i1 arr[end] // ...i arr[target] // i     item: 요소\n i1: 첫 요소 …​i: 마지막 요소 i: 특정 요소\n   index: 인덱스\n start: 첫 인덱스 end: 마지막 인덱스 target: 특정 인덱스\n   인덱스 (Index), 요소 (Item) 쌍\n src\n     객체 (Object)\n     obj\n     {key: value, ...key: ...value}   {k1: v1, k2: v2, ...k: ...v}     obj.key // value   obj.k1 // v1     Key: 키\n k: 키\n   Value: 값\n v: 값\n   키 (Key), 값 (Value) 쌍\n src\n   문자열 (String)\n str\n   \"string\"   \"s1s2...s\"     str[index] // \"string\"   str[start] // \"s1\" str[end] // \"...s\" str[target] // \"s\"     \"string\": 문자열\n \"s1\": 첫 글자 \"…​s\": 마지막 글자 \"s\": 특정 글자\n   `{template literal}`: 템플릿 리터럴\n `{t}`\n   Regular Expression: 정규 표현식\n r/\n   r1/r2/…​r/\n r1/: 첫 표현식 …​r/: 마지막 표현식 r/: 특정 표현식\n   index: 인덱스\n start: 첫 인덱스 end: 마지막 인덱스 target: 특정 인덱스\n   인덱스 (Index), 문자 (String) 쌍\n src\n     맵 (Map)\n     map\n     {key1 = value1, key2 = value2, ...key = ...value}   {k1 = v1, k2 = v2, ...k = ...v}     map.get(key) // value   map.get(k) // v     Key: 키\n k: 키\n   Value: 값\n v: 값\n   키 (Key), 값 (Value) 쌍\n src\n     셋 (Set)\n     set\n     {item1, item2, ...item}   {i1, i2, ...i}     item: 요소\n i1: 첫 요소 …​i: 마지막 요소 i: 특정 요소\n     함수 (Function)\n     func\n     (parameter1, parameter2 ...parameter) = parameter   (p1, p2, ...p) = p     parameter: 인자\n p1: 첫 인자 …​p: 마지막 인자 p: 특정 인자\n     복합 요소 (Hybrid)\n     H\n     hybrid.method()   H.method() H[arr, obj, str, map, set, func]     hybrid: 여러 형태가 가능한 대상\n H[가능 대상 목록]\n     일반 요소\n      0 포함 자연수\n n\n   음의 정수\n -n\n   무한대\n 1/0\n   불리언\n true/false\n   차례로\n start → end\n   역순으로\n end → start\n   생략 가능한 항목의 기본값 0\n 옵션 - 기본: 0\n     1.3. 항목별 설명 순서 기능 설명 → (원본 변경/유지 여부) → 반환값\n  1.4. 기존 대상의 변경 여부 표시   기존 대상 변경: 변경된 대상 반환 (원본 변경) - 기능 설명에 표시\n  기존 대상 유지: 새로운 대상 반환 (원본 유지) - 기능 설명에 미표시\n      2. 용어와 개념 2.1. 얕게 복사  2.2. 반환 (return)  2.3. 확장  2.4. 동결 (freeze)  2.5. 밀봉 (sealed)  2.6. thisArg: 호출하는데 제공될 this 의 값  2.7. 열거 가능 (enumerable)  2.8. 유사 배열 (array-like)  2.9. 이터러블 (iterable)  2.10. 이터레이터 (iterator)  2.11. 원시값 string, number, bigint (큰 정수), boolean, undefined, symbol 객체가 아니면서 메소드도 가지지 않는 데이터\n  2.12. 메소드: 대상에 할당된 함수 const user = {} // [], p = p ... user.sayHi = () = console.log('Hi'); // user 객체에 sayHi() 함수 할당 user.sayHi(); // Hi    2.13. 메소드 체인 user.sayHi().sayBye().goToBed();   undefined 를 반환하는 메소드는 체인 중간에 올수 없음\n    ",
   "wordCount" : "596",
   "inLanguage": "en",
   "datePublished": "2021-04-03T00:00:00Z",
@@ -353,11 +353,19 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong>배열 (Array)</strong></p>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong>arr</strong></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -415,11 +423,19 @@ target: 특정 인덱스</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong>객체 (Object)</strong></p>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong>obj</strong></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -559,11 +575,19 @@ target: 특정 인덱스</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong>맵 (Map)</strong></p>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong>map</strong></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -616,11 +640,19 @@ target: 특정 인덱스</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong>셋 (Set)</strong></p>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong>set</strong></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -646,11 +678,19 @@ i: 특정 요소</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong>함수 (Function)</strong></p>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong>func</strong></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -677,11 +717,19 @@ p: 특정 인자</p>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong>복합 요소 (Hybrid)</strong></p>
+</li>
+</ul>
 </div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong>H</strong></p>
+</li>
+</ul>
 </div></div></td>
 </tr>
 <tr>
@@ -706,8 +754,12 @@ H[arr, obj, str, map, set, func]</code></pre>
 </div></div></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
 <p><strong>일반 요소</strong></p>
+</li>
+</ul>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><div class="content"></div></td>
 </tr>
