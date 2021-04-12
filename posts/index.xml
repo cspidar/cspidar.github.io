@@ -14,7 +14,7 @@
       
       <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/f-%ED%95%A8%EC%88%98-%EB%A9%94%EC%86%8C%EB%93%9C-function-methods/</guid>
       <description>본 문서의 작성 규칙은 자바스크립트 문법 작성 규칙 을 참고하세요. 활용 빈도와 중요도가 높다고 생각되는 항목으로 본문을 구성하였습니다. 나머지 항목은 기타 챕터에서 확인 가능합니다.
-   1. Function 1.1. 특징 this 키워드는 함수 내에서 현재 실행 중인 함수를 참조하지 않으므로 이름으로 Function 객체를 직접 참조해야 함 (bind() 메서드 활용 이유)
+   1. Function 1.1. 주의사항 this 키워드는 함수 내에서 현재 실행 중인 함수를 참조하지 않으므로 이름으로 Function 객체를 직접 참조해야 함 (bind() 메서드 활용 이유)
     2. Function 프로퍼티 2.1. Function.length func.length // func의 p 갯수 반환   /// 예시 function func(a, b) =&amp;gt; a + b; func.</description>
     </item>
     
