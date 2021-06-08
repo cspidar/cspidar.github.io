@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>움직이는 이미지 만들기 - 화면 녹화: ScreenToGif | quick start by EEAS</title>
+
+<meta name="keywords" content="움직이는, 이미지, 화면 녹화, ScreenToGif, windows10" />
+<meta name="description" content="화면을 녹화하여 만든 움직이는 이미지로 문서의 가독성을 개선
+ 1. 왜 ScreenToGif? https://www.screentogif.com/
+ 오픈소스: 광고, 워터마크, 분량제한 없이 사용 가능 다양한 기능 및 설정: 녹화 범위 지정, 마우스 위치 강조, 클릭 효과, 고정창 마우스 따라다니기 기능, gif, avi 등 다양한 출력 방식 제공 등
+ 비교 대상 확인   CamStudio 오픈소스. 마우스 위치 강조나 클릭 효과 있음. 출력 양식 부족, 부가 기능 부족 소개 사이트에서의 인터페이스는 처참하지만.. 실제 윈도우10 환경에서 사용해보면 봐줄만 하다.">
+<meta name="author" content="">
+<link rel="canonical" href="https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/" />
+<link href="/assets/css/stylesheet.min.c615a73190537f7a1b9f4f9f953ed92dbcd78e9eb33f2af9c465e3a0bc4e1d7e.css" integrity="sha256-xhWnMZBTf3obn0&#43;flT7ZLbzXjp6zPyr5xGXjoLxOHX4=" rel="preload stylesheet"
+    as="style">
+
+<link rel="icon" href="https://cspidar.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cspidar.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cspidar.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://cspidar.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://cspidar.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.81.0" />
+
+
+<meta property="og:title" content="움직이는 이미지 만들기 - 화면 녹화: ScreenToGif" />
+<meta property="og:description" content="화면을 녹화하여 만든 움직이는 이미지로 문서의 가독성을 개선
+ 1. 왜 ScreenToGif? https://www.screentogif.com/
+ 오픈소스: 광고, 워터마크, 분량제한 없이 사용 가능 다양한 기능 및 설정: 녹화 범위 지정, 마우스 위치 강조, 클릭 효과, 고정창 마우스 따라다니기 기능, gif, avi 등 다양한 출력 방식 제공 등
+ 비교 대상 확인   CamStudio 오픈소스. 마우스 위치 강조나 클릭 효과 있음. 출력 양식 부족, 부가 기능 부족 소개 사이트에서의 인터페이스는 처참하지만.. 실제 윈도우10 환경에서 사용해보면 봐줄만 하다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-23T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-03-23T00:00:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="움직이는 이미지 만들기 - 화면 녹화: ScreenToGif"/>
+<meta name="twitter:description" content="화면을 녹화하여 만든 움직이는 이미지로 문서의 가독성을 개선
+ 1. 왜 ScreenToGif? https://www.screentogif.com/
+ 오픈소스: 광고, 워터마크, 분량제한 없이 사용 가능 다양한 기능 및 설정: 녹화 범위 지정, 마우스 위치 강조, 클릭 효과, 고정창 마우스 따라다니기 기능, gif, avi 등 다양한 출력 방식 제공 등
+ 비교 대상 확인   CamStudio 오픈소스. 마우스 위치 강조나 클릭 효과 있음. 출력 양식 부족, 부가 기능 부족 소개 사이트에서의 인터페이스는 처참하지만.. 실제 윈도우10 환경에서 사용해보면 봐줄만 하다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://cspidar.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "움직이는 이미지 만들기 - 화면 녹화: ScreenToGif",
+      "item": "https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "움직이는 이미지 만들기 - 화면 녹화: ScreenToGif",
+  "name": "움직이는 이미지 만들기 - 화면 녹화: ScreenToGif",
+  "description": "화면을 녹화하여 만든 움직이는 이미지로 문서의 가독성을 개선\n 1. 왜 ScreenToGif? https://www.screentogif.com/\n 오픈소스: 광고, 워터마크, 분량제한 없이 사용 가능 다양한 기능 및 설정: 녹화 범위 지정, 마우스 위치 강조, 클릭 효과, 고정창 마우스 따라다니기 기능, gif, avi 등 다양한 출력 방식 제공 등\n 비교 대상 확인   CamStudio 오픈소스. 마우스 위치 강조나 클릭 효과 있음. 출력 양식 부족, 부가 기능 부족 소개 사이트에서의 인터페이스는 처참하지만.. 실제 윈도우10 환경에서 사용해보면 봐줄만 하다.",
+  "keywords": [
+    "움직이는", "이미지", "화면 녹화", "ScreenToGif", "windows10"
+  ],
+  "articleBody": " 화면을 녹화하여 만든 움직이는 이미지로 문서의 가독성을 개선\n 1. 왜 ScreenToGif? https://www.screentogif.com/\n 오픈소스: 광고, 워터마크, 분량제한 없이 사용 가능 다양한 기능 및 설정: 녹화 범위 지정, 마우스 위치 강조, 클릭 효과, 고정창 마우스 따라다니기 기능, gif, avi 등 다양한 출력 방식 제공 등\n 비교 대상 확인   CamStudio 오픈소스. 마우스 위치 강조나 클릭 효과 있음. 출력 양식 부족, 부가 기능 부족 소개 사이트에서의 인터페이스는 처참하지만.. 실제 윈도우10 환경에서 사용해보면 봐줄만 하다. 윈도우 기본 인터페이스를 사용해서 그런듯.\n 웹 검색 이미지   설치 후 실행 화면 (Windows10)    ShareX https://getsharex.com/ 오픈소스. 추천 사이트에서 핫함, 자체 서비스에 쉽게 업로드하는것에 집중된 느낌? 영역 설정 기능이 없다. 녹화 관련 설정은 이게 전부.\n ShareX 화면 녹화 설정 항목  화면 영상 녹화보다는 이미지 캡처 및 편집에 집중한 느낌, 하지만 이미지 캡처 관련해서는 다양한 양식을 지원하고 문서도 훌륭하게 구성되어 있다.\n   https://getsharex.com/image-effects/    Free Cam https://www.freescreenrecording.com 무료 인듯 하면서 유료.\n 무료 - 유료 기능 차이     이외의 프로그램도 이후에 테스트해보고 더좋으면 메인 소개글을 교체, 아니면 여기 리스트에 추가할 예정\n   내가 필요로 한 + ScreenToGif에서 만족하는 기능 리스트 확인   캡처 영역 설정 기능\n  마우스 커서 강조, 클릭 표시 기능 → 마우스 따라다니기 기능\n  녹화 시작 중지 단축키\n  무료이면서 광고 워터마크 분량제한이 없을것\n  결과물에 대한 자유로운 사용 가능\n  등등\n   여러 이유가 있겠지만 현재로써는 가장 나은 프로그램이라고 판단 나중에 더 좋은 툴을 알게된다면 업데이트 예정\n     2. 빠른 시작 2.1. 설치 https://camstudio.org/\n    2.2. 설정 2.2.1. 프로그램 설정 https://www.screentogif.com/features 홈페이지에 모든 설정 항목들이 설명되어 있지는 않은것으로 보임\n   프로그램 설정창 들어가기\n    사용 추천 설정\n    기본 설정값에서 변경한 부분: '마우스 따라다니기 기능' 활성화 + 녹화 경계 관련 수치 '40' 설정\n        확인 을 누르면 아래와 같이 알림창 팝업\n  다시 한번 아래의 확인 을 누르면 단축키 설정창이 팝업된다.\n   F6 설정\n      2.2.2. 녹화 설정   녹화 모드 들어가기\n    사용 추천 설정\n    마우스 따라다니기 모드 표시: 마우스 따라다니기 모드 켯을때 아이콘 표시\n  창맞춤: 해당 아이콘을 드래그하여 창맞춤 기능 활성화\n  프로그램 설정창 열기: 2.2.1, “프로그램 설정” 의 설정창 열기\n  녹화 프레임 설정: 1-60 까지 최대 초당 프레임 수 설정, 뒤에서 이야기하겠지만 60프레임으로 해도 자체 인코딩 성능이 꽤 훌륭하여 용량은 생각보다 그리 크지 않음.\n  녹화 창 크기 수동 입력: 녹화 모드 창의 크기를 직접 픽셀 단위로 입력 가능\n  녹화 버튼: 녹화 시작 버튼 (기본 단축키: F7, 종료 단축키: F8 )\n           2.3. 녹화 편집 녹화를 종료하면 (기본 단축키: F8) 자동으로 아래와 같이 결과 파일 편집기 창이 팝업\n   편집기\n    결과 편집\n화면 하단에서 원하는 프레임을 선택하여 잘라내거나 전환 효과 (페이드 아웃, 넘기기) 를 적용하는 정도 편집이 가능\n   인코딩 및 저장 상단 리본 메뉴 › 파일 › 저장 를 누르면 파일로 저장하기 위한 인코딩 옵션 메뉴가 화면 좌측에 열림 파일 종류, 인코더, GIF 설정, 파일 경로, 파일명 등 설정 가능\n  하단 파일 탭에 저장 경로를 설정한 뒤 저장 버튼 또는 단축키 ALT+E / ENTER 를 입력하면 인코딩이 시작된다.\n          2.4. 사용  촬영 결과  해상도: 720P, 시간: 20초 기준 약 6 MB 정도 용량\n    ",
+  "wordCount" : "451",
+  "inLanguage": "en",
+  "datePublished": "2021-03-23T00:00:00Z",
+  "dateModified": "2021-03-23T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "quick start by EEAS",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cspidar.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+            .list {
+                background: var(--theme);
+            }
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+    </style>
+</noscript>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://cspidar.github.io/" accesskey="h" title="quick start by EEAS (Alt + H)">quick start by EEAS</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                
+                
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="https://cspidar.github.io/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cspidar.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cspidar.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cspidar.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li></ul>
+    </nav>
+</header>
+
+    <main class="main">
+<link href="//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-subset.css" rel="stylesheet" />
+<article class="post-single">
+  <header class="post-header">
+<div class="breadcrumbs">
+
+    <a href="https://cspidar.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://cspidar.github.io/posts/">Posts</a>
+</div>
+
+    <h1 class="post-title">
+      움직이는 이미지 만들기 - 화면 녹화: ScreenToGif
+    </h1>
+    <div class="post-meta">March 23, 2021
+
+
+</div>
+  </header> 
+
+  <div class="toc">
+    <details >
+      <summary accesskey="c" title="(Alt + C)">
+        <div class="details">목차</div>
+      </summary>
+      <div class="inner"><ul><li>
+        <a href="#_%ec%99%9c_screentogif" aria-label="1. 왜 ScreenToGif?">1. 왜 ScreenToGif?</a></li><li>
+        <a href="#_%eb%b9%a0%eb%a5%b8_%ec%8b%9c%ec%9e%91" aria-label="2. 빠른 시작">2. 빠른 시작</a><ul>
+            <li>
+        <a href="#_%ec%84%a4%ec%b9%98" aria-label="2.1. 설치">2.1. 설치</a></li><li>
+        <a href="#_%ec%84%a4%ec%a0%95" aria-label="2.2. 설정">2.2. 설정</a><ul>
+            <li>
+        <a href="#_%ed%94%84%eb%a1%9c%ea%b7%b8%eb%9e%a8_%ec%84%a4%ec%a0%95" aria-label="2.2.1. 프로그램 설정">2.2.1. 프로그램 설정</a></li><li>
+        <a href="#_%eb%85%b9%ed%99%94_%ec%84%a4%ec%a0%95" aria-label="2.2.2. 녹화 설정">2.2.2. 녹화 설정</a></li></ul>
+    </li><li>
+        <a href="#_%eb%85%b9%ed%99%94_%ed%8e%b8%ec%a7%91" aria-label="2.3. 녹화 편집">2.3. 녹화 편집</a></li><li>
+        <a href="#_%ec%82%ac%ec%9a%a9" aria-label="2.4. 사용">2.4. 사용</a></li></ul>
+</li></ul>
+      </div>
+    </details>
+  </div>
+  <div class="post-content">
+
+<div class="paragraph">
+<p>화면을 녹화하여 만든 움직이는 이미지로 문서의 가독성을 개선</p>
+</div>
+<div class="sect1">
+<h2 id="_왜_screentogif">1. 왜 ScreenToGif?<a hidden class="anchor" aria-hidden="true" href="#_왜_screentogif">#</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://www.screentogif.com/" class="bare">https://www.screentogif.com/</a></p>
+</div>
+<div class="paragraph">
+<p>오픈소스: 광고, 워터마크, 분량제한 없이 사용 가능<br/>
+다양한 기능 및 설정: 녹화 범위 지정, 마우스 위치 강조, 클릭 효과, 고정창 마우스 따라다니기 기능, gif, avi 등 다양한 출력 방식 제공 등</p>
+</div>
+<details class="result">
+<summary class="title"><strong>비교 대상 확인</strong></summary>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>CamStudio</strong><br/>
+오픈소스. 마우스 위치 강조나 클릭 효과 있음.<br/>
+출력 양식 부족, 부가 기능 부족<br/>
+소개 사이트에서의 인터페이스는 처참하지만..<br/>
+실제 윈도우10 환경에서 사용해보면 봐줄만 하다. 윈도우 기본 인터페이스를 사용해서 그런듯.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/index-92da7.png" alt="index 92da7"/>
+</div>
+<div class="title">웹 검색 이미지</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/index-e2af4.png" alt="index e2af4"/>
+</div>
+<div class="title">설치 후 실행 화면 (Windows10)</div>
+</div>
+</li>
+<li>
+<p><strong>ShareX</strong><br/>
+<a href="https://getsharex.com/" class="bare">https://getsharex.com/</a><br/>
+오픈소스. 추천 사이트에서 핫함, 자체 서비스에 쉽게 업로드하는것에 집중된 느낌?<br/>
+영역 설정 기능이 없다.<br/>
+녹화 관련 설정은 이게 전부.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/움직이는_이미지_만들기_-_PC_화면_동영상_녹화_-_CamStudio-14fc5.png" alt="움직이는 이미지 만들기   PC 화면 동영상 녹화   CamStudio 14fc5"/>
+</div>
+<div class="title">ShareX 화면 녹화 설정 항목</div>
+</div>
+<div class="paragraph">
+<p>화면 영상 녹화보다는 이미지 캡처 및 편집에 집중한 느낌, 하지만 이미지 캡처 관련해서는 다양한 양식을 지원하고 문서도 훌륭하게 구성되어 있다.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="https://getsharex.com/image-effects/"><img src="images/움직이는_이미지_만들기_-_PC_화면_동영상_녹화_-_CamStudio-2bebb.png" alt="움직이는 이미지 만들기   PC 화면 동영상 녹화   CamStudio 2bebb"/></a>
+</div>
+<div class="title"><a href="https://getsharex.com/image-effects/" class="bare">https://getsharex.com/image-effects/</a></div>
+</div>
+</li>
+<li>
+<p><strong>Free Cam</strong><br/>
+<a href="https://www.freescreenrecording.com" class="bare">https://www.freescreenrecording.com</a><br/>
+무료 인듯 하면서 유료.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/index-eac7d.png" alt="index eac7d"/>
+</div>
+<div class="title">무료 - 유료 기능 차이</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>이외의 프로그램도 이후에 테스트해보고 더좋으면 메인 소개글을 교체, 아니면 여기 리스트에 추가할 예정</p>
+</div>
+</div>
+</details>
+<details class="result">
+<summary class="title"><strong>내가 필요로 한 + ScreenToGif에서 만족하는 기능 리스트 확인</strong></summary>
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>캡처 영역 설정 기능</p>
+</li>
+<li>
+<p>마우스 커서 강조, 클릭 표시 기능 → 마우스 따라다니기 기능</p>
+</li>
+<li>
+<p>녹화 시작 중지 단축키</p>
+</li>
+<li>
+<p>무료이면서 광고 워터마크 분량제한이 없을것</p>
+</li>
+<li>
+<p>결과물에 대한 자유로운 사용 가능</p>
+</li>
+<li>
+<p>등등</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>여러 이유가 있겠지만 현재로써는 가장 나은 프로그램이라고 판단<br/>
+나중에 더 좋은 툴을 알게된다면 업데이트 예정</p>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_빠른_시작">2. 빠른 시작<a hidden class="anchor" aria-hidden="true" href="#_빠른_시작">#</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_설치">2.1. 설치<a hidden class="anchor" aria-hidden="true" href="#_설치">#</a></h3>
+<div class="paragraph">
+<p><a href="https://camstudio.org/" class="bare">https://camstudio.org/</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/index-b207d.png" alt="index b207d"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_설정">2.2. 설정<a hidden class="anchor" aria-hidden="true" href="#_설정">#</a></h3>
+<div class="sect3">
+<h4 id="_프로그램_설정">2.2.1. 프로그램 설정<a hidden class="anchor" aria-hidden="true" href="#_프로그램_설정">#</a></h4>
+<div class="paragraph">
+<p><a href="https://www.screentogif.com/features" class="bare">https://www.screentogif.com/features</a><br/>
+홈페이지에 모든 설정 항목들이 설명되어 있지는 않은것으로 보임</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>프로그램 설정창 들어가기</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/index-e32a5.png" alt="index e32a5" width="50%"/>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>사용 추천 설정</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/index-49ada.png" alt="index 49ada"/>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>기본 설정값에서 변경한 부분: &#39;마우스 따라다니기 기능&#39; 활성화 + 녹화 경계 관련 수치 &#39;40&#39; 설정</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><b class="button">확인</b> 을 누르면 아래와 같이 알림창 팝업</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/index-289b3.png" alt="index 289b3" width="50%"/>
+</div>
+</div>
+<div class="paragraph">
+<p>다시 한번 아래의 <b class="button">확인</b> 을 누르면 단축키 설정창이 팝업된다.</p>
+</div>
+</li>
+<li>
+<p><kbd>F6</kbd> 설정</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/index-7545e.png" alt="index 7545e"/>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_녹화_설정">2.2.2. 녹화 설정<a hidden class="anchor" aria-hidden="true" href="#_녹화_설정">#</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>녹화 모드 들어가기</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/index-bb5d4.png" alt="index bb5d4" width="50%"/>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>사용 추천 설정</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/index-e74dc.png" alt="index e74dc"/>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>마우스 따라다니기 모드 표시: 마우스 따라다니기 모드 켯을때 아이콘 표시</p>
+</li>
+<li>
+<p>창맞춤: 해당 아이콘을 드래그하여 창맞춤 기능 활성화</p>
+</li>
+<li>
+<p>프로그램 설정창 열기: <a href="#_프로그램_설정"> 2.2.1, “프로그램 설정”</a> 의 설정창 열기</p>
+</li>
+<li>
+<p>녹화 프레임 설정: 1-60 까지 최대 초당 프레임 수 설정, 뒤에서 이야기하겠지만 60프레임으로 해도 자체 인코딩 성능이 꽤 훌륭하여 용량은 생각보다 그리 크지 않음.</p>
+</li>
+<li>
+<p>녹화 창 크기 수동 입력: 녹화 모드 창의 크기를 직접 픽셀 단위로 입력 가능</p>
+</li>
+<li>
+<p>녹화 버튼: 녹화 시작 버튼 (기본 단축키: <kbd>F7</kbd>, 종료 단축키: <kbd>F8</kbd> )</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_녹화_편집">2.3. 녹화 편집<a hidden class="anchor" aria-hidden="true" href="#_녹화_편집">#</a></h3>
+<div class="paragraph">
+<p>녹화를 종료하면 (기본 단축키: <kbd>F8</kbd>) 자동으로 아래와 같이 결과 파일 편집기 창이 팝업</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>편집기</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/index-371bc.png" alt="index 371bc"/>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>결과 편집</p>
+<div class="paragraph">
+<p>화면 하단에서 원하는 프레임을 선택하여 잘라내거나 전환 효과 (페이드 아웃, 넘기기) 를 적용하는 정도 편집이 가능</p>
+</div>
+</li>
+<li>
+<p>인코딩 및 저장<br/>
+<span class="menuseq"><b class="menu">상단 리본 메뉴</b> <b class="caret">›</b> <b class="submenu">파일</b> <b class="caret">›</b> <b class="menuitem">저장</b></span> 를 누르면 파일로 저장하기 위한 인코딩 옵션 메뉴가 화면 좌측에 열림<br/>
+파일 종류, 인코더, GIF 설정, 파일 경로, 파일명 등 설정 가능</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/index-0ff2e.png" alt="index 0ff2e" width="50%"/>
+</div>
+</div>
+<div class="paragraph">
+<p>하단 파일 탭에 저장 경로를 설정한 뒤 <b class="button">저장</b> 버튼 또는 단축키 <kbd>ALT</kbd>+<kbd>E</kbd> / <kbd>ENTER</kbd> 를 입력하면 인코딩이 시작된다.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/index-87f6b.png" alt="index 87f6b" width="50%"/>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_사용">2.4. 사용<a hidden class="anchor" aria-hidden="true" href="#_사용">#</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/STG.gif" alt="STG"/>
+</div>
+<div class="title">촬영 결과</div>
+</div>
+<div class="paragraph">
+<p>해상도: 720P, 시간: 20초 기준 약 6 MB 정도 용량</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://cspidar.github.io/tags/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94/">움직이는</a></li>
+      <li><a href="https://cspidar.github.io/tags/%EC%9D%B4%EB%AF%B8%EC%A7%80/">이미지</a></li>
+      <li><a href="https://cspidar.github.io/tags/%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/">화면 녹화</a></li>
+      <li><a href="https://cspidar.github.io/tags/screentogif/">ScreenToGif</a></li>
+      <li><a href="https://cspidar.github.io/tags/windows10/">windows10</a></li>
+    </ul>
+    <nav class="paginav">
+      <a class="prev" href="https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%BD%94%EB%93%9C-%EC%A0%80%EC%9E%A5%EC%86%8C-github-%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95/">
+        <span class="title">« Prev Page</span>
+        <br>
+        <span>코드 저장소 github - 기본 사용법 (Windows10)</span>
+      </a>
+    </nav>
+  </footer>
+</article>
+    </main><footer class="footer">
+    <span>&copy; 2021 <a href="https://cspidar.github.io/">quick start by EEAS</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+
+
+<script defer src="/assets/js/highlight.min.b03fa3bda3df09a2ab5f8f68cd50cf34397dca5c60100433c77ecdfeed6012c9.js" integrity="sha256-sD&#43;jvaPfCaKrX49ozVDPNDl9ylxgEAQzx37N/u1gEsk="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+
+</body>
+
+</html>

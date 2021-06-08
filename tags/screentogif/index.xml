@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 23 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cspidar.github.io/tags/screentogif/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>움직이는 이미지 만들기 - 화면 녹화: ScreenToGif</title>
-      <link>https://cspidar.github.io/posts/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/</link>
+      <link>https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/</link>
       <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cspidar.github.io/posts/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/</guid>
+      <guid>https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/</guid>
       <description>화면을 녹화하여 만든 움직이는 이미지로 문서의 가독성을 개선
  1. 왜 ScreenToGif? https://www.screentogif.com/
  오픈소스: 광고, 워터마크, 분량제한 없이 사용 가능 다양한 기능 및 설정: 녹화 범위 지정, 마우스 위치 강조, 클릭 효과, 고정창 마우스 따라다니기 기능, gif, avi 등 다양한 출력 방식 제공 등

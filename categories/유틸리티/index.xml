@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 29 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cspidar.github.io/categories/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>코드 저장소 github - 기본 사용법 (Windows10)</title>
-      <link>https://cspidar.github.io/posts/%EC%BD%94%EB%93%9C-%EC%A0%80%EC%9E%A5%EC%86%8C-github-%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95/</link>
+      <link>https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%BD%94%EB%93%9C-%EC%A0%80%EC%9E%A5%EC%86%8C-github-%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95/</link>
       <pubDate>Mon, 29 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cspidar.github.io/posts/%EC%BD%94%EB%93%9C-%EC%A0%80%EC%9E%A5%EC%86%8C-github-%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95/</guid>
+      <guid>https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%BD%94%EB%93%9C-%EC%A0%80%EC%9E%A5%EC%86%8C-github-%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95/</guid>
       <description>1. 왜 github?   git: 소스코드를 관리하기 위한 버전 관리 시스템, 이력 관리와 협업과 관련된 다양한 기능을 제공
   github: git 을 인터넷에 업로드하는 서비스, 이외에도 유사 서비스 (gitlab 등) 이 있음
    git은 브랜치, 모듈, 로그 등 다양한 기능을 제공하여 개발환경에 훌륭하고 다양한 편의 기능을 제공 하지만, 복잡해보이는 수많은 개념 + 낯선 터미널 명령어때문에 진입 장벽이 다소 높다고 생각합니다. 따라서 Google Drive 나 Naver Cloud 와 같이, github를 코드 + 파일을 저장하는 클라우드 서비스처럼 활용하는 방법만 소개하면 도움이 될 것이라고 생각해 이번 포스트를 작성합니다.</description>
@@ -20,10 +20,10 @@
     
     <item>
       <title>움직이는 이미지 만들기 - 화면 녹화: ScreenToGif</title>
-      <link>https://cspidar.github.io/posts/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/</link>
+      <link>https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/</link>
       <pubDate>Tue, 23 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cspidar.github.io/posts/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/</guid>
+      <guid>https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/</guid>
       <description>화면을 녹화하여 만든 움직이는 이미지로 문서의 가독성을 개선
  1. 왜 ScreenToGif? https://www.screentogif.com/
  오픈소스: 광고, 워터마크, 분량제한 없이 사용 가능 다양한 기능 및 설정: 녹화 범위 지정, 마우스 위치 강조, 클릭 효과, 고정창 마우스 따라다니기 기능, gif, avi 등 다양한 출력 방식 제공 등

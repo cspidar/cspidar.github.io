@@ -25,5 +25,14 @@
       <description></description>
     </item>
     
+    <item>
+      <title>카테고리</title>
+      <link>https://cspidar.github.io/categories/%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC/</link>
+      <pubDate>Mon, 29 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/categories/%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
