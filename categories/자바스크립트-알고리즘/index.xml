@@ -6,15 +6,24 @@
     <description>Recent content in 자바스크립트 알고리즘 on quick start by EEAS</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko</language>
-    <lastBuildDate>Tue, 15 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cspidar.github.io/categories/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cspidar.github.io/categories/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>자바스크립트 알고리즘 - 12-10 자물쇠와 열쇠 (이코테)</title>
-      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/12-10_%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0/</link>
+      <title>자바스크립트 알고리즘 - 코드 - Map 활용</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%A7%B5-%ED%99%9C%EC%9A%A9/</link>
+      <pubDate>Thu, 17 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%A7%B5-%ED%99%9C%EC%9A%A9/</guid>
+      <description>1. arr → map 변환 const map = new Map([ [k1, v1], [k2, v2], [...k, ...v], ]);     2. map →&amp;gt; arr 변환 (펼침 연산자) let arr = [...map];     3. value 업데이트 map.set(k, map.get(k) + 1);     4. 순회 for ([key, value] of map) { }     5. Function - 두 Map 일치 확인 function chkMaps(p1, p2) { // console.</description>
+    </item>
+    
+    <item>
+      <title>자바스크립트 알고리즘 - 이코테 - 12-10 자물쇠와 열쇠</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9D%B4%EC%BD%94%ED%85%8C/12-10_%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0/</link>
       <pubDate>Tue, 15 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/12-10_%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0/</guid>
-      <description>1. 12-10 자물쇠와 열쇠 이것이 취업을 위한 코딩 테스트다 with 파이썬 (한빛미디어, 나동빈 저) 책 내의 문제의 자바스크립트 풀이 코드입니다. 더 나은 풀이를 전달해 주시면 업데이트 하도록 하겠습니다.
- function solution(p1, p2) { // const key = [...p1]; const lock = [...p2]; const large_lock = Array.from(Array(3 * lock.length), () =&amp;gt; Array(3 * lock.length).fill(0), ); for (let i = 0; i &amp;lt; lock.length; i++) { for (let j = 0; j &amp;lt; lock.</description>
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9D%B4%EC%BD%94%ED%85%8C/12-10_%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0/</guid>
+      <description>이것이 취업을 위한 코딩 테스트다 with 파이썬 (한빛미디어, 나동빈 저) 책 내 문제의 자바스크립트 풀이 코드입니다. 더 나은 풀이를 전달해 주시면 업데이트 하도록 하겠습니다.
+ 1. 12-10 자물쇠와 열쇠 function solution(p1, p2) { // const key = [...p1]; const lock = [...p2]; const large_lock = Array.from(Array(3 * lock.length), () =&amp;gt; Array(3 * lock.length).fill(0), ); for (let i = 0; i &amp;lt; lock.length; i++) { for (let j = 0; j &amp;lt; lock.</description>
     </item>
     
   </channel>

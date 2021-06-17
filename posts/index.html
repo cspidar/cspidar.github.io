@@ -167,16 +167,31 @@
 
   <header class="entry-header">
     <h2>
-      자바스크립트 알고리즘 - 12-10 자물쇠와 열쇠 (이코테)
+      자바스크립트 알고리즘 - 코드 - Map 활용
     </h2>
   </header>
   <section class="entry-content">
-    <p>1. 12-10 자물쇠와 열쇠 이것이 취업을 위한 코딩 테스트다 with 파이썬 (한빛미디어, 나동빈 저) 책 내의 문제의 자바스크립트 풀이 코드입니다. 더 나은 풀이를 전달해 주시면 업데이트 하도록 하겠습니다.
- function solution(p1, p2) { // const key = [...p1]; const lock = [...p2]; const large_lock = Array.from(Array(3 * lock.length), () =&gt; Array(3 * lock.length).fill(0), ); for (let i = 0; i &lt; lock.length; i&#43;&#43;) { for (let j = 0; j &lt; lock....</p>
+    <p>1. arr → map 변환 const map = new Map([ [k1, v1], [k2, v2], [...k, ...v], ]);     2. map →&gt; arr 변환 (펼침 연산자) let arr = [...map];     3. value 업데이트 map.set(k, map.get(k) &#43; 1);     4. 순회 for ([key, value] of map) { }     5. Function - 두 Map 일치 확인 function chkMaps(p1, p2) { // console....</p>
+  </section>
+  <footer class="entry-footer">June 17, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 자바스크립트 알고리즘 - 코드 - Map 활용" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%A7%B5-%ED%99%9C%EC%9A%A9/"></a>
+</article>
+
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      자바스크립트 알고리즘 - 이코테 - 12-10 자물쇠와 열쇠
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>이것이 취업을 위한 코딩 테스트다 with 파이썬 (한빛미디어, 나동빈 저) 책 내 문제의 자바스크립트 풀이 코드입니다. 더 나은 풀이를 전달해 주시면 업데이트 하도록 하겠습니다.
+ 1. 12-10 자물쇠와 열쇠 function solution(p1, p2) { // const key = [...p1]; const lock = [...p2]; const large_lock = Array.from(Array(3 * lock.length), () =&gt; Array(3 * lock.length).fill(0), ); for (let i = 0; i &lt; lock.length; i&#43;&#43;) { for (let j = 0; j &lt; lock....</p>
   </section>
   <footer class="entry-footer">June 15, 2021
 </footer>
-  <a class="entry-link" aria-label="post link to 자바스크립트 알고리즘 - 12-10 자물쇠와 열쇠 (이코테)" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/12-10_%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0/"></a>
+  <a class="entry-link" aria-label="post link to 자바스크립트 알고리즘 - 이코테 - 12-10 자물쇠와 열쇠" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9D%B4%EC%BD%94%ED%85%8C/12-10_%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -320,24 +335,11 @@
 </footer>
   <a class="entry-link" aria-label="post link to 코드 저장소 github - 기본 사용법 (Windows10)" href="https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%BD%94%EB%93%9C-%EC%A0%80%EC%9E%A5%EC%86%8C-github-%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95/"></a>
 </article>
-
-<article class="post-entry"> 
-
-  <header class="entry-header">
-    <h2>
-      움직이는 이미지 만들기 - 화면 녹화: ScreenToGif
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>화면을 녹화하여 만든 움직이는 이미지로 문서의 가독성을 개선
- 1. 왜 ScreenToGif? https://www.screentogif.com/
- 오픈소스: 광고, 워터마크, 분량제한 없이 사용 가능 다양한 기능 및 설정: 녹화 범위 지정, 마우스 위치 강조, 클릭 효과, 고정창 마우스 따라다니기 기능, gif, avi 등 다양한 출력 방식 제공 등
- 비교 대상 확인   CamStudio 오픈소스. 마우스 위치 강조나 클릭 효과 있음. 출력 양식 부족, 부가 기능 부족 소개 사이트에서의 인터페이스는 처참하지만.. 실제 윈도우10 환경에서 사용해보면 봐줄만 하다....</p>
-  </section>
-  <footer class="entry-footer">March 23, 2021
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="https://cspidar.github.io/posts/page/2/">Next Page »</a>
+  </nav>
 </footer>
-  <a class="entry-link" aria-label="post link to 움직이는 이미지 만들기 - 화면 녹화: ScreenToGif" href="https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/"></a>
-</article>
 
     </main><footer class="footer">
     <span>&copy; 2021 <a href="https://cspidar.github.io/">quick start by EEAS</a></span>

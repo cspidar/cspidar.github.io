@@ -150,16 +150,31 @@
 
   <header class="entry-header">
     <h2>
-      자바스크립트 알고리즘 - 12-10 자물쇠와 열쇠 (이코테)
+      자바스크립트 알고리즘 - 코드 - Map 활용
     </h2>
   </header>
   <section class="entry-content">
-    <p>1. 12-10 자물쇠와 열쇠 이것이 취업을 위한 코딩 테스트다 with 파이썬 (한빛미디어, 나동빈 저) 책 내의 문제의 자바스크립트 풀이 코드입니다. 더 나은 풀이를 전달해 주시면 업데이트 하도록 하겠습니다.
- function solution(p1, p2) { // const key = [...p1]; const lock = [...p2]; const large_lock = Array.from(Array(3 * lock.length), () =&gt; Array(3 * lock.length).fill(0), ); for (let i = 0; i &lt; lock.length; i&#43;&#43;) { for (let j = 0; j &lt; lock....</p>
+    <p>1. arr → map 변환 const map = new Map([ [k1, v1], [k2, v2], [...k, ...v], ]);     2. map →&gt; arr 변환 (펼침 연산자) let arr = [...map];     3. value 업데이트 map.set(k, map.get(k) &#43; 1);     4. 순회 for ([key, value] of map) { }     5. Function - 두 Map 일치 확인 function chkMaps(p1, p2) { // console....</p>
+  </section>
+  <footer class="entry-footer">June 17, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 자바스크립트 알고리즘 - 코드 - Map 활용" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%A7%B5-%ED%99%9C%EC%9A%A9/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      자바스크립트 알고리즘 - 이코테 - 12-10 자물쇠와 열쇠
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>이것이 취업을 위한 코딩 테스트다 with 파이썬 (한빛미디어, 나동빈 저) 책 내 문제의 자바스크립트 풀이 코드입니다. 더 나은 풀이를 전달해 주시면 업데이트 하도록 하겠습니다.
+ 1. 12-10 자물쇠와 열쇠 function solution(p1, p2) { // const key = [...p1]; const lock = [...p2]; const large_lock = Array.from(Array(3 * lock.length), () =&gt; Array(3 * lock.length).fill(0), ); for (let i = 0; i &lt; lock.length; i&#43;&#43;) { for (let j = 0; j &lt; lock....</p>
   </section>
   <footer class="entry-footer">June 15, 2021
 </footer>
-  <a class="entry-link" aria-label="post link to 자바스크립트 알고리즘 - 12-10 자물쇠와 열쇠 (이코테)" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/12-10_%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0/"></a>
+  <a class="entry-link" aria-label="post link to 자바스크립트 알고리즘 - 이코테 - 12-10 자물쇠와 열쇠" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9D%B4%EC%BD%94%ED%85%8C/12-10_%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
