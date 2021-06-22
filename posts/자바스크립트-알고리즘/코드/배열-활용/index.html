@@ -5,12 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>자바스크립트 알고리즘 - 코드 - Map 활용 | quick start by EEAS</title>
+<title>자바스크립트 알고리즘 - 코드 - 배열 활용 | quick start by EEAS</title>
 
-<meta name="keywords" content="자바스크립트, 알고리즘, 코드, Map, 맵" />
-<meta name="description" content="1. arr → map 변환 const map = new Map([ [k1, v1], [k2, v2], [...k, ...v], ]);     2. map →&gt; arr 변환 (펼침 연산자) let arr = [...map];     3. value 업데이트 map.set(k, map.get(k) &#43; 1);     4. 순회 for ([key, value] of map) { }     5. Function - 두 Map 일치 확인 function chkMaps(p1, p2) { // console.">
+<meta name="keywords" content="자바스크립트, 알고리즘, 코드, Arr, 배열" />
+<meta name="description" content="1. arr의 v1과 v2의 value 서로 교체 / 교환 [arr[v1], arr[v2]] = [arr[v2], arr[v1]]     2. 2차 배열 정렬 / 0번 인덱스 같을때 1번 인덱스로 정렬 arr.sort((a, b) =&gt; { if (a[0] === b[0]) return a[1] - b[1]; else return a[0] - b[0]; });     3. 2차 배열 회전 // arr 회전 - 좌 function rotateLeft(array) { var result = []; array.forEach((a, i, aa) =&gt; { a.">
 <meta name="author" content="">
-<link rel="canonical" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%A7%B5-%ED%99%9C%EC%9A%A9/" />
+<link rel="canonical" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%B0%B0%EC%97%B4-%ED%99%9C%EC%9A%A9/" />
 <link href="/assets/css/stylesheet.min.c615a73190537f7a1b9f4f9f953ed92dbcd78e9eb33f2af9c465e3a0bc4e1d7e.css" integrity="sha256-xhWnMZBTf3obn0&#43;flT7ZLbzXjp6zPyr5xGXjoLxOHX4=" rel="preload stylesheet"
     as="style">
 
@@ -24,16 +24,16 @@
 <meta name="generator" content="Hugo 0.81.0" />
 
 
-<meta property="og:title" content="자바스크립트 알고리즘 - 코드 - Map 활용" />
-<meta property="og:description" content="1. arr → map 변환 const map = new Map([ [k1, v1], [k2, v2], [...k, ...v], ]);     2. map →&gt; arr 변환 (펼침 연산자) let arr = [...map];     3. value 업데이트 map.set(k, map.get(k) &#43; 1);     4. 순회 for ([key, value] of map) { }     5. Function - 두 Map 일치 확인 function chkMaps(p1, p2) { // console." />
+<meta property="og:title" content="자바스크립트 알고리즘 - 코드 - 배열 활용" />
+<meta property="og:description" content="1. arr의 v1과 v2의 value 서로 교체 / 교환 [arr[v1], arr[v2]] = [arr[v2], arr[v1]]     2. 2차 배열 정렬 / 0번 인덱스 같을때 1번 인덱스로 정렬 arr.sort((a, b) =&gt; { if (a[0] === b[0]) return a[1] - b[1]; else return a[0] - b[0]; });     3. 2차 배열 회전 // arr 회전 - 좌 function rotateLeft(array) { var result = []; array.forEach((a, i, aa) =&gt; { a." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%A7%B5-%ED%99%9C%EC%9A%A9/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2021-06-17T00:00:00&#43;00:00" />
-<meta property="article:modified_time" content="2021-06-17T00:00:00&#43;00:00" />
+<meta property="og:url" content="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%B0%B0%EC%97%B4-%ED%99%9C%EC%9A%A9/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-22T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-06-22T00:00:00&#43;00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="자바스크립트 알고리즘 - 코드 - Map 활용"/>
-<meta name="twitter:description" content="1. arr → map 변환 const map = new Map([ [k1, v1], [k2, v2], [...k, ...v], ]);     2. map →&gt; arr 변환 (펼침 연산자) let arr = [...map];     3. value 업데이트 map.set(k, map.get(k) &#43; 1);     4. 순회 for ([key, value] of map) { }     5. Function - 두 Map 일치 확인 function chkMaps(p1, p2) { // console."/>
+<meta name="twitter:title" content="자바스크립트 알고리즘 - 코드 - 배열 활용"/>
+<meta name="twitter:description" content="1. arr의 v1과 v2의 value 서로 교체 / 교환 [arr[v1], arr[v2]] = [arr[v2], arr[v1]]     2. 2차 배열 정렬 / 0번 인덱스 같을때 1번 인덱스로 정렬 arr.sort((a, b) =&gt; { if (a[0] === b[0]) return a[1] - b[1]; else return a[0] - b[0]; });     3. 2차 배열 회전 // arr 회전 - 좌 function rotateLeft(array) { var result = []; array.forEach((a, i, aa) =&gt; { a."/>
 
 
 <script type="application/ld+json">
@@ -50,8 +50,8 @@
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "자바스크립트 알고리즘 - 코드 - Map 활용",
-      "item": "https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%A7%B5-%ED%99%9C%EC%9A%A9/"
+      "name": "자바스크립트 알고리즘 - 코드 - 배열 활용",
+      "item": "https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%B0%B0%EC%97%B4-%ED%99%9C%EC%9A%A9/"
     }
   ]
 }
@@ -60,20 +60,20 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "자바스크립트 알고리즘 - 코드 - Map 활용",
-  "name": "자바스크립트 알고리즘 - 코드 - Map 활용",
-  "description": "1. arr → map 변환 const map = new Map([ [k1, v1], [k2, v2], [...k, ...v], ]);     2. map →\u0026gt; arr 변환 (펼침 연산자) let arr = [...map];     3. value 업데이트 map.set(k, map.get(k) + 1);     4. 순회 for ([key, value] of map) { }     5. Function - 두 Map 일치 확인 function chkMaps(p1, p2) { // console.",
+  "headline": "자바스크립트 알고리즘 - 코드 - 배열 활용",
+  "name": "자바스크립트 알고리즘 - 코드 - 배열 활용",
+  "description": "1. arr의 v1과 v2의 value 서로 교체 / 교환 [arr[v1], arr[v2]] = [arr[v2], arr[v1]]     2. 2차 배열 정렬 / 0번 인덱스 같을때 1번 인덱스로 정렬 arr.sort((a, b) =\u0026gt; { if (a[0] === b[0]) return a[1] - b[1]; else return a[0] - b[0]; });     3. 2차 배열 회전 // arr 회전 - 좌 function rotateLeft(array) { var result = []; array.forEach((a, i, aa) =\u0026gt; { a.",
   "keywords": [
-    "자바스크립트", "알고리즘", "코드", "Map", "맵"
+    "자바스크립트", "알고리즘", "코드", "Arr", "배열"
   ],
-  "articleBody": " 1. arr → map 변환 const map = new Map([ [k1, v1], [k2, v2], [...k, ...v], ]);     2. map → arr 변환 (펼침 연산자) let arr = [...map];     3. value 업데이트 map.set(k, map.get(k) + 1);     4. 순회 for ([key, value] of map) { }     5. Function - 두 Map 일치 확인 function chkMaps(p1, p2) { // console.log(p1); if (p1.size != p2.size) return false; else { for ([k, v] of p1) { if (!p2.has(k) || p2.get(k) !== v) return false; // p2에 p1의 k가 있는지 확인 || p2의 v가 p1의 v와 같은지 확인 } return true; } }     ",
-  "wordCount" : "97",
+  "articleBody": " 1. arr의 v1과 v2의 value 서로 교체 / 교환 [arr[v1], arr[v2]] = [arr[v2], arr[v1]]     2. 2차 배열 정렬 / 0번 인덱스 같을때 1번 인덱스로 정렬 arr.sort((a, b) = { if (a[0] === b[0]) return a[1] - b[1]; else return a[0] - b[0]; });     3. 2차 배열 회전 // arr 회전 - 좌 function rotateLeft(array) { var result = []; array.forEach((a, i, aa) = { a.forEach((b, j, bb) = { result[bb.length - j - 1] = result[bb.length - j - 1] || []; result[bb.length - j - 1][i] = b; }); }); return result; } // arr 회전 - 우 function rotateRight(array) { var result = []; array.forEach((a, i, aa) = { a.forEach((b, j, bb) = { result[j] = result[j] || []; result[j][aa.length - i - 1] = b; }); }); return result; }     4. 특정 v의 모든 i res에 추가 let res = []; let idx = arr.indexOf(v); while (idx != -1) { res.push(idx); idx = arr.indexOf(v, idx + 1); }     ",
+  "wordCount" : "161",
   "inLanguage": "en",
-  "datePublished": "2021-06-17T00:00:00Z",
-  "dateModified": "2021-06-17T00:00:00Z",
+  "datePublished": "2021-06-22T00:00:00Z",
+  "dateModified": "2021-06-22T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%A7%B5-%ED%99%9C%EC%9A%A9/"
+    "@id": "https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%B0%B0%EC%97%B4-%ED%99%9C%EC%9A%A9/"
   },
   "publisher": {
     "@type": "Organization",
@@ -196,9 +196,9 @@
 </div>
 
     <h1 class="post-title">
-      자바스크립트 알고리즘 - 코드 - Map 활용
+      자바스크립트 알고리즘 - 코드 - 배열 활용
     </h1>
-    <div class="post-meta">June 17, 2021
+    <div class="post-meta">June 22, 2021
 
 
 </div>
@@ -210,75 +210,80 @@
         <div class="details">목차</div>
       </summary>
       <div class="inner"><ul><li>
-        <a href="#_arr_map_%eb%b3%80%ed%99%98" aria-label="1. arr → map 변환">1. arr → map 변환</a></li><li>
-        <a href="#_map_arr_%eb%b3%80%ed%99%98_%ed%8e%bc%ec%b9%a8_%ec%97%b0%ec%82%b0%ec%9e%90" aria-label="2. map →&amp;gt; arr 변환 (펼침 연산자)">2. map →&gt; arr 변환 (펼침 연산자)</a></li><li>
-        <a href="#_value_%ec%97%85%eb%8d%b0%ec%9d%b4%ed%8a%b8" aria-label="3. value 업데이트">3. value 업데이트</a></li><li>
-        <a href="#_%ec%88%9c%ed%9a%8c" aria-label="4. 순회">4. 순회</a></li><li>
-        <a href="#_function_%eb%91%90_map_%ec%9d%bc%ec%b9%98_%ed%99%95%ec%9d%b8" aria-label="5. Function - 두 Map 일치 확인">5. Function - 두 Map 일치 확인</a></li></ul>
+        <a href="#_arr%ec%9d%98_v1%ea%b3%bc_v2%ec%9d%98_value_%ec%84%9c%eb%a1%9c_%ea%b5%90%ec%b2%b4_%ea%b5%90%ed%99%98" aria-label="1. arr의 v1과 v2의 value 서로 교체 / 교환">1. arr의 v1과 v2의 value 서로 교체 / 교환</a></li><li>
+        <a href="#_2%ec%b0%a8_%eb%b0%b0%ec%97%b4_%ec%a0%95%eb%a0%ac_0%eb%b2%88_%ec%9d%b8%eb%8d%b1%ec%8a%a4_%ea%b0%99%ec%9d%84%eb%95%8c_1%eb%b2%88_%ec%9d%b8%eb%8d%b1%ec%8a%a4%eb%a1%9c_%ec%a0%95%eb%a0%ac" aria-label="2. 2차 배열 정렬 / 0번 인덱스 같을때 1번 인덱스로 정렬">2. 2차 배열 정렬 / 0번 인덱스 같을때 1번 인덱스로 정렬</a></li><li>
+        <a href="#_2%ec%b0%a8_%eb%b0%b0%ec%97%b4_%ed%9a%8c%ec%a0%84" aria-label="3. 2차 배열 회전">3. 2차 배열 회전</a></li><li>
+        <a href="#_%ed%8a%b9%ec%a0%95_v%ec%9d%98_%eb%aa%a8%eb%93%a0_i_res%ec%97%90_%ec%b6%94%ea%b0%80" aria-label="4. 특정 v의 모든 i res에 추가">4. 특정 v의 모든 i res에 추가</a></li></ul>
       </div>
     </details>
   </div>
   <div class="post-content">
 
 <div class="sect1">
-<h2 id="_arr_map_변환">1. arr → map 변환<a hidden class="anchor" aria-hidden="true" href="#_arr_map_변환">#</a></h2>
+<h2 id="_arr의_v1과_v2의_value_서로_교체_교환">1. arr의 v1과 v2의 value 서로 교체 / 교환<a hidden class="anchor" aria-hidden="true" href="#_arr의_v1과_v2의_value_서로_교체_교환">#</a></h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">const map = new Map([
-  [k1, v1],
-  [k2, v2],
-  [...k, ...v],
-]);</code></pre>
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">[arr[v1], arr[v2]] = [arr[v2], arr[v1]]</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_map_arr_변환_펼침_연산자">2. map →&gt; arr 변환 (펼침 연산자)<a hidden class="anchor" aria-hidden="true" href="#_map_arr_변환_펼침_연산자">#</a></h2>
+<h2 id="_2차_배열_정렬_0번_인덱스_같을때_1번_인덱스로_정렬">2. 2차 배열 정렬 / 0번 인덱스 같을때 1번 인덱스로 정렬<a hidden class="anchor" aria-hidden="true" href="#_2차_배열_정렬_0번_인덱스_같을때_1번_인덱스로_정렬">#</a></h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">let arr = [...map];</code></pre>
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">arr.sort((a, b) =&gt; {
+  if (a[0] === b[0]) return a[1] - b[1];
+  else return a[0] - b[0];
+});</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_value_업데이트">3. value 업데이트<a hidden class="anchor" aria-hidden="true" href="#_value_업데이트">#</a></h2>
+<h2 id="_2차_배열_회전">3. 2차 배열 회전<a hidden class="anchor" aria-hidden="true" href="#_2차_배열_회전">#</a></h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">map.set(k, map.get(k) + 1);</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_순회">4. 순회<a hidden class="anchor" aria-hidden="true" href="#_순회">#</a></h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">for ([key, value] of map) {
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">// arr 회전 - 좌
+function rotateLeft(array) {
+  var result = [];
+  array.forEach((a, i, aa) =&gt; {
+    a.forEach((b, j, bb) =&gt; {
+      result[bb.length - j - 1] = result[bb.length - j - 1] || [];
+      result[bb.length - j - 1][i] = b;
+    });
+  });
+  return result;
+}
+
+// arr 회전 - 우
+function rotateRight(array) {
+  var result = [];
+  array.forEach((a, i, aa) =&gt; {
+    a.forEach((b, j, bb) =&gt; {
+      result[j] = result[j] || [];
+      result[j][aa.length - i - 1] = b;
+    });
+  });
+  return result;
 }</code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_function_두_map_일치_확인">5. Function - 두 Map 일치 확인<a hidden class="anchor" aria-hidden="true" href="#_function_두_map_일치_확인">#</a></h2>
+<h2 id="_특정_v의_모든_i_res에_추가">4. 특정 v의 모든 i res에 추가<a hidden class="anchor" aria-hidden="true" href="#_특정_v의_모든_i_res에_추가">#</a></h2>
 <div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">function chkMaps(p1, p2) {
-  // console.log(p1);
-  if (p1.size != p2.size) return false;
-  else {
-    for ([k, v] of p1) {
-      if (!p2.has(k) || p2.get(k) !== v) return false; // p2에 p1의 k가 있는지 확인 || p2의 v가 p1의 v와 같은지 확인
-    }
-    return true;
-  }
+<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">let res = [];
+let idx = arr.indexOf(v);
+while (idx != -1) {
+  res.push(idx);
+  idx = arr.indexOf(v, idx + 1);
 }</code></pre>
 </div>
 </div>
@@ -291,19 +296,14 @@
       <li><a href="https://cspidar.github.io/tags/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/">자바스크립트</a></li>
       <li><a href="https://cspidar.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
       <li><a href="https://cspidar.github.io/tags/%EC%BD%94%EB%93%9C/">코드</a></li>
-      <li><a href="https://cspidar.github.io/tags/map/">Map</a></li>
-      <li><a href="https://cspidar.github.io/tags/%EB%A7%B5/">맵</a></li>
+      <li><a href="https://cspidar.github.io/tags/arr/">Arr</a></li>
+      <li><a href="https://cspidar.github.io/tags/%EB%B0%B0%EC%97%B4/">배열</a></li>
     </ul>
     <nav class="paginav">
-      <a class="prev" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%B0%B0%EC%97%B4-%ED%99%9C%EC%9A%A9/">
-        <span class="title">« Prev Page</span>
-        <br>
-        <span>자바스크립트 알고리즘 - 코드 - 배열 활용</span>
-      </a>
-      <a class="next" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9D%B4%EC%BD%94%ED%85%8C/12-10_%EC%9E%90%EB%AC%BC%EC%87%A0%EC%99%80-%EC%97%B4%EC%87%A0/">
+      <a class="next" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%A7%B5-%ED%99%9C%EC%9A%A9/">
         <span class="title">Next Page »</span>
         <br>
-        <span>자바스크립트 알고리즘 - 이코테 - 12-10 자물쇠와 열쇠</span>
+        <span>자바스크립트 알고리즘 - 코드 - Map 활용</span>
       </a>
     </nav>
   </footer>
