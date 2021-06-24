@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Floyd-Warshall on quick start by EEAS</title>
+    <link>https://cspidar.github.io/tags/floyd-warshall/</link>
+    <description>Recent content in Floyd-Warshall on quick start by EEAS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Thu, 24 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cspidar.github.io/tags/floyd-warshall/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>자바스크립트 알고리즘 - 코드 - 플로이드-워셜</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%9B%8C%EC%85%9C/</link>
+      <pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%9B%8C%EC%85%9C/</guid>
+      <description>1. 플로이드-워셜   전체 노드간 소요 시간을 graph 배열에 업데이트
+  graph: 노드 정보 배열 (2차, 초기화: 1e9 ≒ 무한)
+  점화식: min(a → b, a → k → b)
+   function solution(p1, p2, p3) { const nodes = Number(p1); const arr = [...p2]; const graph = Array.from(Array(nodes + 1), () =&amp;gt; Array(nodes + 1).fill(1e9)); // graph 자기 자신 거리 = 0 for (i in graph) { graph[i][i] = 0; } // graph 에 node 정보 입력 // [출발 노드, 도착 노드, 거리] for (v of arr) { graph[v[0]][v[1]] = v[2]; } // 점화식 적용 // min(a -&amp;gt; b, a -&amp;gt; k -&amp;gt; b) for (k = 1; k &amp;lt;= nodes; k++) { for (a = 1; a &amp;lt;= nodes; a++) { for (b = 1; b &amp;lt;= nodes; b++) { graph[a][b] = Math.</description>
+    </item>
+    
+  </channel>
+</rss>

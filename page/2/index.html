@@ -156,6 +156,77 @@
 
   <header class="entry-header">
     <h2>
+      자바스크립트 알고리즘 - 코드 - 부분 집합
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>1. 부분 집합   원소를 넣을지 말지 2갈래로 탐색
+  arr 의 모든 부분 집합 res 에 추가, 갯수 cnt에 출력
+   function partsOfarr(arr) { let ch = Array.from(Array(arr.length)); let res = []; // let cnt = 0; function DFS(i) { if (i === arr.length) { let tmp = []; // for문 전 초기화 for (i in ch) { // 체크배열이 1인 v만 tmp에 추가 if (ch[i] === 1) { tmp....</p>
+  </section>
+  <footer class="entry-footer">May 1, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 자바스크립트 알고리즘 - 코드 - 부분 집합" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%B6%80%EB%B6%84-%EC%A7%91%ED%95%A9/"></a>
+</article>
+
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      자바스크립트 알고리즘 - 코드 - 순열
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>1. 순열   arr을 (arr.length - 2) 개 뽑는 모든 순열 res 에 추가
+  cnt 에 갯수 출력
+   function arrPr(arr, r) { let res = []; let tmp = []; // let cnt = 0; let ch = Array.from(Array(arr.length &#43; 1), () =&gt; 0); function DFS(L) { if (L === arr.length) { res.push(tmp.join(&#39;&#39;)); // cnt&#43;&#43;; } else { for (let i = 0; i &lt; arr....</p>
+  </section>
+  <footer class="entry-footer">May 1, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 자바스크립트 알고리즘 - 코드 - 순열" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%88%9C%EC%97%B4/"></a>
+</article>
+
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      자바스크립트 문법 - G - 함수 주요 메소드 (Function methods essential)
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>본 문서의 작성 규칙은 자바스크립트 문법 작성 규칙 을 참고하세요. 활용 빈도와 중요도가 높다고 생각되는 항목으로 본문을 구성하였습니다. 나머지 항목은 기타 챕터에서 확인 가능합니다.
+   1. Function 1.1. 주의사항 this 키워드는 함수 내에서 현재 실행 중인 함수를 참조하지 않으므로 이름으로 Function 객체를 직접 참조해야 함 (bind() 메소드 활용 이유)
+    2. Function 프로퍼티 2.1. Function.length func.length // func의 p 갯수 반환   /// 예시 function func(a, b) =&gt; a &#43; b; func....</p>
+  </section>
+  <footer class="entry-footer">April 10, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 자바스크립트 문법 - G - 함수 주요 메소드 (Function methods essential)" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/g-%ED%95%A8%EC%88%98-%EB%A9%94%EC%86%8C%EB%93%9C-function-methods/"></a>
+</article>
+
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      자바스크립트 문법 - F - 셋 주요 메소드 (Set methods essential)
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>본 문서의 작성 규칙은 자바스크립트 문법 작성 규칙 을 참고하세요. 활용 빈도와 중요도가 높다고 생각되는 항목으로 본문을 구성하였습니다. 나머지 항목은 기타 챕터에서 확인 가능합니다.
+   1. Set 1.1. 특징   유일한 값을 저장, 객체와 원시 값 모두 저장 가능
+  index 없음
+  item 순서에 의미 없음
+  개별 item에 접근 불가
+    1.2. 기본 문법 1.2.1. 선언 const set = new Set()       2....</p>
+  </section>
+  <footer class="entry-footer">April 9, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 자바스크립트 문법 - F - 셋 주요 메소드 (Set methods essential)" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/f-%EC%85%8B-%EB%A9%94%EC%86%8C%EB%93%9C-set-methods/"></a>
+</article>
+
+<article class="post-entry"> 
+
+  <header class="entry-header">
+    <h2>
       자바스크립트 문법 - E - 맵 주요 메소드 (Map methods essential)
     </h2>
   </header>
@@ -256,27 +327,10 @@
 </footer>
   <a class="entry-link" aria-label="post link to 코드 저장소 github - 기본 사용법 (Windows10)" href="https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%BD%94%EB%93%9C-%EC%A0%80%EC%9E%A5%EC%86%8C-github-%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95/"></a>
 </article>
-
-<article class="post-entry"> 
-
-  <header class="entry-header">
-    <h2>
-      움직이는 이미지 만들기 - 화면 녹화: ScreenToGif
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>화면을 녹화하여 만든 움직이는 이미지로 문서의 가독성을 개선
- 1. 왜 ScreenToGif? https://www.screentogif.com/
- 오픈소스: 광고, 워터마크, 분량제한 없이 사용 가능 다양한 기능 및 설정: 녹화 범위 지정, 마우스 위치 강조, 클릭 효과, 고정창 마우스 따라다니기 기능, gif, avi 등 다양한 출력 방식 제공 등
- 비교 대상 확인   CamStudio 오픈소스. 마우스 위치 강조나 클릭 효과 있음. 출력 양식 부족, 부가 기능 부족 소개 사이트에서의 인터페이스는 처참하지만.. 실제 윈도우10 환경에서 사용해보면 봐줄만 하다....</p>
-  </section>
-  <footer class="entry-footer">March 23, 2021
-</footer>
-  <a class="entry-link" aria-label="post link to 움직이는 이미지 만들기 - 화면 녹화: ScreenToGif" href="https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%9B%80%EC%A7%81%EC%9D%B4%EB%8A%94-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0-%ED%99%94%EB%A9%B4-%EB%85%B9%ED%99%94/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://cspidar.github.io/">« Prev Page</a>
+    <a class="next" href="https://cspidar.github.io/page/3/">Next Page »</a>
   </nav>
 </footer>
 

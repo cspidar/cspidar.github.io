@@ -9,12 +9,24 @@
     <lastBuildDate>Thu, 24 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cspidar.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>자바스크립트 알고리즘 - 코드 - 우선 순위 큐 &amp; 다익스트라</title>
-      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%9A%B0%EC%84%A0-%EC%88%9C%EC%9C%84-%ED%81%90%EC%99%80-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</link>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%9A%B0%EC%84%A0-%EC%88%9C%EC%9C%84-%ED%81%90%EC%99%80-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/</link>
       <pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%9A%B0%EC%84%A0-%EC%88%9C%EC%9C%84-%ED%81%90%EC%99%80-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/</guid>
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%9A%B0%EC%84%A0-%EC%88%9C%EC%9C%84-%ED%81%90%EC%99%80-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/</guid>
       <description>1. 우선 순위 큐   출처: https://jun-choi-4928.medium.com/javascript로-heap-priority-queue-구현하기-8bc13bf095d9
    활용 형태 const pq = new PriorityQueue(); // 우선 순위 큐 생성 pq.enqueue(key, value) // value 추가 pq.dequeue() // value 삭제 pq.isEmpty() // value 존재 여부 확인   코드 /** * @fileoverview Data Structure: Heap (Min Heap) * * 우선순위 큐를 구현하기 위한 루트노드에 최소값을 저장하는 Binary Heap * 즉, 부모 노드는 자식 노드보다 항상 작은 값을 유지해야 한다.</description>
+    </item>
+    
+    <item>
+      <title>자바스크립트 알고리즘 - 코드 - 플로이드-워셜</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%9B%8C%EC%85%9C/</link>
+      <pubDate>Thu, 24 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%9B%8C%EC%85%9C/</guid>
+      <description>1. 플로이드-워셜   전체 노드간 소요 시간을 graph 배열에 업데이트
+  graph: 노드 정보 배열 (2차, 초기화: 1e9 ≒ 무한)
+  점화식: min(a → b, a → k → b)
+   function solution(p1, p2, p3) { const nodes = Number(p1); const arr = [...p2]; const graph = Array.from(Array(nodes + 1), () =&amp;gt; Array(nodes + 1).fill(1e9)); // graph 자기 자신 거리 = 0 for (i in graph) { graph[i][i] = 0; } // graph 에 node 정보 입력 // [출발 노드, 도착 노드, 거리] for (v of arr) { graph[v[0]][v[1]] = v[2]; } // 점화식 적용 // min(a -&amp;gt; b, a -&amp;gt; k -&amp;gt; b) for (k = 1; k &amp;lt;= nodes; k++) { for (a = 1; a &amp;lt;= nodes; a++) { for (b = 1; b &amp;lt;= nodes; b++) { graph[a][b] = Math.</description>
     </item>
     
     <item>
@@ -55,17 +67,6 @@
     </item>
     
     <item>
-      <title>자바스크립트 알고리즘 - 코드 - 부분 집합</title>
-      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%B6%80%EB%B6%84-%EC%A7%91%ED%95%A9/</link>
-      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%B6%80%EB%B6%84-%EC%A7%91%ED%95%A9/</guid>
-      <description>1. 부분 집합   원소를 넣을지 말지 2갈래로 탐색
-  arr 의 모든 부분 집합 res 에 추가, 갯수 cnt에 출력
-   function partsOfarr(arr) { let ch = Array.from(Array(arr.length)); let res = []; // let cnt = 0; function DFS(i) { if (i === arr.length) { let tmp = []; // for문 전 초기화 for (i in ch) { // 체크배열이 1인 v만 tmp에 추가 if (ch[i] === 1) { tmp.</description>
-    </item>
-    
-    <item>
       <title>자바스크립트 알고리즘 - 코드 - 이진 검색</title>
       <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%9D%B4%EC%A7%84-%EA%B2%80%EC%83%89/</link>
       <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
@@ -85,6 +86,50 @@
       <description> 1. 소수 확인   n을 n의 제곱근 (Math.sqrt(n)) 까지 나눈 나머지가 0이 존재하면 안됨
   n이 소수면 true, 아니면 false 반환
    const chkPrime = (n) =&amp;gt; { if (n === 0) return false; if (n === 1) return false; else if (n === 2) return true; else { for (let i = 2; i &amp;lt;= Math.sqrt(n); i++) { if (n % i === 0) return false; } return true; } };     </description>
+    </item>
+    
+    <item>
+      <title>자바스크립트 알고리즘 - 코드 - 조합</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%A1%B0%ED%95%A9/</link>
+      <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%A1%B0%ED%95%A9/</guid>
+      <description> 1. 조합   arr을 r 개 뽑는 모든 조합 res에 추가
+  cnt 에 갯수 출력
+   function combi(arr, r) { let res = []; let tmp = Array.from({ length: r }, () =&amp;gt; 0); // let cnt = 0; function DFS(L, s) { if (L === r) { res.push(tmp.slice()); // cnt++; } else { for (let i = s; i &amp;lt; arr.length; i++) { // s 부터 도는게 포인트 tmp[L] = arr[i]; DFS(L + 1, i + 1); // 다음 s 를 i + 1 로 세팅 } } } DFS(0, 0); // return cnt; return res; }     </description>
+    </item>
+    
+    <item>
+      <title>자바스크립트 알고리즘 - 코드 - 중복 순열</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%A4%91%EB%B3%B5-%EC%88%9C%EC%97%B4/</link>
+      <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%A4%91%EB%B3%B5-%EC%88%9C%EC%97%B4/</guid>
+      <description> 1. 중복 순열   arr 에서 중복을 허락하여 r 개 뽑아 res 에 추가
+  cnt에 갯수 출력
+   function arrPir(arr, r) { let res = []; let tmp = []; // let cnt = 0; function DFS(L) { if (L === r) { res.push(tmp.slice()); // cnt++; } else { for (let i = 0; i &amp;lt; arr.length; i++) { // L차 순회하며 각 자리에 v 입력 tmp[L] = arr[i]; DFS(L + 1); } } } DFS(0); // return cnt; return res; }     </description>
+    </item>
+    
+    <item>
+      <title>자바스크립트 알고리즘 - 코드 - 부분 집합</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%B6%80%EB%B6%84-%EC%A7%91%ED%95%A9/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%B6%80%EB%B6%84-%EC%A7%91%ED%95%A9/</guid>
+      <description>1. 부분 집합   원소를 넣을지 말지 2갈래로 탐색
+  arr 의 모든 부분 집합 res 에 추가, 갯수 cnt에 출력
+   function partsOfarr(arr) { let ch = Array.from(Array(arr.length)); let res = []; // let cnt = 0; function DFS(i) { if (i === arr.length) { let tmp = []; // for문 전 초기화 for (i in ch) { // 체크배열이 1인 v만 tmp에 추가 if (ch[i] === 1) { tmp.</description>
+    </item>
+    
+    <item>
+      <title>자바스크립트 알고리즘 - 코드 - 순열</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%88%9C%EC%97%B4/</link>
+      <pubDate>Sat, 01 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%88%9C%EC%97%B4/</guid>
+      <description>1. 순열   arr을 (arr.length - 2) 개 뽑는 모든 순열 res 에 추가
+  cnt 에 갯수 출력
+   function arrPr(arr, r) { let res = []; let tmp = []; // let cnt = 0; let ch = Array.from(Array(arr.length + 1), () =&amp;gt; 0); function DFS(L) { if (L === arr.length) { res.push(tmp.join(&amp;#39;&amp;#39;)); // cnt++; } else { for (let i = 0; i &amp;lt; arr.</description>
     </item>
     
   </channel>

@@ -159,7 +159,25 @@
   </section>
   <footer class="entry-footer">June 24, 2021
 </footer>
-  <a class="entry-link" aria-label="post link to 자바스크립트 알고리즘 - 코드 - 우선 순위 큐 &amp; 다익스트라" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%9A%B0%EC%84%A0-%EC%88%9C%EC%9C%84-%ED%81%90%EC%99%80-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/"></a>
+  <a class="entry-link" aria-label="post link to 자바스크립트 알고리즘 - 코드 - 우선 순위 큐 &amp; 다익스트라" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%9A%B0%EC%84%A0-%EC%88%9C%EC%9C%84-%ED%81%90%EC%99%80-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      자바스크립트 알고리즘 - 코드 - 플로이드-워셜
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>1. 플로이드-워셜   전체 노드간 소요 시간을 graph 배열에 업데이트
+  graph: 노드 정보 배열 (2차, 초기화: 1e9 ≒ 무한)
+  점화식: min(a → b, a → k → b)
+   function solution(p1, p2, p3) { const nodes = Number(p1); const arr = [...p2]; const graph = Array.from(Array(nodes &#43; 1), () =&gt; Array(nodes &#43; 1).fill(1e9)); // graph 자기 자신 거리 = 0 for (i in graph) { graph[i][i] = 0; } // graph 에 node 정보 입력 // [출발 노드, 도착 노드, 거리] for (v of arr) { graph[v[0]][v[1]] = v[2]; } // 점화식 적용 // min(a -&gt; b, a -&gt; k -&gt; b) for (k = 1; k &lt;= nodes; k&#43;&#43;) { for (a = 1; a &lt;= nodes; a&#43;&#43;) { for (b = 1; b &lt;= nodes; b&#43;&#43;) { graph[a][b] = Math....</p>
+  </section>
+  <footer class="entry-footer">June 24, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 자바스크립트 알고리즘 - 코드 - 플로이드-워셜" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%9B%8C%EC%85%9C/"></a>
 </article>
 
 <article class="post-entry tag-entry"> 
@@ -227,23 +245,6 @@
 
   <header class="entry-header">
     <h2>
-      자바스크립트 알고리즘 - 코드 - 부분 집합
-    </h2>
-  </header>
-  <section class="entry-content">
-    <p>1. 부분 집합   원소를 넣을지 말지 2갈래로 탐색
-  arr 의 모든 부분 집합 res 에 추가, 갯수 cnt에 출력
-   function partsOfarr(arr) { let ch = Array.from(Array(arr.length)); let res = []; // let cnt = 0; function DFS(i) { if (i === arr.length) { let tmp = []; // for문 전 초기화 for (i in ch) { // 체크배열이 1인 v만 tmp에 추가 if (ch[i] === 1) { tmp....</p>
-  </section>
-  <footer class="entry-footer">May 31, 2021
-</footer>
-  <a class="entry-link" aria-label="post link to 자바스크립트 알고리즘 - 코드 - 부분 집합" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%B6%80%EB%B6%84-%EC%A7%91%ED%95%A9/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-
-  <header class="entry-header">
-    <h2>
       자바스크립트 알고리즘 - 코드 - 이진 검색
     </h2>
   </header>
@@ -273,6 +274,45 @@
 </footer>
   <a class="entry-link" aria-label="post link to 자바스크립트 알고리즘 - 코드 - 소수 확인" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%86%8C%EC%88%98-%ED%99%95%EC%9D%B8/"></a>
 </article>
+
+<article class="post-entry tag-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      자바스크립트 알고리즘 - 코드 - 조합
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p> 1. 조합   arr을 r 개 뽑는 모든 조합 res에 추가
+  cnt 에 갯수 출력
+   function combi(arr, r) { let res = []; let tmp = Array.from({ length: r }, () =&gt; 0); // let cnt = 0; function DFS(L, s) { if (L === r) { res.push(tmp.slice()); // cnt&#43;&#43;; } else { for (let i = s; i &lt; arr.length; i&#43;&#43;) { // s 부터 도는게 포인트 tmp[L] = arr[i]; DFS(L &#43; 1, i &#43; 1); // 다음 s 를 i &#43; 1 로 세팅 } } } DFS(0, 0); // return cnt; return res; }     </p>
+  </section>
+  <footer class="entry-footer">May 4, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 자바스크립트 알고리즘 - 코드 - 조합" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%A1%B0%ED%95%A9/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+
+  <header class="entry-header">
+    <h2>
+      자바스크립트 알고리즘 - 코드 - 중복 순열
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p> 1. 중복 순열   arr 에서 중복을 허락하여 r 개 뽑아 res 에 추가
+  cnt에 갯수 출력
+   function arrPir(arr, r) { let res = []; let tmp = []; // let cnt = 0; function DFS(L) { if (L === r) { res.push(tmp.slice()); // cnt&#43;&#43;; } else { for (let i = 0; i &lt; arr.length; i&#43;&#43;) { // L차 순회하며 각 자리에 v 입력 tmp[L] = arr[i]; DFS(L &#43; 1); } } } DFS(0); // return cnt; return res; }     </p>
+  </section>
+  <footer class="entry-footer">May 4, 2021
+</footer>
+  <a class="entry-link" aria-label="post link to 자바스크립트 알고리즘 - 코드 - 중복 순열" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%A4%91%EB%B3%B5-%EC%88%9C%EC%97%B4/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="https://cspidar.github.io/categories/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/page/2/">Next Page »</a>
+  </nav>
+</footer>
 
     </main><footer class="footer">
     <span>&copy; 2021 <a href="https://cspidar.github.io/">quick start by EEAS</a></span>

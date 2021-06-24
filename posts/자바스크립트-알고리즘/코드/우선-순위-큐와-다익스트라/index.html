@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>자바스크립트 알고리즘 - 코드 - 우선 순위 큐 &amp; 다익스트라 | quick start by EEAS</title>
+
+<meta name="keywords" content="자바스크립트, 알고리즘, 코드, 우선 순위 큐, Priority queue, 다익스트라 알고리즘, Dijkstra" />
+<meta name="description" content="1. 우선 순위 큐   출처: https://jun-choi-4928.medium.com/javascript로-heap-priority-queue-구현하기-8bc13bf095d9
+   활용 형태 const pq = new PriorityQueue(); // 우선 순위 큐 생성 pq.enqueue(key, value) // value 추가 pq.dequeue() // value 삭제 pq.isEmpty() // value 존재 여부 확인   코드 /** * @fileoverview Data Structure: Heap (Min Heap) * * 우선순위 큐를 구현하기 위한 루트노드에 최소값을 저장하는 Binary Heap * 즉, 부모 노드는 자식 노드보다 항상 작은 값을 유지해야 한다.">
+<meta name="author" content="">
+<link rel="canonical" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%9A%B0%EC%84%A0-%EC%88%9C%EC%9C%84-%ED%81%90%EC%99%80-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" />
+<link href="/assets/css/stylesheet.min.de19ff9944351b942bf2b583137fb71ad68e1aa4358b40e3e5956113197721c7.css" integrity="sha256-3hn/mUQ1G5Qr8rWDE3&#43;3GtaOGqQ1i0Dj5ZVhExl3Icc=" rel="preload stylesheet"
+    as="style">
+
+<link rel="icon" href="https://cspidar.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cspidar.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cspidar.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://cspidar.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://cspidar.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.82.0" />
+
+
+<meta property="og:title" content="자바스크립트 알고리즘 - 코드 - 우선 순위 큐 &amp; 다익스트라" />
+<meta property="og:description" content="1. 우선 순위 큐   출처: https://jun-choi-4928.medium.com/javascript로-heap-priority-queue-구현하기-8bc13bf095d9
+   활용 형태 const pq = new PriorityQueue(); // 우선 순위 큐 생성 pq.enqueue(key, value) // value 추가 pq.dequeue() // value 삭제 pq.isEmpty() // value 존재 여부 확인   코드 /** * @fileoverview Data Structure: Heap (Min Heap) * * 우선순위 큐를 구현하기 위한 루트노드에 최소값을 저장하는 Binary Heap * 즉, 부모 노드는 자식 노드보다 항상 작은 값을 유지해야 한다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%9A%B0%EC%84%A0-%EC%88%9C%EC%9C%84-%ED%81%90%EC%99%80-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-06-24T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-06-24T00:00:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="자바스크립트 알고리즘 - 코드 - 우선 순위 큐 &amp; 다익스트라"/>
+<meta name="twitter:description" content="1. 우선 순위 큐   출처: https://jun-choi-4928.medium.com/javascript로-heap-priority-queue-구현하기-8bc13bf095d9
+   활용 형태 const pq = new PriorityQueue(); // 우선 순위 큐 생성 pq.enqueue(key, value) // value 추가 pq.dequeue() // value 삭제 pq.isEmpty() // value 존재 여부 확인   코드 /** * @fileoverview Data Structure: Heap (Min Heap) * * 우선순위 큐를 구현하기 위한 루트노드에 최소값을 저장하는 Binary Heap * 즉, 부모 노드는 자식 노드보다 항상 작은 값을 유지해야 한다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://cspidar.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "자바스크립트 알고리즘 - 코드 - 우선 순위 큐 \u0026 다익스트라",
+      "item": "https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%9A%B0%EC%84%A0-%EC%88%9C%EC%9C%84-%ED%81%90%EC%99%80-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "자바스크립트 알고리즘 - 코드 - 우선 순위 큐 \u0026 다익스트라",
+  "name": "자바스크립트 알고리즘 - 코드 - 우선 순위 큐 \u0026 다익스트라",
+  "description": "1. 우선 순위 큐   출처: https://jun-choi-4928.medium.com/javascript로-heap-priority-queue-구현하기-8bc13bf095d9\n   활용 형태 const pq = new PriorityQueue(); // 우선 순위 큐 생성 pq.enqueue(key, value) // value 추가 pq.dequeue() // value 삭제 pq.isEmpty() // value 존재 여부 확인   코드 /** * @fileoverview Data Structure: Heap (Min Heap) * * 우선순위 큐를 구현하기 위한 루트노드에 최소값을 저장하는 Binary Heap * 즉, 부모 노드는 자식 노드보다 항상 작은 값을 유지해야 한다.",
+  "keywords": [
+    "자바스크립트", "알고리즘", "코드", "우선 순위 큐", "Priority queue", "다익스트라 알고리즘", "Dijkstra"
+  ],
+  "articleBody": " 1. 우선 순위 큐   출처: https://jun-choi-4928.medium.com/javascript로-heap-priority-queue-구현하기-8bc13bf095d9\n   활용 형태 const pq = new PriorityQueue(); // 우선 순위 큐 생성 pq.enqueue(key, value) // value 추가 pq.dequeue() // value 삭제 pq.isEmpty() // value 존재 여부 확인   코드 /** * @fileoverview Data Structure: Heap (Min Heap) * * 우선순위 큐를 구현하기 위한 루트노드에 최소값을 저장하는 Binary Heap * 즉, 부모 노드는 자식 노드보다 항상 작은 값을 유지해야 한다. * * chileLeftIndex = (parentIndex * 2) + 1 * childRightIndex = (parentIndex * 2) + 2 * parentIndex = (childIndex - 1) / 2 */ class Heap { constructor() { this.heap = []; } getLeftChildIndex = (parentIndex) = parentIndex * 2 + 1; getRightChildIndex = (parentIndex) = parentIndex * 2 + 2; getParentIndex = (childIndex) = Math.floor((childIndex - 1) / 2); peek = () = this.heap[0]; insert = (key, value) = { const node = { key, value }; this.heap.push(node); this.heapifyUp(); // 배열에 가장 끝에 넣고, 다시 min heap 의 형태를 갖추도록 한다. }; // 최근에 삽입된 노드가 제 자리를 찾아갈 수 있도록 하는 메소드 heapifyUp = () = { let index = this.heap.length - 1; // 계속해서 변하는 index 값 const lastInsertedNode = this.heap[index]; // 루트노드가 되기 전까지 while (index  0) { const parentIndex = this.getParentIndex(index); // 부모 노드의 key 값이 마지막에 삽입된 노드의 키 값 보다 크다면 // 부모의 자리를 계속해서 아래로 내린다. if (this.heap[parentIndex].key  lastInsertedNode.key) { this.heap[index] = this.heap[parentIndex]; index = parentIndex; } else break; } // break 를 만나서 자신의 자리를 찾은 상황 // 마지막에 찾아진 곳이 가장 나중에 들어온 노드가 들어갈 자리다. this.heap[index] = lastInsertedNode; }; remove = () = { const count = this.heap.length; const rootNode = this.heap[0]; if (count { let index = 0; const count = this.heap.length; const rootNode = this.heap[index]; // 계속해서 left child 가 있을 때 까지 검사한다. while (this.getLeftChildIndex(index) this.insert(priority, value); dequeue = () = this.remove(); isEmpty = () = this.heap.length      2. 다익스트라 알고리즘: 최소 힙 우선순위 큐 사용   위의 '우선 순위 큐' 사용\n  출발 노드에서 각 노드까지의 최단 시간을 distance 배열에 담아 반환\n   항목 설명   graph: 노드 정보 배열 (2차, 빈배열)\n  distance: 최단 거리 결과 (초기화: 1e9 ≒ 무한)\n  arr = [현위치, 다음 노드, 거리]\n  graph[현위치] = [다음 노드, 거리]\n  pq[현위치] = [거리, 다음 노드]\n  현 위치: dequeue 된 노드\n  다음 노드: graph의 현 위치에서 연결된 노드\n  출발 노드: 시작점, 거리 = 0\n  저장값: distance 배열에 저장된 해당 노드까지의 최소 거리\n   흐름  '출발 노드' enqueue\n  dequeue\n  '출발 노드' 에서 '현 위치' 를 경유한 각각 '다음 노드' 까지의 거리 (출발 노드 → 현 위치 → 다음 노드) 가 기존 거리 보다 작으면, 거리를 distance 배열에 저장하고 '다음 노드' 를 enqueue\n  2 - 3 반복, dequeue 할 노드가 존재하지 않으면 종료\n   코드 function solution(p1, p2, p3) { const start_node = Number(p1); const nodes = Number(p2); const arr = [...p3]; const graph = Array.from(Array(nodes + 1), () = Array()); const distance = Array.from(Array(nodes + 1), () = 1e9); // graph 에 노드 정보 입력 for (v of arr) { graph[v[0]].push([v[1], v[2]]); } function dijk(start) { pq.enqueue(0, start); distance[start] = 0; while (!pq.isEmpty()) { let tmp = pq.dequeue(); let dist = tmp.key; // 현재 노드까지 거리 let now = tmp.value; // 현재 노드 if (distance[now]      ",
+  "wordCount" : "869",
+  "inLanguage": "en",
+  "datePublished": "2021-06-24T00:00:00Z",
+  "dateModified": "2021-06-24T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%9A%B0%EC%84%A0-%EC%88%9C%EC%9C%84-%ED%81%90%EC%99%80-%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "quick start by EEAS",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cspidar.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+            .list {
+                background: var(--theme);
+            }
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+    </style>
+</noscript>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://cspidar.github.io/" accesskey="h" title="quick start by EEAS (Alt + H)">quick start by EEAS</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                
+                
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="https://cspidar.github.io/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cspidar.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cspidar.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cspidar.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li></ul>
+    </nav>
+</header>
+
+    <main class="main">
+<link href="//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-subset.css" rel="stylesheet" />
+<article class="post-single">
+  <header class="post-header">
+<div class="breadcrumbs">
+
+    <a href="https://cspidar.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://cspidar.github.io/posts/">Posts</a>
+</div>
+
+    <h1 class="post-title">
+      자바스크립트 알고리즘 - 코드 - 우선 순위 큐 &amp; 다익스트라
+    </h1>
+    <div class="post-meta">June 24, 2021
+
+
+</div>
+  </header> 
+
+  <div class="toc">
+    <details >
+      <summary accesskey="c" title="(Alt + C)">
+        <div class="details">목차</div>
+      </summary>
+      <div class="inner"><ul><li>
+        <a href="#_%ec%9a%b0%ec%84%a0_%ec%88%9c%ec%9c%84_%ed%81%90" aria-label="1. 우선 순위 큐">1. 우선 순위 큐</a></li><li>
+        <a href="#_%eb%8b%a4%ec%9d%b5%ec%8a%a4%ed%8a%b8%eb%9d%bc_%ec%95%8c%ea%b3%a0%eb%a6%ac%ec%a6%98_%ec%b5%9c%ec%86%8c_%ed%9e%99_%ec%9a%b0%ec%84%a0%ec%88%9c%ec%9c%84_%ed%81%90_%ec%82%ac%ec%9a%a9" aria-label="2. 다익스트라 알고리즘: 최소 힙 우선순위 큐 사용">2. 다익스트라 알고리즘: 최소 힙 우선순위 큐 사용</a></li></ul>
+      </div>
+    </details>
+  </div>
+  <div class="post-content">
+
+<div class="sect1">
+<h2 id="_우선_순위_큐">1. 우선 순위 큐<a hidden class="anchor" aria-hidden="true" href="#_우선_순위_큐">#</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>출처: <a href="https://jun-choi-4928.medium.com/javascript로-heap-priority-queue-구현하기-8bc13bf095d9" class="bare">https://jun-choi-4928.medium.com/javascript로-heap-priority-queue-구현하기-8bc13bf095d9</a></p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">활용 형태</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-JS hljs" data-lang="JS">const pq = new PriorityQueue(); // 우선 순위 큐 생성
+pq.enqueue(key, value) // value 추가
+pq.dequeue() // value 삭제
+pq.isEmpty() // value 존재 여부 확인</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">코드</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-JS hljs" data-lang="JS">/**
+ * @fileoverview Data Structure: Heap (Min Heap)
+ *
+ * 우선순위 큐를 구현하기 위한 루트노드에 최소값을 저장하는 Binary Heap
+ * 즉, 부모 노드는 자식 노드보다 항상 작은 값을 유지해야 한다.
+ *
+ * chileLeftIndex = (parentIndex * 2) + 1
+ * childRightIndex = (parentIndex * 2) + 2
+ * parentIndex = (childIndex - 1) / 2
+ */
+
+class Heap {
+  constructor() {
+    this.heap = [];
+  }
+
+  getLeftChildIndex = (parentIndex) =&gt; parentIndex * 2 + 1;
+  getRightChildIndex = (parentIndex) =&gt; parentIndex * 2 + 2;
+  getParentIndex = (childIndex) =&gt; Math.floor((childIndex - 1) / 2);
+
+  peek = () =&gt; this.heap[0];
+
+  insert = (key, value) =&gt; {
+    const node = { key, value };
+    this.heap.push(node);
+    this.heapifyUp(); // 배열에 가장 끝에 넣고, 다시 min heap 의 형태를 갖추도록 한다.
+  };
+
+  // 최근에 삽입된 노드가 제 자리를 찾아갈 수 있도록 하는 메소드
+  heapifyUp = () =&gt; {
+    let index = this.heap.length - 1; // 계속해서 변하는 index 값
+    const lastInsertedNode = this.heap[index];
+
+    // 루트노드가 되기 전까지
+    while (index &gt; 0) {
+      const parentIndex = this.getParentIndex(index);
+
+      // 부모 노드의 key 값이 마지막에 삽입된 노드의 키 값 보다 크다면
+      // 부모의 자리를 계속해서 아래로 내린다.
+      if (this.heap[parentIndex].key &gt; lastInsertedNode.key) {
+        this.heap[index] = this.heap[parentIndex];
+        index = parentIndex;
+      } else break;
+    }
+
+    // break 를 만나서 자신의 자리를 찾은 상황
+    // 마지막에 찾아진 곳이 가장 나중에 들어온 노드가 들어갈 자리다.
+    this.heap[index] = lastInsertedNode;
+  };
+
+  remove = () =&gt; {
+    const count = this.heap.length;
+    const rootNode = this.heap[0];
+
+    if (count &lt;= 0) return undefined;
+    if (count === 1) this.heap = [];
+    else {
+      this.heap[0] = this.heap.pop(); // 끝에 있는 노드를 부모로 만들고
+      this.heapifyDown(); // 다시 min heap 의 형태를 갖추도록 한다.
+    }
+
+    return rootNode;
+  };
+
+  // 변경된 루트노드가 제 자리를 찾아가도록 하는 메소드
+  heapifyDown = () =&gt; {
+    let index = 0;
+    const count = this.heap.length;
+    const rootNode = this.heap[index];
+
+    // 계속해서 left child 가 있을 때 까지 검사한다.
+    while (this.getLeftChildIndex(index) &lt; count) {
+      const leftChildIndex = this.getLeftChildIndex(index);
+      const rightChildIndex = this.getRightChildIndex(index);
+
+      // 왼쪽, 오른쪽 중에 더 작은 노드를 찾는다
+      // rightChild 가 있다면 key의 값을 비교해서 더 작은 값을 찾는다.
+      // 없다면 leftChild 가 더 작은 값을 가지는 인덱스가 된다.
+      const smallerChildIndex =
+        rightChildIndex &lt; count &amp;&amp;
+        this.heap[rightChildIndex].key &lt; this.heap[leftChildIndex].key
+          ? rightChildIndex
+          : leftChildIndex;
+
+      // 자식 노드의 키 값이 루트노드보다 작다면 위로 끌어올린다.
+      if (this.heap[smallerChildIndex].key &lt;= rootNode.key) {
+        this.heap[index] = this.heap[smallerChildIndex];
+        index = smallerChildIndex;
+      } else break;
+    }
+
+    this.heap[index] = rootNode;
+  };
+}
+
+////
+
+// const Heap = require(&#39;./Heap&#39;)
+
+/**
+ * @fileoverview Data Structure: Priority Queue
+ *
+ * min heap 을 상속해서 구현한 우선순위 큐
+ * min heap 의 insert 메소드가 enqueue 가 되고
+ * min heap 의 remove 메소드가 dequeue 가 된다.
+ */
+class PriorityQueue extends Heap {
+  constructor() {
+    super();
+  }
+
+  enqueue = (priority, value) =&gt; this.insert(priority, value);
+  dequeue = () =&gt; this.remove();
+  isEmpty = () =&gt; this.heap.length &lt;= 0;
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_다익스트라_알고리즘_최소_힙_우선순위_큐_사용">2. 다익스트라 알고리즘: 최소 힙 우선순위 큐 사용<a hidden class="anchor" aria-hidden="true" href="#_다익스트라_알고리즘_최소_힙_우선순위_큐_사용">#</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>위의 &#39;우선 순위 큐&#39; 사용</p>
+</li>
+<li>
+<p>출발 노드에서 각 노드까지의 최단 시간을 distance 배열에 담아 반환</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">항목 설명</div>
+<ul>
+<li>
+<p>graph: 노드 정보 배열 (2차, 빈배열)</p>
+</li>
+<li>
+<p>distance: 최단 거리 결과 (초기화: 1e9 ≒ 무한)</p>
+</li>
+<li>
+<p>arr = [현위치, 다음 노드, 거리]</p>
+</li>
+<li>
+<p>graph[현위치] = [다음 노드, 거리]</p>
+</li>
+<li>
+<p>pq[현위치] = [거리, 다음 노드]</p>
+</li>
+<li>
+<p>현 위치: dequeue 된 노드</p>
+</li>
+<li>
+<p>다음 노드: graph의 현 위치에서 연결된 노드</p>
+</li>
+<li>
+<p>출발 노드: 시작점, 거리 = 0</p>
+</li>
+<li>
+<p>저장값: distance 배열에 저장된 해당 노드까지의 최소 거리</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">흐름</div>
+<ol class="arabic">
+<li>
+<p>&#39;출발 노드&#39; enqueue</p>
+</li>
+<li>
+<p>dequeue</p>
+</li>
+<li>
+<p>&#39;출발 노드&#39; 에서 &#39;현 위치&#39; 를 경유한 각각 &#39;다음 노드&#39; 까지의 거리 (출발 노드 → 현 위치 → 다음 노드) 가 기존 거리 보다 작으면, 거리를 distance 배열에 저장하고 &#39;다음 노드&#39; 를 enqueue</p>
+</li>
+<li>
+<p>2 - 3 반복, dequeue 할 노드가 존재하지 않으면 종료</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="title">코드</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-JS hljs" data-lang="JS">function solution(p1, p2, p3) {
+
+  const start_node = Number(p1);
+  const nodes = Number(p2);
+  const arr = [...p3];
+
+  const graph = Array.from(Array(nodes + 1), () =&gt; Array());
+  const distance = Array.from(Array(nodes + 1), () =&gt; 1e9);
+
+  // graph 에 노드 정보 입력
+  for (v of arr) {
+    graph[v[0]].push([v[1], v[2]]);
+  }
+
+  function dijk(start) {
+    pq.enqueue(0, start);
+    distance[start] = 0;
+
+    while (!pq.isEmpty()) {
+      let tmp = pq.dequeue();
+      let dist = tmp.key; // 현재 노드까지 거리
+      let now = tmp.value; // 현재 노드
+      if (distance[now] &lt; dist) continue; // 현재 노드의 저장 값보다 현재 노드까지 거리 (dist) 가 크면 pass = 체크 배열이 필요없는 이유
+      for (v of graph[now]) {
+        // 현재 노드에서 연결된 노드들 정보 처리
+        let next_node = v[0]; // 다음 노드
+        let next_dist = v[1]; // 현재 노드에서 다음 노드까지 거리
+        let cost = dist + next_dist; // cost = 출발 노드에서 다음 노드까지 거리
+        if (cost &lt; distance[next_node]) {
+          // cost가 저장값보다 작으면 값 갱신 후 우선순위 큐에 추가
+          distance[next_node] = cost;
+          pq.enqueue(cost, next_node);
+        }
+      }
+    }
+  }
+
+  dijk(start_node);
+
+  return distance;
+}
+
+const in1 = 1; // 시작 노드
+const in2 = 6; // 노드 수
+const in3 = [ // [출발지, 목적지, 걸리는 시간]
+  [1, 2, 2],
+  [1, 3, 5],
+  [1, 4, 1],
+  [2, 3, 3],
+  [2, 4, 2],
+  [3, 2, 3],
+  [3, 6, 5],
+  [4, 3, 3],
+  [4, 5, 1],
+  [5, 3, 1],
+  [5, 6, 2],
+];
+const in4 = 0;
+const in5 = 0;
+
+console.log(solution(in1, in2, in3, in4, in5));</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://cspidar.github.io/tags/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/">자바스크립트</a></li>
+      <li><a href="https://cspidar.github.io/tags/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">알고리즘</a></li>
+      <li><a href="https://cspidar.github.io/tags/%EC%BD%94%EB%93%9C/">코드</a></li>
+      <li><a href="https://cspidar.github.io/tags/%EC%9A%B0%EC%84%A0-%EC%88%9C%EC%9C%84-%ED%81%90/">우선 순위 큐</a></li>
+      <li><a href="https://cspidar.github.io/tags/priority-queue/">Priority queue</a></li>
+      <li><a href="https://cspidar.github.io/tags/%EB%8B%A4%EC%9D%B5%EC%8A%A4%ED%8A%B8%EB%9D%BC-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/">다익스트라 알고리즘</a></li>
+      <li><a href="https://cspidar.github.io/tags/dijkstra/">Dijkstra</a></li>
+    </ul>
+    <nav class="paginav">
+      <a class="next" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%ED%94%8C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%9B%8C%EC%85%9C/">
+        <span class="title">Next Page »</span>
+        <br>
+        <span>자바스크립트 알고리즘 - 코드 - 플로이드-워셜</span>
+      </a>
+    </nav>
+  </footer>
+</article>
+    </main><footer class="footer">
+    <span>&copy; 2021 <a href="https://cspidar.github.io/">quick start by EEAS</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+
+
+<script defer src="/assets/js/highlight.min.b03fa3bda3df09a2ab5f8f68cd50cf34397dca5c60100433c77ecdfeed6012c9.js" integrity="sha256-sD&#43;jvaPfCaKrX49ozVDPNDl9ylxgEAQzx37N/u1gEsk="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+
+</body>
+
+</html>
