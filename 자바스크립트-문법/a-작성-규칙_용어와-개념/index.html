@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>자바스크립트 문법 - A - 작성 규칙, 용어와 개념 (Style, Terms and Concepts) | quick start by EEAS</title>
+
+<meta name="keywords" content="자바스크립트, 문법, 작성 규칙, 용어, 개념, Style, Term, Concept" />
+<meta name="description" content="표기법을 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략 또는 비약이 있을 수 있습니다.
+  반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부 (&#43;생략했을때 기본값) 을 명확히 하는데 중점을 뒀습니다.
+  학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주시면 업데이트 하도록 하겠습니다.
+  오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다.">
+<meta name="author" content="">
+<link rel="canonical" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/a-%EC%9E%91%EC%84%B1-%EA%B7%9C%EC%B9%99_%EC%9A%A9%EC%96%B4%EC%99%80-%EA%B0%9C%EB%85%90/" />
+<link href="/assets/css/stylesheet.min.de19ff9944351b942bf2b583137fb71ad68e1aa4358b40e3e5956113197721c7.css" integrity="sha256-3hn/mUQ1G5Qr8rWDE3&#43;3GtaOGqQ1i0Dj5ZVhExl3Icc=" rel="preload stylesheet"
+    as="style">
+
+<link rel="icon" href="https://cspidar.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cspidar.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cspidar.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://cspidar.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://cspidar.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.82.0" />
+
+
+<meta property="og:title" content="자바스크립트 문법 - A - 작성 규칙, 용어와 개념 (Style, Terms and Concepts)" />
+<meta property="og:description" content="표기법을 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략 또는 비약이 있을 수 있습니다.
+  반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부 (&#43;생략했을때 기본값) 을 명확히 하는데 중점을 뒀습니다.
+  학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주시면 업데이트 하도록 하겠습니다.
+  오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/a-%EC%9E%91%EC%84%B1-%EA%B7%9C%EC%B9%99_%EC%9A%A9%EC%96%B4%EC%99%80-%EA%B0%9C%EB%85%90/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-03T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-04-03T00:00:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="자바스크립트 문법 - A - 작성 규칙, 용어와 개념 (Style, Terms and Concepts)"/>
+<meta name="twitter:description" content="표기법을 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략 또는 비약이 있을 수 있습니다.
+  반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부 (&#43;생략했을때 기본값) 을 명확히 하는데 중점을 뒀습니다.
+  학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주시면 업데이트 하도록 하겠습니다.
+  오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://cspidar.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "자바스크립트 문법 - A - 작성 규칙, 용어와 개념 (Style, Terms and Concepts)",
+      "item": "https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/a-%EC%9E%91%EC%84%B1-%EA%B7%9C%EC%B9%99_%EC%9A%A9%EC%96%B4%EC%99%80-%EA%B0%9C%EB%85%90/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "자바스크립트 문법 - A - 작성 규칙, 용어와 개념 (Style, Terms and Concepts)",
+  "name": "자바스크립트 문법 - A - 작성 규칙, 용어와 개념 (Style, Terms and Concepts)",
+  "description": "표기법을 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략 또는 비약이 있을 수 있습니다.\n  반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부 (+생략했을때 기본값) 을 명확히 하는데 중점을 뒀습니다.\n  학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주시면 업데이트 하도록 하겠습니다.\n  오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다.",
+  "keywords": [
+    "자바스크립트", "문법", "작성 규칙", "용어", "개념", "Style", "Term", "Concept"
+  ],
+  "articleBody": "   표기법을 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략 또는 비약이 있을 수 있습니다.\n  반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부 (+생략했을때 기본값) 을 명확히 하는데 중점을 뒀습니다.\n  학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주시면 업데이트 하도록 하겠습니다.\n  오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다.\n  본 문서의 첫번째 작성 목적은 제 학습에 대한 정리와 리마인드를 용이하게 하려는 것이나, 자바스크립트 학습을 시작하시는 분들에게는 파악이 필요한 대상의 요약본이, 숙련자분들에게는 리마인드에 도움이 되는 도구가 되었으면 하는 바램입니다.\n     1. 작성 규칙 요약 1.1. 요소       x1\n 시작 요소\n   …​x\n 마지막 요소\n   x\n 특정 요소 (요소 리스트중 1개 지칭)\n     1.2. 인덱스       start\n 시작 인덱스\n   end\n 끝 인덱스\n   target\n 특정 인덱스\n   차례로\n start → end\n   역순으로\n end → start\n       2. Array (배열) 2.1. 작성 규칙       Array\n arr = []\n   index\n i\n   value\n v\n     2.2. 예시 arr = [v1, v2, ...v] arr[i1] = v1      3. M x N Matrix (M x N 행렬) 3.1. 작성 규칙       행\n i (y 좌표)\n   열\n j (x 좌표)\n     3.2. 예시 matrix = [ [i1, j1], [i1, j2], [i1, ...j], [i2, j1], [i2, j2], [i2, ...j], [...i, j1], [...i, j2], [...i, ...j] ]      4. Object (객체) 4.1. 작성 규칙       Object\n obj = {}\n   key\n k\n   value\n v\n     4.2. 예시 obj = {k1: v1, k2: v2, ...k: ...v} obj.k1 = v1      5. String (문자열) 5.1. 작성 규칙       String\n str = ''\n   index\n i\n   string\n s\n     5.2. 예시 str = 's1s2...s' str[i1] = 's1'      6. Map (맵) 6.1. 작성 규칙       Map\n map = { = }\n   key\n k\n   value\n v\n     6.2. 예시 map = {k1 = v1, k2 = v2, ...k = ...v} map.set(k1, v1) map.get(k1) = v1      7. Set (셋) 7.1. 작성 규칙       Set\n set = {}\n   value\n v\n     7.2. 예시 set = {v1, v2, ...v}      8. Function (함수) 8.1. 작성 규칙       Function\n func = (){} func = () ⇒ {}\n   parameter\n p\n   연산 함수\n p ⇒ p + 1\n   판별 함수\n p ⇒ p     8.2. 예시 func = (p1, p2, ...p) {p1, p2, ...p} func = (p1, p2, ...p) = p1, p2, ...p      9. 기타       여러 형태 (hybrid) 가 가능한 요소\n H\n   0 포함 자연수\n n\n   음의 정수\n -n\n   무한대\t1e9 (10의 9승),\n Infinity\n   불리언\n true/false\n   생략 가능한 항목의 기본값이 0 인 경우\n 옵션 - 기본: 0\n      ",
+  "wordCount" : "383",
+  "inLanguage": "en",
+  "datePublished": "2021-04-03T00:00:00Z",
+  "dateModified": "2021-04-03T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/a-%EC%9E%91%EC%84%B1-%EA%B7%9C%EC%B9%99_%EC%9A%A9%EC%96%B4%EC%99%80-%EA%B0%9C%EB%85%90/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "quick start by EEAS",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cspidar.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+            .list {
+                background: var(--theme);
+            }
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+    </style>
+</noscript>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://cspidar.github.io/" accesskey="h" title="quick start by EEAS (Alt + H)">quick start by EEAS</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                
+                
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="https://cspidar.github.io/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cspidar.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cspidar.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cspidar.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li></ul>
+    </nav>
+</header>
+
+    <main class="main">
+<link href="//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-subset.css" rel="stylesheet" />
+<article class="post-single">
+  <header class="post-header">
+<div class="breadcrumbs">
+
+    <a href="https://cspidar.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://cspidar.github.io/posts/">Posts</a>
+</div>
+
+    <h1 class="post-title">
+      자바스크립트 문법 - A - 작성 규칙, 용어와 개념 (Style, Terms and Concepts)
+    </h1>
+    <div class="post-meta">April 3, 2021
+
+
+</div>
+  </header> 
+
+  <div class="toc">
+    <details >
+      <summary accesskey="c" title="(Alt + C)">
+        <div class="details">목차</div>
+      </summary>
+      <div class="inner"><ul><li>
+        <a href="#_%ec%9e%91%ec%84%b1_%ea%b7%9c%ec%b9%99_%ec%9a%94%ec%95%bd" aria-label="1. 작성 규칙 요약">1. 작성 규칙 요약</a><ul>
+            <li>
+        <a href="#_%ec%9a%94%ec%86%8c" aria-label="1.1. 요소">1.1. 요소</a></li><li>
+        <a href="#_%ec%9d%b8%eb%8d%b1%ec%8a%a4" aria-label="1.2. 인덱스">1.2. 인덱스</a></li></ul>
+    </li><li>
+        <a href="#_array_%eb%b0%b0%ec%97%b4" aria-label="2. Array (배열)">2. Array (배열)</a><ul>
+            <li>
+        <a href="#_%ec%9e%91%ec%84%b1_%ea%b7%9c%ec%b9%99" aria-label="2.1. 작성 규칙">2.1. 작성 규칙</a></li><li>
+        <a href="#_%ec%98%88%ec%8b%9c" aria-label="2.2. 예시">2.2. 예시</a></li></ul>
+    </li><li>
+        <a href="#_m_x_n_matrix_m_x_n_%ed%96%89%eb%a0%ac" aria-label="3. M x N Matrix (M x N 행렬)">3. M x N Matrix (M x N 행렬)</a><ul>
+            <li>
+        <a href="#_%ec%9e%91%ec%84%b1_%ea%b7%9c%ec%b9%99_2" aria-label="3.1. 작성 규칙">3.1. 작성 규칙</a></li><li>
+        <a href="#_%ec%98%88%ec%8b%9c_2" aria-label="3.2. 예시">3.2. 예시</a></li></ul>
+    </li><li>
+        <a href="#_object_%ea%b0%9d%ec%b2%b4" aria-label="4. Object (객체)">4. Object (객체)</a><ul>
+            <li>
+        <a href="#_%ec%9e%91%ec%84%b1_%ea%b7%9c%ec%b9%99_3" aria-label="4.1. 작성 규칙">4.1. 작성 규칙</a></li><li>
+        <a href="#_%ec%98%88%ec%8b%9c_3" aria-label="4.2. 예시">4.2. 예시</a></li></ul>
+    </li><li>
+        <a href="#_string_%eb%ac%b8%ec%9e%90%ec%97%b4" aria-label="5. String (문자열)">5. String (문자열)</a><ul>
+            <li>
+        <a href="#_%ec%9e%91%ec%84%b1_%ea%b7%9c%ec%b9%99_4" aria-label="5.1. 작성 규칙">5.1. 작성 규칙</a></li><li>
+        <a href="#_%ec%98%88%ec%8b%9c_4" aria-label="5.2. 예시">5.2. 예시</a></li></ul>
+    </li><li>
+        <a href="#_map_%eb%a7%b5" aria-label="6. Map (맵)">6. Map (맵)</a><ul>
+            <li>
+        <a href="#_%ec%9e%91%ec%84%b1_%ea%b7%9c%ec%b9%99_5" aria-label="6.1. 작성 규칙">6.1. 작성 규칙</a></li><li>
+        <a href="#_%ec%98%88%ec%8b%9c_5" aria-label="6.2. 예시">6.2. 예시</a></li></ul>
+    </li><li>
+        <a href="#_set_%ec%85%8b" aria-label="7. Set (셋)">7. Set (셋)</a><ul>
+            <li>
+        <a href="#_%ec%9e%91%ec%84%b1_%ea%b7%9c%ec%b9%99_6" aria-label="7.1. 작성 규칙">7.1. 작성 규칙</a></li><li>
+        <a href="#_%ec%98%88%ec%8b%9c_6" aria-label="7.2. 예시">7.2. 예시</a></li></ul>
+    </li><li>
+        <a href="#_function_%ed%95%a8%ec%88%98" aria-label="8. Function (함수)">8. Function (함수)</a><ul>
+            <li>
+        <a href="#_%ec%9e%91%ec%84%b1_%ea%b7%9c%ec%b9%99_7" aria-label="8.1. 작성 규칙">8.1. 작성 규칙</a></li><li>
+        <a href="#_%ec%98%88%ec%8b%9c_7" aria-label="8.2. 예시">8.2. 예시</a></li></ul>
+    </li><li>
+        <a href="#_%ea%b8%b0%ed%83%80" aria-label="9. 기타">9. 기타</a></li></ul>
+      </div>
+    </details>
+  </div>
+  <div class="post-content">
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>표기법을 단순화시켜 실제 사용되는 형태로 표현했습니다. 그 과정에서 다소 생략 또는 비약이 있을 수 있습니다.</p>
+</li>
+<li>
+<p>반환값, 기존 대상의 변경 여부, 항목의 생략 가능 여부 (+생략했을때 기본값) 을 명확히 하는데 중점을 뒀습니다.</p>
+</li>
+<li>
+<p>학습 과정중, 정리를 위해 작성하여 오류가 있을 수 있습니다. 이에 대해 제 스스로 알게되거나, 관련 내용을 전달해 주시면 업데이트 하도록 하겠습니다.</p>
+</li>
+<li>
+<p>오류 수정 외에도 관련 예시와 활용법 추가는 지속적으로 진행할 예정입니다.</p>
+</li>
+<li>
+<p>본 문서의 첫번째 작성 목적은 제 학습에 대한 정리와 리마인드를 용이하게 하려는 것이나,<br/>
+자바스크립트 학습을 시작하시는 분들에게는 파악이 필요한 대상의 요약본이, 숙련자분들에게는 리마인드에 도움이 되는 도구가 되었으면 하는 바램입니다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_작성_규칙_요약">1. 작성 규칙 요약<a hidden class="anchor" aria-hidden="true" href="#_작성_규칙_요약">#</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_요소">1.1. 요소<a hidden class="anchor" aria-hidden="true" href="#_요소">#</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">x1</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">시작 요소</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">…​x</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">마지막 요소</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">x</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">특정 요소 (요소 리스트중 1개 지칭)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_인덱스">1.2. 인덱스<a hidden class="anchor" aria-hidden="true" href="#_인덱스">#</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">start</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">시작 인덱스</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">end</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">끝 인덱스</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">target</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">특정 인덱스</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">차례로</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">start → end</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">역순으로</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">end → start</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_array_배열">2. Array (배열)<a hidden class="anchor" aria-hidden="true" href="#_array_배열">#</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_작성_규칙">2.1. 작성 규칙<a hidden class="anchor" aria-hidden="true" href="#_작성_규칙">#</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Array</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">arr = []</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">index</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">i</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">value</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_예시">2.2. 예시<a hidden class="anchor" aria-hidden="true" href="#_예시">#</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr = [v1, v2, ...v]
+arr[i1] = v1</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_m_x_n_matrix_m_x_n_행렬">3. M x N Matrix (M x N 행렬)<a hidden class="anchor" aria-hidden="true" href="#_m_x_n_matrix_m_x_n_행렬">#</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_작성_규칙_2">3.1. 작성 규칙<a hidden class="anchor" aria-hidden="true" href="#_작성_규칙_2">#</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">행</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">i (y 좌표)</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">열</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">j (x 좌표)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_예시_2">3.2. 예시<a hidden class="anchor" aria-hidden="true" href="#_예시_2">#</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">matrix = [
+[i1, j1], [i1, j2], [i1, ...j],
+[i2, j1], [i2, j2], [i2, ...j],
+[...i, j1], [...i, j2], [...i, ...j]
+]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_object_객체">4. Object (객체)<a hidden class="anchor" aria-hidden="true" href="#_object_객체">#</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_작성_규칙_3">4.1. 작성 규칙<a hidden class="anchor" aria-hidden="true" href="#_작성_규칙_3">#</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Object</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">obj = {}</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">key</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">k</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">value</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_예시_3">4.2. 예시<a hidden class="anchor" aria-hidden="true" href="#_예시_3">#</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">obj = {k1: v1, k2: v2, ...k: ...v}
+obj.k1 = v1</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_string_문자열">5. String (문자열)<a hidden class="anchor" aria-hidden="true" href="#_string_문자열">#</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_작성_규칙_4">5.1. 작성 규칙<a hidden class="anchor" aria-hidden="true" href="#_작성_규칙_4">#</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">String</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">str = &#39;&#39;</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">index</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">i</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">string</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_예시_4">5.2. 예시<a hidden class="anchor" aria-hidden="true" href="#_예시_4">#</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">str = &#39;s1s2...s&#39;
+str[i1] = &#39;s1&#39;</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_map_맵">6. Map (맵)<a hidden class="anchor" aria-hidden="true" href="#_map_맵">#</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_작성_규칙_5">6.1. 작성 규칙<a hidden class="anchor" aria-hidden="true" href="#_작성_규칙_5">#</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Map</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">map = { =&gt; }</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">key</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">k</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">value</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_예시_5">6.2. 예시<a hidden class="anchor" aria-hidden="true" href="#_예시_5">#</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">map = {k1 =&gt; v1, k2 =&gt; v2, ...k =&gt; ...v}
+map.set(k1, v1)
+map.get(k1) = v1</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_set_셋">7. Set (셋)<a hidden class="anchor" aria-hidden="true" href="#_set_셋">#</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_작성_규칙_6">7.1. 작성 규칙<a hidden class="anchor" aria-hidden="true" href="#_작성_규칙_6">#</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Set</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set = {}</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">value</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">v</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_예시_6">7.2. 예시<a hidden class="anchor" aria-hidden="true" href="#_예시_6">#</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">set = {v1, v2, ...v}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_function_함수">8. Function (함수)<a hidden class="anchor" aria-hidden="true" href="#_function_함수">#</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_작성_규칙_7">8.1. 작성 규칙<a hidden class="anchor" aria-hidden="true" href="#_작성_규칙_7">#</a></h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Function</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">func = (){}<br/>
+              func = () ⇒ {}</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">parameter</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">p</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">연산 함수</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">p ⇒ p + 1</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">판별 함수</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">p ⇒ p &lt; 10</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_예시_7">8.2. 예시<a hidden class="anchor" aria-hidden="true" href="#_예시_7">#</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">func = (p1, p2, ...p) {p1, p2, ...p}
+func = (p1, p2, ...p) =&gt; p1, p2, ...p</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_기타">9. 기타<a hidden class="anchor" aria-hidden="true" href="#_기타">#</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">여러 형태 (hybrid) 가 가능한 요소</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">H</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">0 포함 자연수</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">n</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">음의 정수</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-n</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">무한대	1e9 (10의 9승),</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Infinity</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">불리언</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true/false</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">생략 가능한 항목의<br/>
+기본값이 0 인 경우</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">옵션 - 기본: 0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+</div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://cspidar.github.io/tags/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/">자바스크립트</a></li>
+      <li><a href="https://cspidar.github.io/tags/%EB%AC%B8%EB%B2%95/">문법</a></li>
+      <li><a href="https://cspidar.github.io/tags/%EC%9E%91%EC%84%B1-%EA%B7%9C%EC%B9%99/">작성 규칙</a></li>
+      <li><a href="https://cspidar.github.io/tags/%EC%9A%A9%EC%96%B4/">용어</a></li>
+      <li><a href="https://cspidar.github.io/tags/%EA%B0%9C%EB%85%90/">개념</a></li>
+      <li><a href="https://cspidar.github.io/tags/style/">Style</a></li>
+      <li><a href="https://cspidar.github.io/tags/term/">Term</a></li>
+      <li><a href="https://cspidar.github.io/tags/concept/">Concept</a></li>
+    </ul>
+    <nav class="paginav">
+      <a class="prev" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/b-%EB%B0%B0%EC%97%B4-%EB%A9%94%EC%86%8C%EB%93%9C-array-methods/">
+        <span class="title">« Prev Page</span>
+        <br>
+        <span>자바스크립트 문법 - B - 배열 주요 메소드 (Array methods essential)</span>
+      </a>
+      <a class="next" href="https://cspidar.github.io/posts/%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0/%EC%BD%94%EB%93%9C-%EC%A0%80%EC%9E%A5%EC%86%8C-github-%EA%B8%B0%EB%B3%B8-%EC%82%AC%EC%9A%A9%EB%B2%95/">
+        <span class="title">Next Page »</span>
+        <br>
+        <span>코드 저장소 github - 기본 사용법 (Windows10)</span>
+      </a>
+    </nav>
+  </footer>
+</article>
+    </main><footer class="footer">
+    <span>&copy; 2021 <a href="https://cspidar.github.io/">quick start by EEAS</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+
+
+<script defer src="/assets/js/highlight.min.b03fa3bda3df09a2ab5f8f68cd50cf34397dca5c60100433c77ecdfeed6012c9.js" integrity="sha256-sD&#43;jvaPfCaKrX49ozVDPNDl9ylxgEAQzx37N/u1gEsk="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>자바스크립트 문법 - B - 배열 주요 메소드 (Array methods essential) | quick start by EEAS</title>
+
+<meta name="keywords" content="자바스크립트, 문법, 용어, 개념, 메소드, 배열, Array" />
+<meta name="description" content="본 문서의 작성 규칙은 자바스크립트 문법 작성 규칙 을 참고하세요. 활용 빈도와 중요도가 높다고 생각되는 항목으로 본문을 구성하였습니다. 나머지 항목은 기타 챕터에서 확인 가능합니다.
+   1. 배열 프로퍼티 1.1. Array.prototype.length arr.length // arr의 value 갯수 반환      2. 배열 메소드 2.1. 직접 수정 원본 배열을 직접 수정하여 변경합니다.
+ 2.1.1. Array.prototype.shift() arr.shift() // arr의 첫 번째 요소를 제거 (원본 arr 변경), 제거된 요소를 반환    2.">
+<meta name="author" content="">
+<link rel="canonical" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/b-%EB%B0%B0%EC%97%B4-%EB%A9%94%EC%86%8C%EB%93%9C-array-methods/" />
+<link href="/assets/css/stylesheet.min.de19ff9944351b942bf2b583137fb71ad68e1aa4358b40e3e5956113197721c7.css" integrity="sha256-3hn/mUQ1G5Qr8rWDE3&#43;3GtaOGqQ1i0Dj5ZVhExl3Icc=" rel="preload stylesheet"
+    as="style">
+
+<link rel="icon" href="https://cspidar.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cspidar.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cspidar.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://cspidar.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://cspidar.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.82.0" />
+
+
+<meta property="og:title" content="자바스크립트 문법 - B - 배열 주요 메소드 (Array methods essential)" />
+<meta property="og:description" content="본 문서의 작성 규칙은 자바스크립트 문법 작성 규칙 을 참고하세요. 활용 빈도와 중요도가 높다고 생각되는 항목으로 본문을 구성하였습니다. 나머지 항목은 기타 챕터에서 확인 가능합니다.
+   1. 배열 프로퍼티 1.1. Array.prototype.length arr.length // arr의 value 갯수 반환      2. 배열 메소드 2.1. 직접 수정 원본 배열을 직접 수정하여 변경합니다.
+ 2.1.1. Array.prototype.shift() arr.shift() // arr의 첫 번째 요소를 제거 (원본 arr 변경), 제거된 요소를 반환    2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/b-%EB%B0%B0%EC%97%B4-%EB%A9%94%EC%86%8C%EB%93%9C-array-methods/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-04T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-04-04T00:00:00&#43;00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="자바스크립트 문법 - B - 배열 주요 메소드 (Array methods essential)"/>
+<meta name="twitter:description" content="본 문서의 작성 규칙은 자바스크립트 문법 작성 규칙 을 참고하세요. 활용 빈도와 중요도가 높다고 생각되는 항목으로 본문을 구성하였습니다. 나머지 항목은 기타 챕터에서 확인 가능합니다.
+   1. 배열 프로퍼티 1.1. Array.prototype.length arr.length // arr의 value 갯수 반환      2. 배열 메소드 2.1. 직접 수정 원본 배열을 직접 수정하여 변경합니다.
+ 2.1.1. Array.prototype.shift() arr.shift() // arr의 첫 번째 요소를 제거 (원본 arr 변경), 제거된 요소를 반환    2."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://cspidar.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "자바스크립트 문법 - B - 배열 주요 메소드 (Array methods essential)",
+      "item": "https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/b-%EB%B0%B0%EC%97%B4-%EB%A9%94%EC%86%8C%EB%93%9C-array-methods/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "자바스크립트 문법 - B - 배열 주요 메소드 (Array methods essential)",
+  "name": "자바스크립트 문법 - B - 배열 주요 메소드 (Array methods essential)",
+  "description": "본 문서의 작성 규칙은 자바스크립트 문법 작성 규칙 을 참고하세요. 활용 빈도와 중요도가 높다고 생각되는 항목으로 본문을 구성하였습니다. 나머지 항목은 기타 챕터에서 확인 가능합니다.\n   1. 배열 프로퍼티 1.1. Array.prototype.length arr.length // arr의 value 갯수 반환      2. 배열 메소드 2.1. 직접 수정 원본 배열을 직접 수정하여 변경합니다.\n 2.1.1. Array.prototype.shift() arr.shift() // arr의 첫 번째 요소를 제거 (원본 arr 변경), 제거된 요소를 반환    2.",
+  "keywords": [
+    "자바스크립트", "문법", "용어", "개념", "메소드", "배열", "Array"
+  ],
+  "articleBody": " 본 문서의 작성 규칙은 자바스크립트 문법 작성 규칙 을 참고하세요. 활용 빈도와 중요도가 높다고 생각되는 항목으로 본문을 구성하였습니다. 나머지 항목은 기타 챕터에서 확인 가능합니다.\n   1. 배열 프로퍼티 1.1. Array.prototype.length arr.length // arr의 value 갯수 반환      2. 배열 메소드 2.1. 직접 수정 원본 배열을 직접 수정하여 변경합니다.\n 2.1.1. Array.prototype.shift() arr.shift() // arr의 첫 번째 요소를 제거 (원본 arr 변경), 제거된 요소를 반환    2.1.2. Array.prototype.unshift() arr.unshift(v) // v를 arr의 첫 value으로 추가 (원본 arr 변경), 새로운 길이를 반환    2.1.3. Array.prototype.pop() arr.pop() // arr의 마지막 value 을 제거 (원본 arr 변경), 제거한 value을 반환, 빈 arr은 undefined 반환    2.1.4. Array.prototype.push() arr.push(v1, v2, ...v) // arr의 끝에 하나 이상의 v 추가 (원본 arr 변경), arr의 새로운 길이를 반환. (원본 변경)   눌러서 추가 활용 방법 확인 /// 두 배열 합치기, concat()은 원본 유지 Array.prototype.push.apply(arr, arr1)      2.1.5. Array.prototype.splice() arr.splice(start, n, v1, v2, ...v) // start 부터 n개 (옵션 - 기본: end 까지) value 삭제 후 그 자리에 하나 이상의 v (옵션 - 기본: 없음) 추가 (원본 arr 변경), 제거한 value들로 구성된 arr 반환    2.1.6. Array.prototype.fill() arr.fill(v, start, end) // start (옵션 - 기본: 0) 에서 end (옵션 - 기본: arr.length) 까지 value을 v로 채움 (원본 arr 변경), 변경된 arr 반환    2.1.7. Array.prototype.copyWithin() arr.copyWithin(target, start, end) // arr의 start (옵션 - 기본: 0) 에서 end (옵션 - 기본: arr.length) 까지 value을 복사하여 target 부터 덮어씌움 (원본 arr 변경), 변경된 arr 반환    2.1.8. Array.prototype.sort() arr.sort((a , b) = a - b) // 정렬 함수 기준으로 정렬 (원본 arr 변경), 변경된 arr 반환   /// 정렬 함수 (a, b) = a - b // a - b 오름차순 : 1, 2, 3, a, b, c // b - a 내림차순 : c, b, a, 3, 2, 1 // (옵션 - 기본: 문자열 기준 유니코드)    2.1.9. Array.prototype.reverse() arr.reverse() // arr의 순서를 반전 (원본 arr 변경), 변경된 arr 반환    2.1.10. Array.prototype.flat() arr.flat(n) //고차 arr을 n (옵션 - 기본: 1) 만큼 차수 낮춤 (원본 arr 변경), 변경된 arr 반환   눌러서 예시 확인 /// 예시 arr.flat(1) // [1,[2]] - [1,2] / [1,[2,[3]]] - [1,2,[3]] arr.flat(2) // [1,[2,[3]]] - [1,2,3]     눌러서 활용법 확인 /// 배열 구멍 제거 const arr = [1, 2, , 4, 5] arr.flat() // [1, 2, 4, 5]       2.2. 변환 원본 배열은 유지한채 내부 요소를 변환하여 반환합니다.\n 2.2.1. Array.prototype.concat() arr.concat(h1, h2, ...h) // arr에 하나 이상의 h[arr, value] 를 합쳐 새로운 arr 반환    2.2.2. Array.prototype.join() arr.join('a') // arr의 모든 value을 사이에 'a' 구분자를 넣어 더해 새로운 str로 반환, value이 undefined 또는 null이면 빈 str로 반환   /// 문자열 분할 str.split('a', n) // str을 'a' 구분자 (옵션 - 기본: 구분자 없음) 로 n 개 (옵션 - 기본: str.length) 까지 분할해 새로운 arr로 반환    2.2.3. Array.prototype.slice() arr.slice(start, end) // start부터 end (옵션 - 기본: arr.length) 전까지 (end 미포함) value을 새로운 arr로 반환    2.2.4. Array.prototype.toString() arr.toString() // value들을 쉼표를 구분자로 합쳐 새로운 str로 반환   눌러서 예시 확인 const arr = [1,2,3,4,5] console.log(arr.toString()) // 1,2,3,4,5      2.2.5. Array.prototype.forEach() arr.forEach(p = p + 1) // start 부터 end 까지 연산 함수 적용, 중간 탈출 불가, undefine 반환 // undefine을 반환하기 때문에 메소드 체인의 제일 마지막에서 연산 함수를 통해 외부로 효과를 적용해야 할때 사용 (추가적인 변수 선언 없이 한번에 실행)    2.2.6. Array.prototype.map() arr.map(x = x + 1) // arr의 value에 연산 함수를 차례로 적용, 새로운 arr 반환 // undefine을 반환하기 때문에 메소드 체인의 제일 마지막에서 연산 함수를 통해 외부로 효과를 적용해야 할때 사용 (추가적인 변수 선언 없이 한번에 실행)   눌러서 주의사항 확인 /// 두개 이상의 p를 받는 연산 함수를 적용 시 기대와 다른 결과값이 나오므로 주의 ['1', '2', '3'].map(parseInt)      2.2.7. Array.prototype.flatMap() 눌러서 내용 확인 arr.flatMap(p = p + 1) // arr.map(p = p + 1).flat(1)   /// flat().map() 이 아님 console.log([1, 2, [3, 3]].flat().map(x = x + 1)) /// [2, 3, 4, 4] console.log([1, 2, [3, 3]].map(x = x + 1).flat()) /// [2, 3, \"3,31\"]      2.2.8. Array.prototype.reduce() arr.reduce((acc, cur) = acc + cur) arr.reduce((acc, cur, inx, src) = acc + cur, int) // arr의 각 value을 차례로 cur에 대입하고 리듀서 함수를 적용, 결과를 acc에 누적하여 반환   /// 리듀서 (reducer) 함수: int (옵션 - 기본: 0) 를 초기값으로 시작, arr의 각 value이 차례로 cur에 대입되어 연산 함수를 적용한 뒤 acc에 누적 저장하여 반환 // acc: accumulator, cur: currentValue, idx: currentIndex, src: sourceArray, int: initialValue   눌러서 주의사항 확인 각 항목이 모두 리듀서 함수를 거치게 하려면 int (초기값: initialValue) 을 입력해야함 초기값이 없으면, . 배열의 첫번째 요소 (0번 인덱스) 를 accumulator에 누적한 후 1번 인덱스부터 리듀서 함수를 거친다. (0번 인덱스 항목은 리듀서 함수를 거치지 않음) . 배열의 요소 값이 1개인데 초기값도 제공하지 않은 경우 or 초기값은 있지만 배열이 빈 배열인 경우에는 그 단독 값을 리듀서를 거치지 않고 바로 반환 . 배열이 비었는데 초기값도 없는 상태에서 reduce() 를 호출하면 TypeError 오류가 발생\n   눌러서 추가 예시 확인 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce\n    2.2.9. Array.prototype.reduceRight() 눌러서 내용 확인 arr.reduceRight((acc, cur) = acc + cur) arr.reduceRight((acc, cur, inx, src) = acc + cur, int) // reduce() 와 같으나 value을 역순으로 cur에 대입      2.2.10. Array.from() Array.from(H, p = p + 1) // H ('a', arr, array-like, iterable, (p1, p2, ...p)) 를 각 value에 연산 함수 (옵션 - 기본: p = p) 적용, 새로운 arr 반환     2.3. 검색 \u0026 확인 배열의 value 또는 배열 자체를 검색하고 확인합니다.\n 2.3.1. Array.prototype.every() arr.every(p = p     2.3.2. Array.prototype.some() arr.some(p = p  10) // 판별 함수를 만족하는 value 발견 시 true, 모두 불만족하면 false 반환, 빈 배열은 false 반환    2.3.3. Array.prototype.filter() arr.filter(p = p     2.3.4. Array.prototype.find() arr.find(p = p     2.3.5. Array.prototype.findIndex() arr.find(p = p     2.3.6. Array.prototype.includes() arr.includes(a) // arr의 value 중 a의 존재 여부 확인, 있으면 true 반환, 없으면 false 반환    2.3.7. Array.prototype.indexOf() arr.indexOf(v, n) // arr의 value 중 v의 존재 여부 확인, n 번째 (옵션 - 기본: 1) index를 반환, 없으면 -1 반환    2.3.8. Array.prototype.lastIndexOf() arr.lastIndexOf() // indexOf() 와 달리 마지막 index 반환, 없으면 -1 반환    2.3.9. Array.isArray() Array.isArray(a) // a가 배열인지 판별, true/false 반환     2.4. 기타 관련 항목 더보기 Array.prototype.keys() arr.keys() // arr의 index를 차례로 제공하는 새로운 iterator 반환   Array.prototype.values() arr.values() // arr의 value을 차례로 제공하는 새로운 iterator 반환   Array.prototype.entries() arr.entries() // [index, item] 을 차례로 제공하는 새로운 iterator 반환   Array.of() Array.of(v1, v2, ...v) // [v1, v2, ...v] 반환   Array.prototype.toLocaleString() H.toLocaleString() // 숫자 및 숫자가 포함된 대상을 지역에 따른 표현을 적용한 문자열로 반환 (원본 H 유지)   눌러서 예시 확인 const num = 12341.23 console.log(num.toLocaleString(\"ko-KR\", { style: 'currency', currency: 'KRW' })); // ₩12,341       사용 금지 (웹 표준 아님)\n  Array.prototype.toSource()\n// 배열의 소스 코드 문자열을 반환              3. 활용 3.1. arr의 특정 v 제거 // arr.splice(start, n, v1, v2, ...v) - 원본 arr 변경 arr.splice(target, 1)   // arr.slice(start, end).concat(h1, h2, ...h) - 원본 arr 유지 arr.slice(0, target).concat(arr.slice(target + 1))    3.2. arr의 앞/뒤에 v 추가 // arr.unshift(v) / arr.push(v1, v2, ...v) - 원본 arr 변경 arr.unshift(v) arr.push(v)   // ... (펼침 연산자) - 원본 arr 유지 [v, ...arr] [...arr, v]    3.3. arr 정렬 // arr.sort((a , b) = a - b ) - 원본 arr 변경 arr.sort((a , b) = a - b )   // ... (펼침 연산자) - 원본 arr 유지 [...arr].sort((a , b) = a - b )    3.4. 특정 item의 모든 index 찾기 //arr.indexOf(item, start) const result = []; const arr = ['a', 'b', 'a', 'c', 'a', 'd']; const item = 'a'; let idx = arr.indexOf(value); while (idx != -1) { result.push(idx); idx = arr.indexOf(value, idx + 1); } console.log(result); // [0, 2, 4]    3.5. arr내 특정 value 존재 여부 확인 후 없으면 추가 //arr.indexOf(value, start) function update (arr, value) { if (arr.indexOf(value) === -1) { arr.push(value); console.log('새로운 arr: ' + arr); } else if (arr.indexOf(value)  -1) { console.log(value + ' 은 이미 arr에 존재'); } } const arr = ['a', 'b', 'c', 'd']; update(arr, 'e'); // 새로운 arr: a, b, c, d, e update(arr, 'e'); // e 은 이미 arr에 존재      ",
+  "wordCount" : "1298",
+  "inLanguage": "en",
+  "datePublished": "2021-04-04T00:00:00Z",
+  "dateModified": "2021-04-04T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/b-%EB%B0%B0%EC%97%B4-%EB%A9%94%EC%86%8C%EB%93%9C-array-methods/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "quick start by EEAS",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cspidar.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+
+
+
+
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+            .list {
+                background: var(--theme);
+            }
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+    </style>
+</noscript>
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://cspidar.github.io/" accesskey="h" title="quick start by EEAS (Alt + H)">quick start by EEAS</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                
+                
+            </span>
+        </div>
+        <ul id="menu" onscroll="menu_on_scroll()">
+            <li>
+                <a href="https://cspidar.github.io/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cspidar.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cspidar.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cspidar.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li></ul>
+    </nav>
+</header>
+
+    <main class="main">
+<link href="//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-subset.css" rel="stylesheet" />
+<article class="post-single">
+  <header class="post-header">
+<div class="breadcrumbs">
+
+    <a href="https://cspidar.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://cspidar.github.io/posts/">Posts</a>
+</div>
+
+    <h1 class="post-title">
+      자바스크립트 문법 - B - 배열 주요 메소드 (Array methods essential)
+    </h1>
+    <div class="post-meta">April 4, 2021
+
+
+</div>
+  </header> 
+
+  <div class="toc">
+    <details >
+      <summary accesskey="c" title="(Alt + C)">
+        <div class="details">목차</div>
+      </summary>
+      <div class="inner"><ul><li>
+        <a href="#_%eb%b0%b0%ec%97%b4_%ed%94%84%eb%a1%9c%ed%8d%bc%ed%8b%b0" aria-label="1. 배열 프로퍼티">1. 배열 프로퍼티</a><ul>
+            <li>
+        <a href="#_array_prototype_length" aria-label="1.1. Array.prototype.length">1.1. Array.prototype.length</a></li></ul>
+    </li><li>
+        <a href="#_%eb%b0%b0%ec%97%b4_%eb%a9%94%ec%86%8c%eb%93%9c" aria-label="2. 배열 메소드">2. 배열 메소드</a><ul>
+            <li>
+        <a href="#_%ec%a7%81%ec%a0%91_%ec%88%98%ec%a0%95" aria-label="2.1. 직접 수정">2.1. 직접 수정</a><ul>
+            <li>
+        <a href="#_array_prototype_shift" aria-label="2.1.1. Array.prototype.shift()">2.1.1. Array.prototype.shift()</a></li><li>
+        <a href="#_array_prototype_unshift" aria-label="2.1.2. Array.prototype.unshift()">2.1.2. Array.prototype.unshift()</a></li><li>
+        <a href="#_array_prototype_pop" aria-label="2.1.3. Array.prototype.pop()">2.1.3. Array.prototype.pop()</a></li><li>
+        <a href="#_array_prototype_push" aria-label="2.1.4. Array.prototype.push()">2.1.4. Array.prototype.push()</a></li><li>
+        <a href="#_array_prototype_splice" aria-label="2.1.5. Array.prototype.splice()">2.1.5. Array.prototype.splice()</a></li><li>
+        <a href="#_array_prototype_fill" aria-label="2.1.6. Array.prototype.fill()">2.1.6. Array.prototype.fill()</a></li><li>
+        <a href="#_array_prototype_copywithin" aria-label="2.1.7. Array.prototype.copyWithin()">2.1.7. Array.prototype.copyWithin()</a></li><li>
+        <a href="#_array_prototype_sort" aria-label="2.1.8. Array.prototype.sort()">2.1.8. Array.prototype.sort()</a></li><li>
+        <a href="#_array_prototype_reverse" aria-label="2.1.9. Array.prototype.reverse()">2.1.9. Array.prototype.reverse()</a></li><li>
+        <a href="#_array_prototype_flat" aria-label="2.1.10. Array.prototype.flat()">2.1.10. Array.prototype.flat()</a></li></ul>
+    </li><li>
+        <a href="#_%eb%b3%80%ed%99%98" aria-label="2.2. 변환">2.2. 변환</a><ul>
+            <li>
+        <a href="#_array_prototype_concat" aria-label="2.2.1. Array.prototype.concat()">2.2.1. Array.prototype.concat()</a></li><li>
+        <a href="#_array_prototype_join" aria-label="2.2.2. Array.prototype.join()">2.2.2. Array.prototype.join()</a></li><li>
+        <a href="#_array_prototype_slice" aria-label="2.2.3. Array.prototype.slice()">2.2.3. Array.prototype.slice()</a></li><li>
+        <a href="#_array_prototype_tostring" aria-label="2.2.4. Array.prototype.toString()">2.2.4. Array.prototype.toString()</a></li><li>
+        <a href="#_array_prototype_foreach" aria-label="2.2.5. Array.prototype.forEach()">2.2.5. Array.prototype.forEach()</a></li><li>
+        <a href="#_array_prototype_map" aria-label="2.2.6. Array.prototype.map()">2.2.6. Array.prototype.map()</a></li><li>
+        <a href="#_array_prototype_flatmap" aria-label="2.2.7. Array.prototype.flatMap()">2.2.7. Array.prototype.flatMap()</a></li><li>
+        <a href="#_array_prototype_reduce" aria-label="2.2.8. Array.prototype.reduce()">2.2.8. Array.prototype.reduce()</a></li><li>
+        <a href="#_array_prototype_reduceright" aria-label="2.2.9. Array.prototype.reduceRight()">2.2.9. Array.prototype.reduceRight()</a></li><li>
+        <a href="#_array_from" aria-label="2.2.10. Array.from()">2.2.10. Array.from()</a></li></ul>
+    </li><li>
+        <a href="#_%ea%b2%80%ec%83%89_%ed%99%95%ec%9d%b8" aria-label="2.3. 검색 &amp;amp; 확인">2.3. 검색 &amp; 확인</a><ul>
+            <li>
+        <a href="#_array_prototype_every" aria-label="2.3.1. Array.prototype.every()">2.3.1. Array.prototype.every()</a></li><li>
+        <a href="#_array_prototype_some" aria-label="2.3.2. Array.prototype.some()">2.3.2. Array.prototype.some()</a></li><li>
+        <a href="#_array_prototype_filter" aria-label="2.3.3. Array.prototype.filter()">2.3.3. Array.prototype.filter()</a></li><li>
+        <a href="#_array_prototype_find" aria-label="2.3.4. Array.prototype.find()">2.3.4. Array.prototype.find()</a></li><li>
+        <a href="#_array_prototype_findindex" aria-label="2.3.5. Array.prototype.findIndex()">2.3.5. Array.prototype.findIndex()</a></li><li>
+        <a href="#_array_prototype_includes" aria-label="2.3.6. Array.prototype.includes()">2.3.6. Array.prototype.includes()</a></li><li>
+        <a href="#_array_prototype_indexof" aria-label="2.3.7. Array.prototype.indexOf()">2.3.7. Array.prototype.indexOf()</a></li><li>
+        <a href="#_array_prototype_lastindexof" aria-label="2.3.8. Array.prototype.lastIndexOf()">2.3.8. Array.prototype.lastIndexOf()</a></li><li>
+        <a href="#_array_isarray" aria-label="2.3.9. Array.isArray()">2.3.9. Array.isArray()</a></li></ul>
+    </li><li>
+        <a href="#_%ea%b8%b0%ed%83%80" aria-label="2.4. 기타">2.4. 기타</a></li></ul>
+    </li><li>
+        <a href="#_%ed%99%9c%ec%9a%a9" aria-label="3. 활용">3. 활용</a><ul>
+            <li>
+        <a href="#_arr%ec%9d%98_%ed%8a%b9%ec%a0%95_v_%ec%a0%9c%ea%b1%b0" aria-label="3.1. arr의 특정 v 제거">3.1. arr의 특정 v 제거</a></li><li>
+        <a href="#_arr%ec%9d%98_%ec%95%9e%eb%92%a4%ec%97%90_v_%ec%b6%94%ea%b0%80" aria-label="3.2. arr의 앞/뒤에 v 추가">3.2. arr의 앞/뒤에 v 추가</a></li><li>
+        <a href="#_arr_%ec%a0%95%eb%a0%ac" aria-label="3.3. arr 정렬">3.3. arr 정렬</a></li><li>
+        <a href="#_%ed%8a%b9%ec%a0%95_item%ec%9d%98_%eb%aa%a8%eb%93%a0_index_%ec%b0%be%ea%b8%b0" aria-label="3.4. 특정 item의 모든 index 찾기">3.4. 특정 item의 모든 index 찾기</a></li><li>
+        <a href="#_arr%eb%82%b4_%ed%8a%b9%ec%a0%95_value_%ec%a1%b4%ec%9e%ac_%ec%97%ac%eb%b6%80_%ed%99%95%ec%9d%b8_%ed%9b%84_%ec%97%86%ec%9c%bc%eb%a9%b4_%ec%b6%94%ea%b0%80" aria-label="3.5. arr내 특정 value 존재 여부 확인 후 없으면 추가">3.5. arr내 특정 value 존재 여부 확인 후 없으면 추가</a></li></ul>
+</li></ul>
+      </div>
+    </details>
+  </div>
+  <div class="post-content">
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>본 문서의 작성 규칙은 <a href="../a-작성-규칙_용어와-개념/#_작성_규칙">자바스크립트 문법 작성 규칙</a> 을 참고하세요.<br/>
+활용 빈도와 중요도가 높다고 생각되는 항목으로 본문을 구성하였습니다.<br/>
+나머지 항목은 <a href="#_기타">기타</a>  챕터에서 확인 가능합니다.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_배열_프로퍼티">1. 배열 프로퍼티<a hidden class="anchor" aria-hidden="true" href="#_배열_프로퍼티">#</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_array_prototype_length">1.1. Array.prototype.length<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_length">#</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.length
+// arr의 value 갯수 반환</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_배열_메소드">2. 배열 메소드<a hidden class="anchor" aria-hidden="true" href="#_배열_메소드">#</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_직접_수정">2.1. 직접 수정<a hidden class="anchor" aria-hidden="true" href="#_직접_수정">#</a></h3>
+<div class="paragraph">
+<p>원본 배열을 직접 수정하여 변경합니다.</p>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_shift">2.1.1. Array.prototype.shift()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_shift">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.shift()
+// arr의 첫 번째 요소를 제거 (원본 arr 변경), 제거된 요소를 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_unshift">2.1.2. Array.prototype.unshift()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_unshift">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.unshift(v)
+// v를 arr의 첫 value으로 추가 (원본 arr 변경), 새로운 길이를 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_pop">2.1.3. Array.prototype.pop()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_pop">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.pop()
+// arr의 마지막 value 을 제거 (원본 arr 변경), 제거한 value을 반환, 빈 arr은 undefined 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_push">2.1.4. Array.prototype.push()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_push">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.push(v1, v2, ...v)
+// arr의 끝에 하나 이상의 v 추가 (원본 arr 변경), arr의 새로운 길이를 반환. (원본 변경)</code></pre>
+</div>
+</div>
+<details class="result">
+<summary class="title"><strong>눌러서 추가 활용 방법 확인</strong></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">/// 두 배열 합치기, concat()은 원본 유지
+Array.prototype.push.apply(arr, arr1)</code></pre>
+</div>
+</div>
+</div>
+</details>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_splice">2.1.5. Array.prototype.splice()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_splice">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.splice(start, n, v1, v2, ...v)
+// start 부터 n개 (옵션 - 기본: end 까지) value 삭제 후 그 자리에 하나 이상의 v (옵션 - 기본: 없음) 추가 (원본 arr 변경), 제거한 value들로 구성된 arr 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_fill">2.1.6. Array.prototype.fill()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_fill">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.fill(v, start, end)
+// start (옵션 - 기본: 0) 에서 end (옵션 - 기본: arr.length) 까지 value을 v로 채움 (원본 arr 변경), 변경된 arr 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_copywithin">2.1.7. Array.prototype.copyWithin()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_copywithin">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.copyWithin(target, start, end)
+// arr의 start (옵션 - 기본: 0) 에서 end (옵션 - 기본: arr.length) 까지 value을 복사하여 target 부터 덮어씌움 (원본 arr 변경), 변경된 arr 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_sort">2.1.8. Array.prototype.sort()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_sort">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.sort((a , b) =&gt; a - b)
+// 정렬 함수 기준으로 정렬 (원본 arr 변경), 변경된 arr 반환</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">/// 정렬 함수
+(a, b) =&gt; a - b
+// a - b 오름차순 : 1, 2, 3, a, b, c
+// b - a 내림차순 : c, b, a, 3, 2, 1
+// (옵션 - 기본: 문자열 기준 유니코드)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_reverse">2.1.9. Array.prototype.reverse()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_reverse">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.reverse()
+// arr의 순서를 반전 (원본 arr 변경), 변경된 arr 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_flat">2.1.10. Array.prototype.flat()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_flat">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.flat(n)
+//고차 arr을 n (옵션 - 기본: 1) 만큼 차수 낮춤 (원본 arr 변경), 변경된 arr 반환</code></pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">눌러서 예시 확인</summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">/// 예시
+arr.flat(1) // [1,[2]] -&gt; [1,2] / [1,[2,[3]]] -&gt; [1,2,[3]]
+arr.flat(2) // [1,[2,[3]]] -&gt; [1,2,3]</code></pre>
+</div>
+</div>
+</div>
+</details>
+<details class="result">
+<summary class="title">눌러서 활용법 확인</summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">/// 배열 구멍 제거
+const arr = [1, 2, , 4, 5]
+arr.flat()
+//&gt; [1, 2, 4, 5]</code></pre>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_변환">2.2. 변환<a hidden class="anchor" aria-hidden="true" href="#_변환">#</a></h3>
+<div class="paragraph">
+<p>원본 배열은 유지한채 내부 요소를 변환하여 반환합니다.</p>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_concat">2.2.1. Array.prototype.concat()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_concat">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.concat(h1, h2, ...h)
+// arr에 하나 이상의 h[arr, value] 를 합쳐 새로운 arr 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_join">2.2.2. Array.prototype.join()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_join">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.join(&#39;a&#39;)
+// arr의 모든 value을 사이에 &#39;a&#39; 구분자를 넣어 더해 새로운 str로 반환, value이 undefined 또는 null이면 빈 str로 반환</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">/// 문자열 분할
+str.split(&#39;a&#39;, n)
+// str을 &#39;a&#39; 구분자 (옵션 - 기본: 구분자 없음) 로 n 개 (옵션 - 기본: str.length) 까지 분할해 새로운 arr로 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_slice">2.2.3. Array.prototype.slice()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_slice">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.slice(start, end)
+// start부터 end (옵션 - 기본: arr.length) 전까지 (end 미포함) value을 새로운 arr로 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_tostring">2.2.4. Array.prototype.toString()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_tostring">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.toString()
+// value들을 쉼표를 구분자로 합쳐 새로운 str로 반환</code></pre>
+</div>
+</div>
+<details class="result">
+<summary class="title"><strong>눌러서 예시 확인</strong></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">const arr = [1,2,3,4,5]
+console.log(arr.toString())
+//&gt; 1,2,3,4,5</code></pre>
+</div>
+</div>
+</div>
+</details>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_foreach">2.2.5. Array.prototype.forEach()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_foreach">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.forEach(p =&gt; p + 1)
+// start 부터 end 까지 연산 함수 적용, 중간 탈출 불가, undefine 반환
+// undefine을 반환하기 때문에 메소드 체인의 제일 마지막에서 연산 함수를 통해 외부로 효과를 적용해야 할때 사용 (추가적인 변수 선언 없이 한번에 실행)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_map">2.2.6. Array.prototype.map()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_map">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.map(x =&gt; x + 1)
+// arr의 value에 연산 함수를 차례로 적용, 새로운 arr 반환
+// undefine을 반환하기 때문에 메소드 체인의 제일 마지막에서 연산 함수를 통해 외부로 효과를 적용해야 할때 사용 (추가적인 변수 선언 없이 한번에 실행)</code></pre>
+</div>
+</div>
+<details class="result">
+<summary class="title"><strong>눌러서 주의사항 확인</strong></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">/// 두개 이상의 p를 받는 연산 함수를 적용 시 기대와 다른 결과값이 나오므로 주의
+[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;].map(parseInt)</code></pre>
+</div>
+</div>
+</div>
+</details>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_flatmap">2.2.7. Array.prototype.flatMap()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_flatmap">#</a></h4>
+<details class="result">
+<summary class="title"><strong>눌러서 내용 확인</strong></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.flatMap(p =&gt; p + 1)
+// arr.map(p =&gt; p + 1).flat(1)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">/// flat().map() 이 아님
+console.log([1, 2, [3, 3]].flat().map(x =&gt; x + 1))
+///&gt; [2, 3, 4, 4]
+
+console.log([1, 2, [3, 3]].map(x =&gt; x + 1).flat())
+///&gt; [2, 3, &#34;3,31&#34;]</code></pre>
+</div>
+</div>
+</div>
+</details>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_reduce">2.2.8. Array.prototype.reduce()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_reduce">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.reduce((acc, cur) =&gt; acc + cur)
+arr.reduce((acc, cur, inx, src) =&gt; acc + cur, int)
+// arr의 각 value을 차례로 cur에 대입하고 리듀서 함수를 적용, 결과를 acc에 누적하여 반환</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">/// 리듀서 (reducer) 함수: int (옵션 - 기본: 0) 를 초기값으로 시작, arr의 각 value이 차례로 cur에 대입되어 연산 함수를 적용한 뒤 acc에 누적 저장하여 반환
+// acc: accumulator, cur: currentValue, idx: currentIndex, src: sourceArray, int: initialValue</code></pre>
+</div>
+</div>
+<details class="result">
+<summary class="title"><strong>눌러서 주의사항 확인</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p>각 항목이 모두 리듀서 함수를 거치게 하려면 int (초기값: initialValue) 을 입력해야함<br/>
+초기값이 없으면,<br/>
+. 배열의 첫번째 요소 (0번 인덱스) 를 accumulator에 누적한 후 1번 인덱스부터 리듀서 함수를 거친다. (0번 인덱스 항목은 리듀서 함수를 거치지 않음)<br/>
+. 배열의 요소 값이 1개인데 초기값도 제공하지 않은 경우 or 초기값은 있지만 배열이 빈 배열인 경우에는 그 단독 값을 리듀서를 거치지 않고 바로 반환<br/>
+. 배열이 비었는데 초기값도 없는 상태에서 reduce() 를 호출하면 TypeError 오류가 발생</p>
+</div>
+</div>
+</details>
+<details class="result">
+<summary class="title"><strong>눌러서 추가 예시 확인</strong></summary>
+<div class="content">
+<div class="paragraph">
+<p><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" class="bare">https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce</a></p>
+</div>
+</div>
+</details>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_reduceright">2.2.9. Array.prototype.reduceRight()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_reduceright">#</a></h4>
+<details class="result">
+<summary class="title"><strong>눌러서 내용 확인</strong></summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.reduceRight((acc, cur) =&gt; acc + cur)
+arr.reduceRight((acc, cur, inx, src) =&gt; acc + cur, int)
+// reduce() 와 같으나 value을 역순으로 cur에 대입</code></pre>
+</div>
+</div>
+</div>
+</details>
+</div>
+<div class="sect3">
+<h4 id="_array_from">2.2.10. Array.from()<a hidden class="anchor" aria-hidden="true" href="#_array_from">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">Array.from(H, p =&gt; p + 1)
+// H (&#39;a&#39;, arr, array-like, iterable, (p1, p2, ...p)) 를 각 value에 연산 함수 (옵션 - 기본: p =&gt; p) 적용, 새로운 arr 반환</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_검색_확인">2.3. 검색 &amp; 확인<a hidden class="anchor" aria-hidden="true" href="#_검색_확인">#</a></h3>
+<div class="paragraph">
+<p>배열의 value 또는 배열 자체를 검색하고 확인합니다.</p>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_every">2.3.1. Array.prototype.every()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_every">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.every(p =&gt; p &lt; 10)
+// 모든 value이 판별 함수를 만족하면 true, 불만족 value 발견 시 false, 빈 배열은 true 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_some">2.3.2. Array.prototype.some()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_some">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.some(p =&gt; p &gt; 10)
+// 판별 함수를 만족하는 value 발견 시 true, 모두 불만족하면 false 반환, 빈 배열은 false 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_filter">2.3.3. Array.prototype.filter()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_filter">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.filter(p =&gt; p &lt; 10)
+// 판별 함수를 만족하는 value을 모아 새로운 arr 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_find">2.3.4. Array.prototype.find()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_find">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.find(p =&gt; p &lt; 10)
+// 판별 함수를 만족하는 첫번째 value을 반환, 없으면 undefined 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_findindex">2.3.5. Array.prototype.findIndex()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_findindex">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.find(p =&gt; p &lt; 10)
+//판별 함수를 만족하는 첫번째 value의 index를 반환, 없으면 -1 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_includes">2.3.6. Array.prototype.includes()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_includes">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.includes(a)
+// arr의 value 중 a의 존재 여부 확인, 있으면 true 반환, 없으면 false 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_indexof">2.3.7. Array.prototype.indexOf()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_indexof">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.indexOf(v, n)
+// arr의 value 중 v의 존재 여부 확인, n 번째 (옵션 - 기본: 1) index를 반환, 없으면 -1 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_prototype_lastindexof">2.3.8. Array.prototype.lastIndexOf()<a hidden class="anchor" aria-hidden="true" href="#_array_prototype_lastindexof">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.lastIndexOf()
+// indexOf() 와 달리 마지막 index 반환, 없으면 -1 반환</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_array_isarray">2.3.9. Array.isArray()<a hidden class="anchor" aria-hidden="true" href="#_array_isarray">#</a></h4>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">Array.isArray(a)
+// a가 배열인지 판별, true/false 반환</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_기타">2.4. 기타<a hidden class="anchor" aria-hidden="true" href="#_기타">#</a></h3>
+<details class="result">
+<summary class="title"><strong>관련 항목 더보기</strong></summary>
+<div class="content">
+<div class="listingblock">
+<div class="title">Array.prototype.keys()</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.keys()
+// arr의 index를 차례로 제공하는 새로운 iterator 반환</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Array.prototype.values()</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.values()
+// arr의 value을 차례로 제공하는 새로운 iterator 반환</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Array.prototype.entries()</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">arr.entries()
+// [index, item] 을 차례로 제공하는 새로운 iterator 반환</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Array.of()</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">Array.of(v1, v2, ...v)
+// [v1, v2, ...v] 반환</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="title">Array.prototype.toLocaleString()</div>
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">H.toLocaleString()
+// 숫자 및 숫자가 포함된 대상을 지역에 따른 표현을 적용한 문자열로 반환 (원본 H 유지)</code></pre>
+</div>
+</div>
+<details class="result">
+<summary class="title">눌러서 예시 확인</summary>
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">const num = 12341.23
+console.log(num.toLocaleString(&#34;ko-KR&#34;, { style: &#39;currency&#39;, currency: &#39;KRW&#39; }));
+//&gt; ₩12,341</code></pre>
+</div>
+</div>
+</div>
+</details>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>사용 금지 (웹 표준 아님)</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Array.prototype.toSource()</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">// 배열의 소스 코드 문자열을 반환</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</details>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_활용">3. 활용<a hidden class="anchor" aria-hidden="true" href="#_활용">#</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_arr의_특정_v_제거">3.1. arr의 특정 v 제거<a hidden class="anchor" aria-hidden="true" href="#_arr의_특정_v_제거">#</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">// arr.splice(start, n, v1, v2, ...v)  - 원본 arr 변경
+arr.splice(target, 1)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">// arr.slice(start, end).concat(h1, h2, ...h) - 원본 arr 유지
+arr.slice(0, target).concat(arr.slice(target + 1))</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_arr의_앞뒤에_v_추가">3.2. arr의 앞/뒤에 v 추가<a hidden class="anchor" aria-hidden="true" href="#_arr의_앞뒤에_v_추가">#</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">// arr.unshift(v) / arr.push(v1, v2, ...v) - 원본 arr 변경
+arr.unshift(v)
+arr.push(v)</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">// ... (펼침 연산자) - 원본 arr 유지
+[v, ...arr]
+[...arr, v]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_arr_정렬">3.3. arr 정렬<a hidden class="anchor" aria-hidden="true" href="#_arr_정렬">#</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">// arr.sort((a , b) =&gt; a - b ) - 원본 arr 변경
+arr.sort((a , b) =&gt; a - b )</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">// ... (펼침 연산자) - 원본 arr 유지
+[...arr].sort((a , b) =&gt; a - b )</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_특정_item의_모든_index_찾기">3.4. 특정 item의 모든 index 찾기<a hidden class="anchor" aria-hidden="true" href="#_특정_item의_모든_index_찾기">#</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">//arr.indexOf(item, start)
+const result = [];
+const arr = [&#39;a&#39;, &#39;b&#39;, &#39;a&#39;, &#39;c&#39;, &#39;a&#39;, &#39;d&#39;];
+const item = &#39;a&#39;;
+let idx = arr.indexOf(value);
+while (idx != -1) {
+  result.push(idx);
+  idx = arr.indexOf(value, idx + 1);
+}
+console.log(result);
+//&gt; [0, 2, 4]</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_arr내_특정_value_존재_여부_확인_후_없으면_추가">3.5. arr내 특정 value 존재 여부 확인 후 없으면 추가<a hidden class="anchor" aria-hidden="true" href="#_arr내_특정_value_존재_여부_확인_후_없으면_추가">#</a></h3>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-js" data-lang="js">//arr.indexOf(value, start)
+function update (arr, value) {
+  if (arr.indexOf(value) === -1) {
+      arr.push(value);
+      console.log(&#39;새로운 arr: &#39; + arr);
+  } else if (arr.indexOf(value) &gt; -1) {
+      console.log(value + &#39; 은 이미 arr에 존재&#39;);
+  }
+}
+const arr = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;];
+update(arr, &#39;e&#39;);
+//&gt; 새로운 arr: a, b, c, d, e
+update(arr, &#39;e&#39;);
+//&gt; e 은 이미 arr에 존재</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://cspidar.github.io/tags/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/">자바스크립트</a></li>
+      <li><a href="https://cspidar.github.io/tags/%EB%AC%B8%EB%B2%95/">문법</a></li>
+      <li><a href="https://cspidar.github.io/tags/%EC%9A%A9%EC%96%B4/">용어</a></li>
+      <li><a href="https://cspidar.github.io/tags/%EA%B0%9C%EB%85%90/">개념</a></li>
+      <li><a href="https://cspidar.github.io/tags/%EB%A9%94%EC%86%8C%EB%93%9C/">메소드</a></li>
+      <li><a href="https://cspidar.github.io/tags/%EB%B0%B0%EC%97%B4/">배열</a></li>
+      <li><a href="https://cspidar.github.io/tags/array/">Array</a></li>
+    </ul>
+    <nav class="paginav">
+      <a class="prev" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/c-%EA%B0%9D%EC%B2%B4-%EB%A9%94%EC%86%8C%EB%93%9C-object-methods/">
+        <span class="title">« Prev Page</span>
+        <br>
+        <span>자바스크립트 문법 - C - 객체 주요 메소드 (Object methods essential)</span>
+      </a>
+      <a class="next" href="https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/a-%EC%9E%91%EC%84%B1-%EA%B7%9C%EC%B9%99_%EC%9A%A9%EC%96%B4%EC%99%80-%EA%B0%9C%EB%85%90/">
+        <span class="title">Next Page »</span>
+        <br>
+        <span>자바스크립트 문법 - A - 작성 규칙, 용어와 개념 (Style, Terms and Concepts)</span>
+      </a>
+    </nav>
+  </footer>
+</article>
+    </main><footer class="footer">
+    <span>&copy; 2021 <a href="https://cspidar.github.io/">quick start by EEAS</a></span>
+    <span>&middot;</span>
+    <span>Powered by <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a></span>
+    <span>&middot;</span>
+    <span>Theme <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a></span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+
+
+<script defer src="/assets/js/highlight.min.b03fa3bda3df09a2ab5f8f68cd50cf34397dca5c60100433c77ecdfeed6012c9.js" integrity="sha256-sD&#43;jvaPfCaKrX49ozVDPNDl9ylxgEAQzx37N/u1gEsk="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<script>
+    window.onload = function () {
+        if (localStorage.getItem("menu-scroll-position")) {
+            document.getElementById('menu').scrollLeft = localStorage.getItem("menu-scroll-position");
+        }
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+    function menu_on_scroll() {
+        localStorage.setItem("menu-scroll-position", document.getElementById('menu').scrollLeft);
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+
+</body>
+
+</html>
