@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Str on quick start by EEAS</title>
+    <link>https://cspidar.github.io/tags/str/</link>
+    <description>Recent content in Str on quick start by EEAS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Mon, 31 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cspidar.github.io/tags/str/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>자바스크립트 알고리즘 - 코드 - 문자열 활용</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%99%9C%EC%9A%A9/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%99%9C%EC%9A%A9/</guid>
+      <description>1. str 공백 제거 str.trim();     2. str 수식 계산 const res = eval(&amp;#34;1+2&amp;#34;); // 3     3. ascii num 변경 str.charCodeAt(); // ascii num으로 변경 String.fromCharCode(n); // ascii num을 str 반환     4. str 정규표현식 사용하여 replace로 교체 str.replace(/A/g, &amp;#34;B&amp;#34;); // &amp;#39;A&amp;#39; 를 글로벌 (g) 로 &amp;#39;B&amp;#39;로 교체     5. arr 배열 내 문자열 정렬 arr.sort((a, b) =&amp;gt; { return a[0].</description>
+    </item>
+    
+  </channel>
+</rss>

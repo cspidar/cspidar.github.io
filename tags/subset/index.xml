@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Subset on quick start by EEAS</title>
+    <link>https://cspidar.github.io/tags/subset/</link>
+    <description>Recent content in Subset on quick start by EEAS</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko</language>
+    <lastBuildDate>Mon, 31 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cspidar.github.io/tags/subset/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>자바스크립트 알고리즘 - 코드 - 부분 집합</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%B6%80%EB%B6%84-%EC%A7%91%ED%95%A9/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%B6%80%EB%B6%84-%EC%A7%91%ED%95%A9/</guid>
+      <description>1. 부분 집합   원소를 넣을지 말지 2갈래로 탐색
+  arr 의 모든 부분 집합 res 에 추가, 갯수 cnt에 출력
+   function partsOfarr(arr) { let ch = Array.from(Array(arr.length)); let res = []; // let cnt = 0; function DFS(i) { if (i === arr.length) { let tmp = []; // for문 전 초기화 for (i in ch) { // 체크배열이 1인 v만 tmp에 추가 if (ch[i] === 1) { tmp.</description>
+    </item>
+    
+  </channel>
+</rss>

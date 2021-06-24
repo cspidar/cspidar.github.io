@@ -25,5 +25,47 @@
       <description>1. arr → map 변환 const map = new Map([ [k1, v1], [k2, v2], [...k, ...v], ]);     2. map →&amp;gt; arr 변환 (펼침 연산자) let arr = [...map];     3. value 업데이트 map.set(k, map.get(k) + 1);     4. 순회 for ([key, value] of map) { }     5. Function - 두 Map 일치 확인 function chkMaps(p1, p2) { // console.</description>
     </item>
     
+    <item>
+      <title>자바스크립트 알고리즘 - 코드 - 문자열 활용</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%99%9C%EC%9A%A9/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%AC%B8%EC%9E%90%EC%97%B4-%ED%99%9C%EC%9A%A9/</guid>
+      <description>1. str 공백 제거 str.trim();     2. str 수식 계산 const res = eval(&amp;#34;1+2&amp;#34;); // 3     3. ascii num 변경 str.charCodeAt(); // ascii num으로 변경 String.fromCharCode(n); // ascii num을 str 반환     4. str 정규표현식 사용하여 replace로 교체 str.replace(/A/g, &amp;#34;B&amp;#34;); // &amp;#39;A&amp;#39; 를 글로벌 (g) 로 &amp;#39;B&amp;#39;로 교체     5. arr 배열 내 문자열 정렬 arr.sort((a, b) =&amp;gt; { return a[0].</description>
+    </item>
+    
+    <item>
+      <title>자바스크립트 알고리즘 - 코드 - 부분 집합</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%B6%80%EB%B6%84-%EC%A7%91%ED%95%A9/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EB%B6%80%EB%B6%84-%EC%A7%91%ED%95%A9/</guid>
+      <description>1. 부분 집합   원소를 넣을지 말지 2갈래로 탐색
+  arr 의 모든 부분 집합 res 에 추가, 갯수 cnt에 출력
+   function partsOfarr(arr) { let ch = Array.from(Array(arr.length)); let res = []; // let cnt = 0; function DFS(i) { if (i === arr.length) { let tmp = []; // for문 전 초기화 for (i in ch) { // 체크배열이 1인 v만 tmp에 추가 if (ch[i] === 1) { tmp.</description>
+    </item>
+    
+    <item>
+      <title>자바스크립트 알고리즘 - 코드 - 이진 검색</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%9D%B4%EC%A7%84-%EA%B2%80%EC%83%89/</link>
+      <pubDate>Mon, 31 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%9D%B4%EC%A7%84-%EA%B2%80%EC%83%89/</guid>
+      <description> 1. 이진 검색   lt: 맨 왼쪽 / rt: 맨 오른쪽 / mid: lt와 rt의 중간
+  arr의 mid 값이 condition() 함수의 조건 만족할때까지 검색
+   while (lt &amp;lt;= rt) { mid = Math.floor((lt + rt) / 2); if (condition(arr, mid) === false) { res = mid; lt = mid + 1; // mid는 이미 확인했기때문에 rt =&amp;gt; mid - 1 / lt =&amp;gt; mid + 1 } else rt = mid - 1; }     </description>
+    </item>
+    
+    <item>
+      <title>자바스크립트 알고리즘 - 코드 - 소수 확인</title>
+      <link>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%86%8C%EC%88%98-%ED%99%95%EC%9D%B8/</link>
+      <pubDate>Thu, 27 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cspidar.github.io/posts/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%BD%94%EB%93%9C/%EC%86%8C%EC%88%98-%ED%99%95%EC%9D%B8/</guid>
+      <description> 1. 소수 확인   n을 n의 제곱근 (Math.sqrt(n)) 까지 나눈 나머지가 0이 존재하면 안됨
+  n이 소수면 true, 아니면 false 반환
+   const chkPrime = (n) =&amp;gt; { if (n === 0) return false; if (n === 1) return false; else if (n === 2) return true; else { for (let i = 2; i &amp;lt;= Math.sqrt(n); i++) { if (n % i === 0) return false; } return true; } };     </description>
+    </item>
+    
   </channel>
 </rss>
