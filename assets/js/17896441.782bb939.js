@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocubook=self.webpackChunkdocubook||[]).push([[8401],{45140:(o,c,s)=>{s.d(c,{A:()=>e});var k=s(72774),u=s(5871);const e={...k.A,DocCardList:u.A}}}]);
